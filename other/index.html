@@ -89,8 +89,8 @@
             
             
 
-<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note. The documentation is very work in progress, and is very incomplete. <br>
-If you want to see the documentation for the stable release, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
+<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note, and is very WIP / incomplete. <br>
+If you are looking for the stable release documentation, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
 
 
           </div>
@@ -996,6 +996,13 @@ If you want to see the documentation for the stable release, see <a href="https:
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mobile-unbolded-text" class="md-nav__link">
+    Mobile Unbolded Text
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1420,6 +1427,13 @@ If you want to see the documentation for the stable release, see <a href="https:
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mobile-unbolded-text" class="md-nav__link">
+    Mobile Unbolded Text
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1515,7 +1529,7 @@ I personally like using this field to test handlebars from Yomichan.</p>
 the execution of the code).</p>
 <hr>
 <h2 id="fix-ruby-positioning-for-legacy-anki-versions">Fix Ruby Positioning (for legacy Anki versions)<a class="headerlink" href="#fix-ruby-positioning-for-legacy-anki-versions" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>If the furigana appears higher than normal on your card,
 the following <a href="../runtimeoptions/" target="_blank">runtime option</a> serves as a quick fix to lower the furigana:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"fixRubyPositioning.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
@@ -1550,7 +1564,7 @@ This fix is imperfect because it adds even more spacing to the left and right th
 if the furigana text is too long.</p>
 <hr>
 <h2 id="remove-the-na-on-cards-with-no-pitch-accents">Remove the "(N/A)" on cards with no pitch accents<a class="headerlink" href="#remove-the-na-on-cards-with-no-pitch-accents" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>If the word has no pitch accent, the pitch accent is usually displayed as <code>(N/A)</code>.
 This indicator can be removed with the following <a href="../customcss/" target="_blank">CSS</a>:</p>
 <details class="example">
@@ -1625,7 +1639,7 @@ the color for night mode. You must use <code>.night_mode</code>.</p>
 </details>
 <hr>
 <h2 id="removing-the-word-sentence-at-the-top-of-the-back-side">Removing the word / sentence at the top of the back side<a class="headerlink" href="#removing-the-word-sentence-at-the-top-of-the-back-side" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>For users who are only using one card type
 (e.g. only vocab cards with no sentence cards, TSCs, or anything else),
 it might be better to remove the tested content and the line below it.</p>
@@ -1656,14 +1670,29 @@ your note to do.
 !!! note
     * If you want to change something for a card-per-card basis, see the [Field Reference](fieldref.md) page.
     * These customizations make heavy use of [runtime options](runtimeoptions.md){:target="_blank"} and [custom CSS](customcss.md){:target="_blank"}.
---></div>
+-->
+
+<h2 id="mobile-unbolded-text">Mobile Unbolded Text<a class="headerlink" href="#mobile-unbolded-text" title="Permanent link">¶</a></h2>
+<p>By default, most text that would be bolded on desktop is unbolded in mobile.
+This is because the bolded text makes the kanji feel much more squished together,
+especially on Android where the custom bold font cannot be used.
+Additionally, the bolded text is still highlighted in the accent color of the note,
+so the text still stands out compared to other text.</p>
+<p>If you want to bold the text again, use the following <a href="../customcss/" target="_blank">CSS</a>:</p>
+<p>(TODO link to extra/style.scss and all)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>@media (max-width: 620px) {
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  :root {
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    --bold-font-weight: bold;
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  }
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>}
+</code></pre></div></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 14, 2023</span>
       
     
   </small>

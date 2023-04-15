@@ -89,8 +89,8 @@
             
             
 
-<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note. The documentation is very work in progress, and is very incomplete. <br>
-If you want to see the documentation for the stable release, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
+<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note, and is very WIP / incomplete. <br>
+If you are looking for the stable release documentation, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
 
 
           </div>
@@ -684,13 +684,6 @@ If you want to see the documentation for the stable release, see <a href="https:
         <li class="md-nav__item">
   <a href="#updating-yomichan-templates" class="md-nav__link">
     Updating Yomichan Templates
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#updating-the-runtime-options-file" class="md-nav__link">
-    Updating the Runtime Options File
   </a>
   
 </li>
@@ -1421,13 +1414,6 @@ If you want to see the documentation for the stable release, see <a href="https:
 </li>
       
         <li class="md-nav__item">
-  <a href="#updating-the-runtime-options-file" class="md-nav__link">
-    Updating the Runtime Options File
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#final-steps" class="md-nav__link">
     Final Steps
   </a>
@@ -1500,11 +1486,19 @@ and should do the exact same operations as running the script manually.</p>
 <ol>
 <li>If you haven't installed JPMN Manager yet, do so with the following code: <code>1732829476</code>.
     Be sure to restart Anki after installing.</li>
-<li>Make sure there is something to update to in the first place.
-    You can do this by:
-    &gt; <code>Tools</code> →  <code>JPMN Manager</code> →  <code>Check for note updates</code></li>
-<li>Update the note by navigating to the following:
-    &gt; <code>Tools</code> →  <code>JPMN Manager</code> →  <code>Update jp-mining-note</code></li>
+<li>
+<p>Make sure there is something to update to in the first place.
+    You can do this by:</p>
+<blockquote>
+<p><code>Tools</code> →  <code>JPMN Manager</code> →  <code>Check for note updates</code></p>
+</blockquote>
+</li>
+<li>
+<p>Update the note by navigating to the following: <br></p>
+<blockquote>
+<p><code>Tools</code> →  <code>JPMN Manager</code> →  <code>Update jp-mining-note</code></p>
+</blockquote>
+</li>
 </ol>
 <p>There may be further steps outside of just updating the card,
 such as updating Yomichan's templates / format.
@@ -1554,7 +1548,6 @@ Lastly, it will give you warnings on anything you have to change manually,
 such as Yomichan Templates.
 -->
 </details>
-<p><br></p>
 <details class="question">
 <summary>Why can't I just copy/paste the templates, or just re-install the .apkg file to update the note?</summary>
 <p>In short, updating via Anki or Python performs many operations that cannot be done with
@@ -1603,7 +1596,6 @@ little to no support given.</p>
 <hr>
 <h2 id="common-errors">Common Errors<a class="headerlink" href="#common-errors" title="Permanent link">¶</a></h2>
 <p>This section will document common errors that occur when running the installation script.</p>
-<p><br></p>
 <h3 id="anki-connect-is-missing-actions">Anki-Connect is missing actions<a class="headerlink" href="#anki-connect-is-missing-actions" title="Permanent link">¶</a></h3>
 <p>Anki-Connect is likely outdated.
 To fix this, remove and re-download Anki-Connect from the
@@ -1615,7 +1607,6 @@ despite the fact that a newer version of the add-on exists.
 That is why I recommend re-downloading from the AnkiWeb page
 instead of using this feature.</p>
 </div>
-<p><br></p>
 <h3 id="fieldverifierexception">FieldVerifierException<a class="headerlink" href="#fieldverifierexception" title="Permanent link">¶</a></h3>
 <p><a href="../assets/anki/fields_window.png"><img align="right" alt="anki field window" src="../assets/anki/fields_window.png" width="300"> </a></p>
 <p>This class of errors means that the field list was edited at some point
@@ -1631,15 +1622,26 @@ any note type with modifications to the field list.</p>
 <summary>The field order has been changed.</summary>
 <p>If the field order has been changed, and nothing else has been changed,
 you should be able to preserve your existing field list order by running the installation script
-with the <code>--ignore-order</code> flag (i.e. <code>python3 install.py --ignore-order</code>).</p>
-<p>Alternatively, you can simply re-order the fields back to their original position.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you use <code>--ignore-order</code>, all new fields will be added to the very end
-of the field list (i.e. under <code>Comment</code>).
-Additionally, any fields that were supposed to be repositioned will stay in place.
-It is up to you to move the fields to the appropriate places.</p>
+with the <code>--ignore-order</code> flag:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">JPMN Manager</label><label for="__tabbed_2_2">Python Script</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p><code>Tools</code> →  <code>JPMN Manager</code> →  <code>Run installer with arguments</code></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>--update --ignore-order
+</code></pre></div>
 </div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3 install.py --update --ignore-order
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, you can re-order the field list beforehand.
+This can be done with the following <a href="../batch/">batch command</a>:
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>reposition_fields
+</code></pre></div>
 </details>
 <details class="info">
 <summary>New field(s) have been created.</summary>
@@ -1725,7 +1727,6 @@ then <strong>the field will not show up automatically in Yomichan</strong>.</p>
 <p>Doing the above WILL clear all the fields that you previously had, unless there
 is a matching field in that other card.</p>
 </div>
-<p><br></p>
 <h3 id="refreshing-yomichan-fields">Refreshing Yomichan Fields<a class="headerlink" href="#refreshing-yomichan-fields" title="Permanent link">¶</a></h3>
 <details class="example">
 <summary>Video Demo <em>(click here)</em></summary>
@@ -1777,16 +1778,6 @@ and again, please make sure you <strong>reset the existing templates</strong> (u
 I recommend temporarily saving a copy of the Yomichan templates so you can easily
 reset your Yomichan template options after updating.</p>
 <hr>
-<h2 id="updating-the-runtime-options-file">Updating the Runtime Options File<a class="headerlink" href="#updating-the-runtime-options-file" title="Permanent link">¶</a></h2>
-<p>The <a href="../runtimeoptions/" target="_blank">runtime options</a> does not automatically update with each note update,
-as to not override the user's configuration on each update.
-If the options file isn't updated, then the note will simply use the default value for the option.</p>
-<p>However, if certain runtime options no longer work, you may have to update this file,
-as it is possible for the configuration file layout to have changed between versions.
-The most recent version of the options file can always be found
-<a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/master/media/_jpmn-options.js">here</a>.
-if you want to update it.</p>
-<hr>
 <h2 id="final-steps">Final Steps<a class="headerlink" href="#final-steps" title="Permanent link">¶</a></h2>
 <p>By now, you should be done updating the note!
 Please do the following checks to make sure everything properly works:</p>
@@ -1810,7 +1801,7 @@ Please do the following checks to make sure everything properly works:</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
       
     
   </small>

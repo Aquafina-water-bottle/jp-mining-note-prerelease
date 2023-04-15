@@ -89,8 +89,8 @@
             
             
 
-<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note. The documentation is very work in progress, and is very incomplete. <br>
-If you want to see the documentation for the stable release, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
+<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note, and is very WIP / incomplete. <br>
+If you are looking for the stable release documentation, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
 
 
           </div>
@@ -780,11 +780,31 @@ If you want to see the documentation for the stable release, see <a href="https:
 </li>
       
         <li class="md-nav__item">
-  <a href="#hiding-the-first-line-of-a-definition" class="md-nav__link">
-    Hiding the first line of a definition
+  <a href="#simplifying-the-definition" class="md-nav__link">
+    Simplifying the Definition
   </a>
   
-    <nav class="md-nav" aria-label="Hiding the first line of a definition">
+    <nav class="md-nav" aria-label="Simplifying the Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#card-by-card-control" class="md-nav__link">
+    Card-by-Card Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simplifying-options-how-does-it-work" class="md-nav__link">
+    Simplifying Options: How does it work?
+  </a>
+  
+    <nav class="md-nav" aria-label="Simplifying Options: How does it work?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -803,13 +823,6 @@ If you want to see the documentation for the stable release, see <a href="https:
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#removing-the-numbers-in-the-primary-definition" class="md-nav__link">
-    Removing the numbers in the primary definition
-  </a>
   
 </li>
       
@@ -1455,11 +1468,31 @@ If you want to see the documentation for the stable release, see <a href="https:
 </li>
       
         <li class="md-nav__item">
-  <a href="#hiding-the-first-line-of-a-definition" class="md-nav__link">
-    Hiding the first line of a definition
+  <a href="#simplifying-the-definition" class="md-nav__link">
+    Simplifying the Definition
   </a>
   
-    <nav class="md-nav" aria-label="Hiding the first line of a definition">
+    <nav class="md-nav" aria-label="Simplifying the Definition">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#card-by-card-control" class="md-nav__link">
+    Card-by-Card Control
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simplifying-options-how-does-it-work" class="md-nav__link">
+    Simplifying Options: How does it work?
+  </a>
+  
+    <nav class="md-nav" aria-label="Simplifying Options: How does it work?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1478,13 +1511,6 @@ If you want to see the documentation for the stable release, see <a href="https:
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#removing-the-numbers-in-the-primary-definition" class="md-nav__link">
-    Removing the numbers in the primary definition
-  </a>
   
 </li>
       
@@ -1575,7 +1601,6 @@ as these are not traditionally-formatted dictionaries.</p>
 </ul>
 <p>The way that the dictionaries are sorted into the appropriate fields is by assigning
 a category to each individual dictionary.</p>
-<p><br></p>
 <h3 id="verifying-categories">Verifying Categories<a class="headerlink" href="#verifying-categories" title="Permanent link">¶</a></h3>
 <p>You can check that your dictionaries are correctly categorized with the
 <code>{jpmn-test-dict-type}</code> marker.
@@ -1603,7 +1628,6 @@ Monolingual dictionaries are considered to be dictionaries that aren't either
 of the two above, so no handlebars code has to be changed if one were to
 use more monolingual dictionaries.</p>
 <p>To see how to edit the regex, go to <a href="#editing-the-dictionary-regex">this section</a>.</p>
-<p><br></p>
 <h3 id="ignoring-a-dictionary">Ignoring a Dictionary<a class="headerlink" href="#ignoring-a-dictionary" title="Permanent link">¶</a></h3>
 <p>If you want to see the dictionary on Yomichan but not have it show on Anki,
 you can use the <code>ignored-dict-regex</code> option.</p>
@@ -1617,7 +1641,6 @@ within the note.
 If you wish to not see a dictionary, it might be easier to
 <a href="#collapsing-dictionaries">collapse the dictionary</a>.</p>
 </div>
-<p><br></p>
 <h3 id="editing-the-dictionary-regex">Editing the dictionary regex<a class="headerlink" href="#editing-the-dictionary-regex" title="Permanent link">¶</a></h3>
 <p>To modify a regex string:</p>
 <ol>
@@ -1675,7 +1698,6 @@ that <em>only</em> the selected text is shown in the first definition,
 then set <code>opt-selection-text-glossary-attempt-bold</code> to <code>false</code>.</p>
 </li>
 </ol>
-<p><br></p>
 <h3 id="where-automatic-bolding-can-fail">Where automatic bolding can fail<a class="headerlink" href="#where-automatic-bolding-can-fail" title="Permanent link">¶</a></h3>
 <p>Automatic bolding works by searching through every dictionary in Yomichan order,
 until the highlighted text is found in one of the definitions.</p>
@@ -1704,7 +1726,6 @@ be incorrectly selected.</p>
 <p>The above example happened to me with the word 垣根,
 using デジタル大辞泉 and highlighting the word <code>border</code>.</p>
 </div>
-<p><br></p>
 <h3 id="where-dictionary-selection-can-fail">Where dictionary selection can fail<a class="headerlink" href="#where-dictionary-selection-can-fail" title="Permanent link">¶</a></h3>
 <p>This may occasionally select the wrong dictionary,
 but this only happens if the selected text also appears in a dictionary above the selected text.</p>
@@ -1718,177 +1739,185 @@ Additionally, monolingual dictionaries almost never have the exact same definiti
 However, if you still want a specific dictionary, highlight the dictionary tag
 <a href="#overriding-a-dictionary">as shown above</a>.</p>
 <hr>
-<h2 id="hiding-the-first-line-of-a-definition">Hiding the first line of a definition<a class="headerlink" href="#hiding-the-first-line-of-a-definition" title="Permanent link">¶</a></h2>
-<p><sup>See also: <a href="#removing-the-numbers-in-the-primary-definition">How to remove the numbers in the definition</a></sup></p>
-<p>The first line of the definition has various elements that can be hidden with <a href="../customcss/" target="_blank">CSS</a>.</p>
-<p>TODO change this to a RTO + tags to enable/disable</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Hide entire first line</label><label for="__tabbed_1_2">Nothing hidden (default)</label><label for="__tabbed_1_3">Hide extra text</label><label for="__tabbed_1_4">Hide dictionary tag</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><figure markdown>
-  <a href="../assets/definitions/first_line_css/first_line_hidden.png"><img alt="" src="../assets/definitions/first_line_css/first_line_hidden.png"></a>
-</figure></p>
-<ul>
-<li>Hides the entire first line.
-    This is a combination of "Hide extra text" and "Hide dictionary tag",
-    meaning it hides the dictionary tag and the text to the right.</li>
-</ul>
-<details class="example">
-<summary>CSS to hide the entire first line for all dictionaries <em>(click here)</em></summary>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
-<ol>
-<li>
-<p>Under <code>extra/style.scss</code>, add the following code:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">CSS</label><label for="__tabbed_2_2">SCSS</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">/* hide the first line for the all dictionaries */</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line-break</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">}</span>
+<h2 id="simplifying-the-definition">Simplifying the Definition<a class="headerlink" href="#simplifying-the-definition" title="Permanent link">¶</a></h2>
+<p>If you use a monolingual dictionary, there is usually a bunch of extra information in the first line.
+Additionally, there is usually only one dictionary entry, making the list number redundant.
+Both of these can be automatically hidden with the following <a href="../runtimeoptions/" target="_blank">runtime option</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"blockquotes.simplifyDefinitions.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">/* hide the first line for the all dictionaries */</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="err">.dict-group__tag-list,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line-break</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="err">}</span>
+<p>TODO image comparison</p>
+<h3 id="card-by-card-control">Card-by-Card Control<a class="headerlink" href="#card-by-card-control" title="Permanent link">¶</a></h3>
+<p>For some cards, this might not be valid. For example, consider the following definition:</p>
+<blockquote>
+<p>TODO example with redirect</p>
+</blockquote>
+<p>Fortunately, you can force the first line of the definition to show by
+adding the <code>line-show</code> tag to the card.</p>
+<p>TODO image with tag, figure markdown</p>
+<p>Similarly, if you want to show the list for a particular card,
+you can add the <code>list-show</code> tag to the card.</p>
+<p>TODO image with both tags.</p>
+<!--
+
+
+## CSS Simplifying Options
+
+
+TODO is this necessary?
+
+
+There are many ways to control exactly what content is removed, and in what way.
+
+
+=== "Hide entire first line"
+    <figure markdown>
+      [![](assets/definitions/first_line_css/first_line_hidden.png)](assets/definitions/first_line_css/first_line_hidden.png)
+    </figure>
+
+    * Hides the entire first line.
+        This is a combination of "Hide extra text" and "Hide dictionary tag",
+        meaning it hides the dictionary tag and the text to the right.
+
+    ??? example "CSS to hide the entire first line for all dictionaries *(click here)*"
+        <sup><i>New in version `0.11.0.0` (latest version: `0.12.0.0-prerelease-2`)</i></sup>
+
+        1. Under `extra/style.scss`, add the following code:
+
+            === "CSS"
+                <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">/* hide the first line for the all dictionaries */</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line-break</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="p">}</span>
 </code></pre></div>
-</div>
-</div>
-</div>
-</li>
-<li>
-<p>(Optional) Under <code>extra/field.scss</code>, add the following code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="err">.dict-group__tag-list,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line-break</span><span class="w"> </span><span class="err">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="err">}</span>
+
+            === "SCSS"
+                <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c">/* hide the first line for the all dictionaries */</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="err">.dict-group__tag-list,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line-break</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="err">}</span>
 </code></pre></div>
-</li>
-</ol>
-</details>
-</div>
-<div class="tabbed-block">
-<p><figure markdown>
-  <a href="../assets/definitions/first_line_css/full.png"><img alt="" src="../assets/definitions/first_line_css/full.png"></a>
-</figure></p>
-<ul>
-<li>Nothing is hidden. This is the default behavior.</li>
-</ul>
-</div>
-<div class="tabbed-block">
-<p><figure markdown>
-  <a href="../assets/definitions/first_line_css/dict_tag_only.png"><img alt="" src="../assets/definitions/first_line_css/dict_tag_only.png"></a>
-</figure></p>
-<ul>
-<li>This hides all the text to the right of the dictionary tag.</li>
-</ul>
-<details class="example">
-<summary>CSS to hide extra text <em>(click here)</em></summary>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
-<p>The following CSS only affects only the dictionary with the tag 「旺文社国語辞典 第十一版」. To use this on more than one dictionary, copy/paste the CSS multiple times, and replace the dictionary tag.</p>
-<ol>
-<li>
-<p>Under <code>extra/style.scss</code>, add the following code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c">/* hide the text after the 「旺文社国語辞典 第十一版」 dictionary tag */</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"明鏡国語辞典 第二版"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">}</span>
+
+        2. (Optional) Under `extra/field.scss`, add the following code:
+
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="err">.dict-group__tag-list,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line,</span><span class="w"> </span><span class="err">.dict-group__glossary--first-line-break</span><span class="w"> </span><span class="err">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="err">}</span>
 </code></pre></div>
-</li>
-<li>
-<p>(Optional) Under <code>extra/field.scss</code>, add the following code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c">/* greys out the text after the 「旺文社国語辞典 第十一版」 dictionary tag */</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"明鏡国語辞典 第二版"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
+
+
+=== "Nothing hidden (default)"
+    <figure markdown>
+      [![](assets/definitions/first_line_css/full.png)](assets/definitions/first_line_css/full.png)
+    </figure>
+
+    * Nothing is hidden. This is the default behavior.
+
+
+
+=== "Hide extra text"
+    <figure markdown>
+      [![](assets/definitions/first_line_css/dict_tag_only.png)](assets/definitions/first_line_css/dict_tag_only.png)
+    </figure>
+
+    * This hides all the text to the right of the dictionary tag.
+
+    ??? example "CSS to hide extra text *(click here)*"
+        <sup><i>New in version `0.11.0.0` (latest version: `0.12.0.0-prerelease-2`)</i></sup>
+
+        {{ css_oubunsha }}
+
+        1. Under `extra/style.scss`, add the following code:
+
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c">/* hide the text after the 「旺文社国語辞典 第十一版」 dictionary tag */</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;明鏡国語辞典 第二版&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="p">}</span>
 </code></pre></div>
-</li>
-</ol>
-</details>
-</div>
-<div class="tabbed-block">
-<p><figure markdown>
-  <a href="../assets/definitions/first_line_css/right_text_only.png"><img alt="" src="../assets/definitions/first_line_css/right_text_only.png"></a>
-</figure></p>
-<ul>
-<li>Removes only the dictionary tag.
-    This doesn't look very good on most dictionaries.</li>
-</ul>
-<details class="example">
-<summary>CSS to hide dictionary tag(s) <em>(click here)</em></summary>
-<p>The following CSS only affects only the dictionary with the tag 「旺文社国語辞典 第十一版」. To use this on more than one dictionary, copy/paste the CSS multiple times, and replace the dictionary tag.</p>
-<ol>
-<li>
-<p>Under <code>extra/style.scss</code>, add the following code:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c">/* hide the 「旺文社国語辞典 第十一版」 dictionary */</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"旺文社国語辞典 第十一版"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+
+        2. (Optional) Under `extra/field.scss`, add the following code:
+
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c">/* greys out the text after the 「旺文社国語辞典 第十一版」 dictionary tag */</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;明鏡国語辞典 第二版&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__glossary--first-line</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
 </code></pre></div>
-</li>
-<li>
-<p>(Optional) Under <code>extra/field.scss</code>, add the following code:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c">/* greys out the 「旺文社国語辞典 第十一版」 dictionary */</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"旺文社国語辞典 第十一版"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
+
+=== "Hide dictionary tag"
+    <figure markdown>
+      [![](assets/definitions/first_line_css/right_text_only.png)](assets/definitions/first_line_css/right_text_only.png)
+    </figure>
+
+    * Removes only the dictionary tag.
+        This doesn't look very good on most dictionaries.
+
+    ??? example "CSS to hide dictionary tag(s) *(click here)*"
+
+        {{ css_oubunsha }}
+
+        1. Under `extra/style.scss`, add the following code:
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c">/* hide the 「旺文社国語辞典 第十一版」 dictionary */</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;旺文社国語辞典 第十一版&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">}</span>
 </code></pre></div>
-</li>
-</ol>
-</details>
-<details class="example">
-<summary>CSS to hide JMdict's dictionary tag <em>(click here)</em></summary>
-<p>If you are on a modern version of JMdict, the dictionary will contain additional tags
-to the right of the dictionary tag by default, such as (n), (vs), etc.
-The instructions above will remove all of these tags.</p>
-<p>You may want to only remove the dictionary tag without removing the other information tags.
-If your JMdict dictionary tag is exactly <code>JMdict (English)</code>, then this is already the
-default behavior.
-However, if your dictionary tag is different, do the following
-(you may have to replace <code>JMdict</code> with your exact JMdict dictionary tag):</p>
-<ol>
-<li>
-<p>Under <code>extra/style.scss</code>, add the following code:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c">/* removes the dictionary entry for jmdict */</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"JMdict"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag--dict</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+
+        2. (Optional) Under `extra/field.scss`, add the following code:
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c">/* greys out the 「旺文社国語辞典 第十一版」 dictionary */</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;旺文社国語辞典 第十一版&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">}</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c">/* Makes JMDict italic */</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"JMdict"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="p">}</span>
 </code></pre></div>
-</li>
-<li>
-<p>(Optional) Under <code>extra/field.scss</code>, add the following code:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c">/* greys out dictionary entry for jmdict */</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"JMdict"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag--dict</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
+
+    ??? example "CSS to hide JMdict's dictionary tag *(click here)*"
+        If you are on a modern version of JMdict, the dictionary will contain additional tags
+        to the right of the dictionary tag by default, such as (n), (vs), etc.
+        The instructions above will remove all of these tags.
+
+        You may want to only remove the dictionary tag without removing the other information tags.
+        If your JMdict dictionary tag is exactly `JMdict (English)`, then this is already the
+        default behavior.
+        However, if your dictionary tag is different, do the following
+        (you may have to replace `JMdict` with your exact JMdict dictionary tag):
+
+        1. Under `extra/style.scss`, add the following code:
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c">/* removes the dictionary entry for jmdict */</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;JMdict&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag--dict</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">}</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c">/* Makes JMDict italic */</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">"JMdict"</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="p">.</span><span class="nc">glossary-text</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;JMdict&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">  </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="p">}</span>
 </code></pre></div>
-</li>
-</ol>
-</details>
-</div>
-</div>
-</div>
+
+        2. (Optional) Under `extra/field.scss`, add the following code:
+            <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c">/* greys out dictionary entry for jmdict */</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;JMdict&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag--dict</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">}</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c">/* Makes JMDict italic */</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nt">anki-editable</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="o">[</span><span class="nt">data-details</span><span class="o">=</span><span class="s2">&quot;JMdict&quot;</span><span class="o">]</span><span class="w"> </span><span class="p">.</span><span class="nc">dict-group__tag-list</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">  </span><span class="k">font-style</span><span class="p">:</span><span class="w"> </span><span class="kc">italic</span><span class="p">;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</code></pre></div>
+
+-->
+
+<hr>
+<h2 id="simplifying-options-how-does-it-work">Simplifying Options: How does it work?<a class="headerlink" href="#simplifying-options-how-does-it-work" title="Permanent link">¶</a></h2>
+<p>TODO wrap CSS</p>
 <h3 id="when-html-can-break">When HTML can break<a class="headerlink" href="#when-html-can-break" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>In order to even have the possibility of removing the first line,
 the HTML is parsed with regex in order to find the text before the first line break.
 In computer science, it is well known that
@@ -1900,41 +1929,46 @@ Due to this, an unexpected dictionary format may cause the resulting export to
 be invalid HTML.</p>
 <p>If you do not plan on using this feature, you should set <code>opt-wrap-first-line-spans</code> to <code>false</code>
 to remove the possibility of invalid HTML.</p>
-<p><br></p>
 <h3 id="hide-the-first-line-for-select-dictionaries">Hide the first line for select dictionaries<a class="headerlink" href="#hide-the-first-line-for-select-dictionaries" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>The following two options are useful if you want to ignore certain problematic dictionaries,
 that do not play well with the regex above.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-first-line-regex-mode"</span> <span class="s2">"except"</span><span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="cp">{{</span><span class="m m-Attribute">~#set</span> <span class="s2">"opt-first-line-dicts-regex"</span><span class="m">~</span><span class="cp">}}</span><span class="x"> ^(JMdict.*|Nico/Pixiv)$ </span><span class="cp">{{</span><span class="m m-Attribute">~/set~</span><span class="cp">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-first-line-regex-mode"</span> <span class="s2">"except"</span><span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="cp">{{</span><span class="m m-Attribute">~#set</span> <span class="s2">"opt-first-line-dicts-regex"</span><span class="m">~</span><span class="cp">}}</span><span class="x"> ^(JMdict.*|Nico/Pixiv)$ </span><span class="cp">{{</span><span class="m m-Attribute">~/set~</span><span class="cp">}}</span>
 </code></pre></div>
 <p><code>opt-first-line-dicts-regex</code> specifies the list of dictionaries that should be ignored or kept.
 Whether the dictionaries are ignored or kept is defined in <code>opt-first-line-regex-mode</code>
 (<code>except</code> means that the specified dictionaries are ignored, and <code>only</code> means that only the
 specified dictionaries can have their first lines removed.)</p>
 <hr>
-<h2 id="removing-the-numbers-in-the-primary-definition">Removing the numbers in the primary definition<a class="headerlink" href="#removing-the-numbers-in-the-primary-definition" title="Permanent link">¶</a></h2>
-<p>TODO image</p>
-<p>Currently, I am not aware of an easy way to only remove the numbers if there is only one
-item (and having them remain for multple definitions) with only CSS.</p>
-<p>The following <a href="../customcss/" target="_blank">CSS</a> completely nukes the numbers regardless of how many items there are in the list.</p>
-<details class="example">
-<summary>Instructions <em>(click here)</em></summary>
-<ol>
-<li>
-<p>Under <code>extra/style.scss</code>, add the following code:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">.</span><span class="nc">glossary-text--primary-definition</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="k">list-style</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="k">padding-left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">}</span>
-</code></pre></div>
-</li>
-</ol>
-</details>
-<hr>
 <!--
+
+# Removing the numbers in the primary definition
+
+TODO image
+
+Currently, I am not aware of an easy way to only remove the numbers if there is only one
+item (and having them remain for multple definitions) with only CSS.
+
+The following [CSS](customcss.md){:target="_blank"} completely nukes the numbers regardless of how many items there are in the list.
+
+
+??? example "Instructions *(click here)*"
+
+    1. Under `extra/style.scss`, add the following code:
+
+        <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">.</span><span class="nc">glossary-text--primary-definition</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="k">list-style</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">  </span><span class="k">padding-left</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="kt">em</span><span class="p">;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">}</span>
+</code></pre></div>
+
+---
+
+
+
 ## Collapsing dictionaries
-<sup><i>New in version `0.12.0.0` (latest version: `0.12.0.0-prerelease-1`)</i></sup>
+<sup><i>New in version `0.12.0.0` (latest version: `0.12.0.0-prerelease-2`)</i></sup>
 
 This allows you collapse dictionaries within the
 Secondary Definition or Extra Definitions section.
@@ -1943,14 +1977,14 @@ TODO gif
 
 ??? example "Instructions *(click here)*"
 
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">{</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="nt">&quot;modules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="nt">&quot;collapse-dictionaries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">      </span><span class="c1">// ...</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="p">}</span>
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">&quot;modules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="nt">&quot;collapse-dictionaries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">      </span><span class="nt">&quot;enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">      </span><span class="c1">// ...</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">}</span>
 </code></pre></div>
 
 !!! note
@@ -1971,7 +2005,7 @@ dictionary tag (with <code>Compact tags</code> turned off in Yomichan).</p>
 as multiple entries.
 It is almost never the case that monolingual dictionaries has multiple dictionary entries.
 Instead, most monolingual dictionaries store the definition as one gigantic entry.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Multiple Entries</label><label for="__tabbed_3_2">Only one entry</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Multiple Entries</label><label for="__tabbed_1_2">Only one entry</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>TODO</p>
@@ -1985,7 +2019,7 @@ Instead, most monolingual dictionaries store the definition as one gigantic entr
 However, if <code>opt-primary-def-one-dict-entry-only</code> is set to <code>true</code>,
 then only the first (or <a href="#manual-selection">manually selected</a>) dictionary entry
 will be imported into the primary definition.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Export all entries (default)</label><label for="__tabbed_4_2">Export one entry</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Export all entries (default)</label><label for="__tabbed_2_2">Export one entry</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>TODO</p>
@@ -1993,7 +2027,7 @@ will be imported into the primary definition.</p>
 <div class="tabbed-block">
 <p>TODO</p>
 <p>This uses the following option:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-primary-def-one-dict-entry-only"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-primary-def-one-dict-entry-only"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
 </div>
 </div>
@@ -2018,18 +2052,18 @@ instead of collapsing them.
 
     1. Under `extra/style.scss`, add the following code:
 
-        <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c">/* max 4 definitions shown */</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">.</span><span class="nc">glossary-text--extra-definitions</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">n</span><span class="o">+</span><span class="nt">5</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">}</span>
+        <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c">/* max 4 definitions shown */</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">.</span><span class="nc">glossary-text--extra-definitions</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">n</span><span class="o">+</span><span class="nt">5</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
 </code></pre></div>
 
     2. (Optional) Under `extra/field.scss`, add the following code:
 
-        <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c">/* max 4 definitions shown */</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nt">anki-editable</span><span class="o">[</span><span class="nt">field</span><span class="o">=</span><span class="s2">&quot;ExtraDefinitions&quot;</span><span class="o">]</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">n</span><span class="o">+</span><span class="nt">5</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
+        <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c">/* max 4 definitions shown */</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">anki-editable</span><span class="o">[</span><span class="nt">field</span><span class="o">=</span><span class="s2">&quot;ExtraDefinitions&quot;</span><span class="o">]</span><span class="w"> </span><span class="nt">ol</span><span class="w"> </span><span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">n</span><span class="o">+</span><span class="nt">5</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--text-color--3</span><span class="p">);</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="p">}</span>
 </code></pre></div>
         This will grey out the definitions past the 4th definition in the editor.
 
@@ -2043,7 +2077,7 @@ instead of collapsing them.
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
       
     
   </small>

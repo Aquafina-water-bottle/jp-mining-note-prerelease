@@ -89,8 +89,8 @@
             
             
 
-<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note. The documentation is very work in progress, and is very incomplete. <br>
-If you want to see the documentation for the stable release, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
+<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note, and is very WIP / incomplete. <br>
+If you are looking for the stable release documentation, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
 
 
           </div>
@@ -943,6 +943,13 @@ If you want to see the documentation for the stable release, see <a href="https:
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reposition_fields" class="md-nav__link">
+    reposition_fields
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1347,6 +1354,13 @@ If you want to see the documentation for the stable release, see <a href="https:
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#reposition_fields" class="md-nav__link">
+    reposition_fields
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1420,7 +1434,6 @@ usually for importing notes or updating notes.
 If you want the full list, run the following command:
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python3 tools/batch.py --help
 </code></pre></div>
-<p><br></p>
 <h3 id="fill_field">fill_field<a class="headerlink" href="#fill_field" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>usage: <code>fill_field [-h] [--value VALUE] [--query QUERY] field_name</code></p>
@@ -1433,32 +1446,34 @@ If you want the full list, run the following command:
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c"># does the above, but fills the field with `x` instead of `1`:</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">fill_field</span><span class="w"> </span>IsSentenceCard<span class="w"> </span>--value<span class="w"> </span><span class="s2">"x"</span>
 </code></pre></div>
-<p><br></p>
 <h3 id="empty_field">empty_field<a class="headerlink" href="#empty_field" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>usage: <code>empty_field [-h] [--query QUERY] field_name</code></p>
 </blockquote>
 <p>Empties the given field.</p>
-<p><br></p>
 <h3 id="copy_field">copy_field<a class="headerlink" href="#copy_field" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>usage: <code>copy_field [-h] [--query QUERY] src dest</code></p>
 </blockquote>
 <p>Copies the contents of the source (src) field to the destination (dest) field.</p>
-<p><br></p>
 <h3 id="verify_fields">verify_fields<a class="headerlink" href="#verify_fields" title="Permanent link">¶</a></h3>
 <blockquote>
 <p>usage: <code>verify_fields [-h] [--version VERSION]</code></p>
 </blockquote>
 <p>Checks that the fields and its order is correct
-with the current version.</p></div>
+with the current version.</p>
+<h3 id="reposition_fields">reposition_fields<a class="headerlink" href="#reposition_fields" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>usage: <code>reposition_fields [-h] [--version VERSION]</code></p>
+</blockquote>
+<p>Automatically reorders the field list to be the expected order</p></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
       
     
   </small>

@@ -89,8 +89,8 @@
             
             
 
-<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note. The documentation is very work in progress, and is very incomplete. <br>
-If you want to see the documentation for the stable release, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
+<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note, and is very WIP / incomplete. <br>
+If you are looking for the stable release documentation, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
 
 
           </div>
@@ -1675,7 +1675,6 @@ and must be enabled in the <a href="../runtimeoptions/" target="_blank">runtime 
 <li>The <code>auto-pitch-accent</code> module must be enabled to use colored pitch accent.</li>
 </ol>
 <p><div class="video-container"><video style="width:100%;height:100%" controls alt="type:video"><source src="../assets/autopa/pa_override_color.mp4" type="video/mp4"></source></video></div></p>
-<p><br></p>
 <h3 id="pitch-accent-groups">Pitch Accent Groups<a class="headerlink" href="#pitch-accent-groups" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -1719,9 +1718,8 @@ and must be enabled in the <a href="../runtimeoptions/" target="_blank">runtime 
 </tr>
 </tbody>
 </table>
-<p><br></p>
 <h3 id="controlling-what-gets-colored">Controlling What Gets Colored<a class="headerlink" href="#controlling-what-gets-colored" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>There are many <a href="../runtimeoptions/" target="_blank">runtime options</a> that change exactly what is colored.
 By default, everything except words found in tooltips (kanji hover and word indicators)
 are highlighted.</p>
@@ -1745,7 +1743,6 @@ are highlighted.</p>
     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"tooltips.highlightWordInSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div></li>
 </ol>
-<p><br></p>
 <h3 id="when-pitch-is-not-automatically-colored">When Pitch Is Not Automatically Colored<a class="headerlink" href="#when-pitch-is-not-automatically-colored" title="Permanent link">¶</a></h3>
 <p>Pitch accent coloring requires a numeric position value somewhere within the card.
 This is usually found in one of these places:</p>
@@ -1760,16 +1757,14 @@ This is usually found in one of these places:</p>
 <li>Using <code>PAOverride</code> with <a href="./#specifying-pitch-accent">a number</a> (recommended).</li>
 <li>Force the pitch accent group with tags (see below).</li>
 </ol>
-<p><br></p>
 <h3 id="kifuku-coloring">Kifuku Coloring<a class="headerlink" href="#kifuku-coloring" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup>
 A word is automatically colored as 起伏 if the <code>WordTags</code> field contains a verb tag,
 and its pitch accent group is not 平板.</p>
 <p>This <code>WordTags</code> field can only be filled out if you have a modern version of the
 <a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMdict dictionary for Yomichan</a>
 For old cards that do not have this field filled, you will have to manually mark
 the word with <code>-1</code> (in <code>PAOverride</code>).</p>
-<p><br></p>
 <h3 id="override-pitch-accent-group">Override Pitch Accent Group<a class="headerlink" href="#override-pitch-accent-group" title="Permanent link">¶</a></h3>
 <p>In some extremely rare cases, you must set manually set the pitch accent group,
 if the available options do not work.
@@ -1812,7 +1807,7 @@ More info on this can be found in the <a href="#2-paoverride">PAOverride field</
 </div>
 <hr>
 <h2 id="1-paoverridetext">(1) PAOverrideText<a class="headerlink" href="#1-paoverridetext" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>If the <code>PAOverrideText</code> field is filled, then this field is displayed exactly as is,
 without any changes or parsing.
 This provides the most flexibility, but the least ease of usage.</p>
@@ -1829,7 +1824,6 @@ This provides the most flexibility, but the least ease of usage.</p>
 If the field contents cannot be parsed in either of these formats,
 then the field is displayed without any special formatting.
 This will act just like <code>PAOverrideText</code>.</p>
-<p><br></p>
 <h3 id="21-paoverride-positions-format">(2.1) PAOverride: Positions Format<a class="headerlink" href="#21-paoverride-positions-format" title="Permanent link">¶</a></h3>
 <p>When the <code>PAOverride</code> field contains any number, that number will be considered
 as the downstep position, and be rendered as such.
@@ -1863,7 +1857,7 @@ downstep to be after the second last mora.</p>
 </tbody>
 </table>
 <h4 id="multiple-numbers">Multiple Numbers<a class="headerlink" href="#multiple-numbers" title="Permanent link">¶</a></h4>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>Multiple numbers can be used, as long as they are separated by commas.
 This is useful on certain words with devoiced mora, where the pitch accent
 can be multiple positions with little real distinction.</p>
@@ -1904,9 +1898,8 @@ Additionally, commas cannot be bolded.</p>
 <p>For example, <code>0,&lt;b&gt;1&lt;/b&gt;,&lt;b&gt;2&lt;/b&gt;,3</code> is valid,
 but <code>0,&lt;b&gt;1,2&lt;/b&gt;,3</code> and <code>0,&lt;b&gt;1,&lt;/b&gt;2,3</code> are invalid.</p>
 </div>
-<p><br></p>
 <h3 id="22-paoverride-text-format">(2.2) PAOverride: Text Format<a class="headerlink" href="#22-paoverride-text-format" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <details class="info">
 <summary>How To Type Special Characters <em>(click here)</em></summary>
 <p>This section requires you to type certain special characters.
@@ -2010,7 +2003,6 @@ Using the above example, one can instead type 身長 as 「しんちょう」.</
 This means that bold, italics, overlines, etc. cannot be present in the field.
 For example, the input <code>&lt;b&gt;にせもの&lt;/b&gt;</code> will be rejected.</p>
 </div>
-<p><br></p>
 <h3 id="23-paoverride-raw-text">(2.3) PAOverride: Raw Text<a class="headerlink" href="#23-paoverride-raw-text" title="Permanent link">¶</a></h3>
 <p>As a last case resort, if the input of this field cannot be parsed as either of the two,
 the exact contents of <code>PAOverride</code> will be displayed.
@@ -2020,9 +2012,8 @@ This will behave exactly the same as <code>PAOverrideText</code>.</p>
 <p>This field is automatically filled out as long as Yomichan has pitch accent dictionaries,
 and the tested word is covered in said dictionary.</p>
 <p>By default, the first pitch of the first dictionary is shown.</p>
-<p><br></p>
 <h3 id="show-all-possibilities-in-dictionary">Show All Possibilities in Dictionary<a class="headerlink" href="#show-all-possibilities-in-dictionary" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-1</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>TODO: update pictures with correct config + add new config value for all dictionaries</p>
 <p>Sometimes, pitch accent dictionaries show multiple pitch accents for a word.
 However, only the first pitch accent is shown by default.</p>
@@ -2068,7 +2059,6 @@ By default, the word reading is selected based on the following priority:</p>
 <li><code>AJTWordPitch</code></li>
 <li><code>WordReading</code></li>
 </ol>
-<p><br></p>
 <h3 id="reading-ajtwordpitch">Reading: AJTWordPitch<a class="headerlink" href="#reading-ajtwordpitch" title="Permanent link">¶</a></h3>
 <p>Usually, the reading is selected from <code>AJTWordPitch</code>.
 This has a few features over the raw word reading:</p>
@@ -2083,7 +2073,6 @@ change the following <a href="../runtimeoptions/" target="_blank">runtime option
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">"autoPitchAccent.searchForAJTWord"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
 </div>
-<p><br></p>
 <h3 id="reading-wordreading">Reading: WordReading<a class="headerlink" href="#reading-wordreading" title="Permanent link">¶</a></h3>
 <p>If the word cannot be found under <code>AJTWordPitch</code>, then the default reading
 in <code>WordReading</code> is used, and displayed in katakana.</p>
@@ -2131,7 +2120,7 @@ CSS specification.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 11, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
       
     
   </small>

@@ -89,8 +89,8 @@
             
             
 
-<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note. The documentation is very work in progress, and is very incomplete. <br>
-If you want to see the documentation for the stable release, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
+<b class="jpmn-highlight">WARNING</b>: This documentation is for the latest pre-release version of jp-mining-note, and is very WIP / incomplete. <br>
+If you are looking for the stable release documentation, see <a href="https://aquafina-water-bottle.github.io/jp-mining-note/">here</a>.
 
 
           </div>
@@ -671,6 +671,13 @@ If you want to see the documentation for the stable release, see <a href="https:
 </li>
         
           <li class="md-nav__item">
+  <a href="#custom-scss" class="md-nav__link">
+    Custom SCSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#final-steps" class="md-nav__link">
     Final Steps
   </a>
@@ -720,6 +727,13 @@ If you want to see the documentation for the stable release, see <a href="https:
         <li class="md-nav__item">
   <a href="#20221119-jpmn-01100" class="md-nav__link">
     2022/11/19 (JPMN 0.11.0.0)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#everything-before" class="md-nav__link">
+    Everything before
   </a>
   
 </li>
@@ -1397,6 +1411,13 @@ If you want to see the documentation for the stable release, see <a href="https:
 </li>
         
           <li class="md-nav__item">
+  <a href="#custom-scss" class="md-nav__link">
+    Custom SCSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#final-steps" class="md-nav__link">
     Final Steps
   </a>
@@ -1450,6 +1471,13 @@ If you want to see the documentation for the stable release, see <a href="https:
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#everything-before" class="md-nav__link">
+    Everything before
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1491,8 +1519,11 @@ please check here first! If you can't find any solution,
 including an entire backend javascript rework.
 See the <a href="../updating/#overview">Updating</a> page on how to update the note.
 Afterwards, see below for the other necessary changes that must be made to properly update the note.</p>
-<p><br></p>
 <h3 id="field-font-size">Field Font Size<a class="headerlink" href="#field-font-size" title="Permanent link">¶</a></h3>
+<p>TODO: batch commands</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>set_font_sizes
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>set_fonts_to_key_font
+</code></pre></div>
 <p>The fields within the note editor may look a bit off, due to the font and font sizes being wrong.
 When Anki-Connect finally updates, these fonts will be changed automatically upon installation.
 However, until then, it will have to be done manually.
@@ -1500,7 +1531,6 @@ All info about the field font sizes should be found in the <a href="../fields/">
 <p>Additionally, all new fields will have the default font, which likely
 does not display Japanese characters correctly.
 Please set this to match your other fields.</p>
-<p><br></p>
 <h3 id="automatic-field-collapsing">Automatic Field Collapsing<a class="headerlink" href="#automatic-field-collapsing" title="Permanent link">¶</a></h3>
 <p>For newer versions of Anki,
 you can set a field to be collapsed by default by heading over to:</p>
@@ -1508,10 +1538,9 @@ you can set a field to be collapsed by default by heading over to:</p>
 <p>(Note editor) →  <code>Fields...</code> →  <code>Collapse by default</code></p>
 </blockquote>
 <p>Feel free to automatially collapse any fields you don't use, or very rarely use.</p>
-<p><br></p>
 <h3 id="config-rework">Config Rework<a class="headerlink" href="#config-rework" title="Permanent link">¶</a></h3>
 <p>You will get the following warning on all cards:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>JPMNOptions was not defined in the options file. Was there an error?
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>JPMNOptions was not defined in the options file. Was there an error?
 </code></pre></div>
 <p>This is because the <code>_jpmn-options.js</code> runtime options file has been completely reworked,
 meaning your config will no longer work.
@@ -1534,11 +1563,10 @@ To fix your config file, do the following steps:</p>
 <p class="admonition-title">Note</p>
 <p>For people using pitch accent coloring, the entire card is now highlighted with the pitch accent group.
 To restore the previous behavior, use these runtime options:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
 </div>
-<p><br></p>
 <h3 id="handlebars">Handlebars<a class="headerlink" href="#handlebars" title="Permanent link">¶</a></h3>
 <p>Yomichan's Handlebars has been updated, with some new markers and features being added.</p>
 <ul>
@@ -1555,20 +1583,19 @@ To restore the previous behavior, use these runtime options:</p>
 <li>See <a href="../updating/#updating-yomichans-anki-card-format">here</a>
   for instructions on how to update Anki Card Format.</li>
 </ul>
-<p><br></p>
 <h4 id="handlebars-jmdict-extra">Handlebars: JMdict Extra<a class="headerlink" href="#handlebars-jmdict-extra" title="Permanent link">¶</a></h4>
 <p><i><sup>Main Page: <a href="../setupyomichan/#fixing-jmdict-extra">Setup Yomichan: Fixing JMdict Extra</a></sup></i></p>
 <p>A new version of JMdict was released for Yomichan, called
 <a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMdict Extra</a>.
 This version of JMdict contains many things ontop of the the definition, including
 example sentences, antonyms, etc.</p>
-<p>There are certain issues with exporting the definition with default settings.
-If you are using JMdict extra, set the
+<p>When exporting this dictionary with default settings,
+the entries are sometimes displayed in list format instead of compact format.
+If you want a consistently compact format, set the
 <code>opt-jmdict-list-format</code> Yomichan template option to <code>true</code>.
 For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
-<p><br></p>
 <h3 id="frequency-display">Frequency Display<a class="headerlink" href="#frequency-display" title="Permanent link">¶</a></h3>
 <p>The frequency at the top right now defaults to using the FrequencySort value.
 This is because it is usually more useful to see a summary of the values,
@@ -1579,13 +1606,16 @@ instead of all the literal values itself.</p>
     <a href="../importing/#6-optional-backfill-the-frequencysort-field">backfill the frequencies</a>.</li>
 <li>If you prefer the frequency sort display but your frequency sort is somehow invalid:<ol>
 <li>Clear out your <code>FrequencySort</code> field entirely through the following command:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python3 tools/batch.py clear_field "FrequencySort"
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3 tools/batch.py clear_field "FrequencySort"
 </code></pre></div></li>
 <li>Follow the backfill frequencies instructions in the second point.</li>
 </ol>
 </li>
 </ul>
-<p><br></p>
+<h3 id="custom-scss">Custom SCSS<a class="headerlink" href="#custom-scss" title="Permanent link">¶</a></h3>
+<p>For people who are using custom SCSS (usually through <code>src/scss/extra</code>),
+it is now recommended that the <code>extra</code> folder is moved to the <code>overrides/scss</code> folder.
+This is purely a stylistic change, to better separate user-defined changes and source code.</p>
 <h3 id="final-steps">Final Steps<a class="headerlink" href="#final-steps" title="Permanent link">¶</a></h3>
 <p>After changing everything, don't forget to <a href="../updating/#final-steps">test that the card works!</a>
 If you reached this point, then congratulations! You are finally done with updating the note!
@@ -1646,6 +1676,7 @@ If you are already using the AnkiWeb version, nothing has to be done.</p>
   <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/master/media/_jpmn-options.js">Example config</a></li>
 </ul>
 <hr>
+<h2 id="everything-before">Everything before<a class="headerlink" href="#everything-before" title="Permanent link">¶</a></h2>
 <p>Lower versions of JPMN are not recorded here.
 Full details of the changes can be found in the main
 <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/master/CHANGELOG.md">changelog</a> instead.</p></div>
@@ -1655,7 +1686,7 @@ Full details of the changes can be found in the main
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
       
     
   </small>
