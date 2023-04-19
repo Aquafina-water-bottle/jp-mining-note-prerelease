@@ -1023,6 +1023,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#viewportwidthbreakpoint" class="md-nav__link">
+    viewportWidthBreakpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cardtype" class="md-nav__link">
     cardType
   </a>
@@ -1432,6 +1439,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#viewportwidthbreakpoint" class="md-nav__link">
+    viewportWidthBreakpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cardtype" class="md-nav__link">
     cardType
   </a>
@@ -1508,24 +1522,27 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
 <div><p>Runtime options are card options that are applied globally to all JPMN cards.
 This differs from binary fields,
-as binary options are options that only affects the one note.</p>
+as binary options are options that only affects the one card.</p>
 <hr>
 <h2 id="accessing-editing">Accessing &amp; Editing<a class="headerlink" href="#accessing-editing" title="Permanent link">¶</a></h2>
 <p>To access the runtime options, navigate to your profile's
 <a href="../faq/#where-is-the-x-folder-in-anki">media folder</a>,
-and open the <code>_jpmn-options.js</code> file as a text file.</p>
+and open the <code>_jpmn-options.js</code> file with your favorite text editor.</p>
 <p>The contents of the file should look something like the following:
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">JPMNOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="c1">// Add your runtime options here.</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="c1">// ...</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To open the file as a text file on Windows, right click the file and select <code>Edit</code>.
-Do not double-click the file.</p>
-</div>
-<p>TODO add demo for windows to opening the file &amp; editing</p>
+<!--
+!!! note
+
+    To open the file as a text file on Windows, right click the file and select `Edit`.
+    Do not double-click the file.
+-->
+
 <hr>
 <h2 id="adding-options">Adding Options<a class="headerlink" href="#adding-options" title="Permanent link">¶</a></h2>
 <p>You can add a runtime option anywhere between the two outer-most curly brackets.
@@ -1577,9 +1594,20 @@ For example,
 </ol>
 </div>
 <h3 id="override-options">Override Options<a class="headerlink" href="#override-options" title="Permanent link">¶</a></h3>
+<p>There are a few option groups that can be used to override other options:</p>
 <ul>
-<li>TODO put any options used by the module to override</li>
+<li><code>tooltips.overrideOptions.sentenceParser</code></li>
+<li><code>tooltips.overrideOptions.autoPitchAccent</code></li>
+<li><code>kanjiHover.overrideOptions.tooltips</code></li>
+<li><code>wordIndicators.overrideOptions.tooltips</code></li>
 </ul>
+<p>The tooltips internally use an instance of the sentence parser and auto pitch accent
+modules to display the content.
+However, one may want to display content differently in tooltips than in
+the regular card.
+If that is desired, these override options can be used to exactly define
+what options are used by the internal
+sentence parser, auto pitch accent and/or tooltips modules.</p>
 <hr>
 <h2 id="special-option-values">Special Option Values<a class="headerlink" href="#special-option-values" title="Permanent link">¶</a></h2>
 <p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
@@ -1606,7 +1634,9 @@ with type type of <code>isMobile</code>:</p>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">},</span>
 </code></pre></div>
 <p>A full list of special option types is shown below.
-The source code for these can be found under src/ts/options.ts (TODO link).</p>
+The source code for these can be found under
+<a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/webpack/src/ts/options.ts">src/ts/options.ts</a>.
+(TODO not webpack)</p>
 <h3 id="ismobile-and-ispc"><code>isMobile</code> and <code>isPC</code><a class="headerlink" href="#ismobile-and-ispc" title="Permanent link">¶</a></h3>
 <p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>The <code>isMobile</code> and <code>isPC</code> type allows you to specify different values depending if
@@ -1645,6 +1675,25 @@ and will only be updated when you flip the side or go to a new card.</p>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">},</span>
 </code></pre></div>
 <p>TODO <code>MATH_OP</code> and <code>WIDTH</code></p>
+<h3 id="viewportwidthbreakpoint"><code>viewportWidthBreakpoint</code><a class="headerlink" href="#viewportwidthbreakpoint" title="Permanent link">¶</a></h3>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"viewportWidthBreakpoint"</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">"op"</span><span class="p">:</span><span class="w"> </span><span class="err">MATH_OP</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="err">BREAKPOINT_VAR</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="p">},</span>
+</code></pre></div>
+<p><code>BREAKPOINT_VAR</code> can be one of:</p>
+<ul>
+<li><code>displaySentenceShrink</code></li>
+<li><code>displaySentenceRemoveNewlines</code></li>
+<li><code>maxWidthBackside</code> (tablet)</li>
+<li><code>combinePicture</code> (mobile)</li>
+</ul>
 <h3 id="cardtype"><code>cardType</code><a class="headerlink" href="#cardtype" title="Permanent link">¶</a></h3>
 <p>TODO</p>
 <h3 id="cardside"><code>cardSide</code><a class="headerlink" href="#cardside" title="Permanent link">¶</a></h3>
