@@ -1490,7 +1490,7 @@ a specific tag.</p>
 One can save an image of the cover (in the media folder), and add
 the appropriate tag to all of the cards
 to automatically set the image to the cover of the book.</p>
-<p>This is specified under the <a href="../runtimeoptions/" target="_blank">runtime options</a>:</p>
+<p>This is specified under the <a href="../runtimeoptions/">runtime options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"imgStylizer.setMainImageFromTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
 </code></pre></div>
 <p>Example:</p>
@@ -1516,7 +1516,7 @@ See the video demo below to see exactly what happens.</p>
 <p>Place your images in the <code>PrimaryDefinitionPicture</code> field, as shown in the <a href="./#the-primarydefinitionpicture-field">section below</a>.</p>
 </li>
 <li>
-<p>Disable it globally in the <a href="../runtimeoptions/" target="_blank">runtime options</a>:</p>
+<p>Disable it globally in the <a href="../runtimeoptions/">runtime options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">// alternatively, try "none" instead of "float".</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">"imgStylizer.glossary.primaryDef.mode.yomichan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float"</span><span class="p">,</span>
 </code></pre></div>
@@ -1595,7 +1595,7 @@ For example, one can add text, tables, or links to the field.</p>
 </div>
 <h3 id="changing-automatic-positioning-behavior">Changing Automatic Positioning Behavior<a class="headerlink" href="#changing-automatic-positioning-behavior" title="Permanent link">¶</a></h3>
 <p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
-<p>The following <a href="../runtimeoptions/" target="_blank">runtime option</a> can be used to change how the primary definition picture is positioned:</p>
+<p>The following <a href="../runtimeoptions/">runtime option</a> can be used to change how the primary definition picture is positioned:</p>
 <p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Valid options (case sensitive): "auto", "bottom", "right", "top"</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">"imgStylizer.glossary.floatImg.position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"auto"</span><span class="p">,</span>
 </code></pre></div>
@@ -1622,7 +1622,7 @@ To mark a card as NSFW, add any of the following tags to the card:</p>
 </blockquote>
 <p>This behavior is <strong>disabled by default</strong>. In other words, you will not be able to blur
 images unless the following setting is explicitly enabled
-in the <a href="../runtimeoptions/" target="_blank">runtime options</a>:</p>
+in the <a href="../runtimeoptions/">runtime options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">"imgStylizer.mainImage.blur.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// (1)!</span>
 </code></pre></div>
 <ol>

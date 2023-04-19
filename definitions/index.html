@@ -1646,7 +1646,7 @@ the dictionary name or a section of the definition.</p>
 <h3 id="primary-definition-selection-automatic">Primary Definition Selection: Automatic<a class="headerlink" href="#primary-definition-selection-automatic" title="Permanent link">¶</a></h3>
 <p>The dictionary for the primary definition is the first bilingual dictionary
 (that appears on Yomichan) by default.</p>
-<p>This can be changed to the first monolingual dictionary by changing the following <a href="../yomichantemplates/" target="_blank">Yomichan template option</a> to <code>monolingual</code>:</p>
+<p>This can be changed to the first monolingual dictionary by changing the following <a href="../yomichantemplates/">Yomichan template option</a> to <code>monolingual</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">valid</span> <span class="nv">values</span><span class="err">:</span> <span class="s2">"bilingual"</span><span class="err">,</span> <span class="s2">"monolingual"</span> <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-first-definition-type"</span> <span class="s2">"monolingual"</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
@@ -1835,7 +1835,7 @@ such as (but not limited to):
 <h2 id="simplifying-the-definition">Simplifying the Definition<a class="headerlink" href="#simplifying-the-definition" title="Permanent link">¶</a></h2>
 <p>If you use a monolingual dictionary, there is usually a bunch of extra information in the first line.
 Additionally, there is usually only one dictionary entry, making the list number redundant.
-Both of these can be automatically hidden with the following <a href="../runtimeoptions/" target="_blank">runtime option</a>:</p>
+Both of these can be automatically hidden with the following <a href="../runtimeoptions/">runtime option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"blockquotes.simplifyDefinitions.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Simple</label><label for="__tabbed_4_2">Default</label></div>
@@ -2161,7 +2161,7 @@ instead of collapsing them.
 
 
 ??? example "Instructions <small>(click here)</small>"
-    Use the following [CSS](customcss.md){:target="_blank"}:
+    Use the following [CSS](customcss.md):
 
     1. Under `extra/style.scss`, add the following code:
 

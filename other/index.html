@@ -1529,7 +1529,7 @@ the execution of the code).</p>
 <h2 id="fix-ruby-positioning">Fix Ruby Positioning <small>(for legacy Anki versions)</small><a class="headerlink" href="#fix-ruby-positioning" title="Permanent link">¶</a></h2>
 <p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>If the furigana appears higher than normal on your card,
-the following <a href="../runtimeoptions/" target="_blank">runtime option</a> serves as a quick fix to lower the furigana:</p>
+the following <a href="../runtimeoptions/">runtime option</a> serves as a quick fix to lower the furigana:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"fixRubyPositioning.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
 <p>See the pictures below to compare between furigana positions.</p>
@@ -1564,7 +1564,7 @@ if the furigana text is too long.</p>
 <h2 id="remove-the-na-on-cards-with-no-pitch-accents">Remove the "(N/A)" on cards with no pitch accents<a class="headerlink" href="#remove-the-na-on-cards-with-no-pitch-accents" title="Permanent link">¶</a></h2>
 <p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>If the word has no pitch accent, the pitch accent is usually displayed as <code>(N/A)</code>.
-This indicator can be removed with the following <a href="../customcss/" target="_blank">CSS</a>:</p>
+This indicator can be removed with the following <a href="../customcss/">CSS</a>:</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
 <ol>
@@ -1579,7 +1579,7 @@ This indicator can be removed with the following <a href="../customcss/" target=
 </details>
 <hr>
 <h2 id="removing-the-furigana-on-the-word-reading">Removing the furigana on the word reading<a class="headerlink" href="#removing-the-furigana-on-the-word-reading" title="Permanent link">¶</a></h2>
-<p>The following <a href="../customcss/" target="_blank">CSS</a> removes the furigana on the word reading, while keeping
+<p>The following <a href="../customcss/">CSS</a> removes the furigana on the word reading, while keeping
 the furigana on the kanjis within hover.</p>
 <p>TODO image</p>
 <details class="example">
@@ -1647,7 +1647,7 @@ between card types on both sides of the card.
 However, this take up extra vertical space which is unnecessary if you are only using one card type.</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Use the following <a href="../customcss/" target="_blank">CSS</a>:</p>
+<p>Use the following <a href="../customcss/">CSS</a>:</p>
 <ol>
 <li>
 <p>Under <code>extra/style.scss</code>, add the following code:</p>
@@ -1667,7 +1667,7 @@ your note to do.
 
 !!! note
     * If you want to change something for a card-per-card basis, see the [Field Reference](fieldref.md) page.
-    * These customizations make heavy use of [runtime options](runtimeoptions.md){:target="_blank"} and [custom CSS](customcss.md){:target="_blank"}.
+    * These customizations make heavy use of [runtime options](runtimeoptions.md) and [custom CSS](customcss.md).
 -->
 
 <h2 id="mobile-unbolded-text">Mobile Unbolded Text<a class="headerlink" href="#mobile-unbolded-text" title="Permanent link">¶</a></h2>
@@ -1676,7 +1676,7 @@ This is because the bolded text makes the kanji feel much more squished together
 especially on Android where the custom bold font cannot be used.
 Additionally, the bolded text is still highlighted in the accent color of the note,
 so the text still stands out compared to other text.</p>
-<p>If you want to bold the text again, use the following <a href="../customcss/" target="_blank">CSS</a>:</p>
+<p>If you want to bold the text again, use the following <a href="../customcss/">CSS</a>:</p>
 <p>(TODO link to extra/style.scss and all)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>@media (max-width: 620px) {
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  :root {

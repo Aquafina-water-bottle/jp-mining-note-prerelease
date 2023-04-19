@@ -1663,7 +1663,7 @@ of the same thing.</p>
 <h2 id="removing-sentence-periods">Removing sentence periods<a class="headerlink" href="#removing-sentence-periods" title="Permanent link">¶</a></h2>
 <p>The display sentence will have the period at the end of the sentence
 removed by default.
-If you want to keep the period, you can set the desired <a href="../runtimeoptions/" target="_blank">runtime options</a> to <code>false</code>:</p>
+If you want to keep the period, you can set the desired <a href="../runtimeoptions/">runtime options</a> to <code>false</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">"sentenceParser.removeFinalPeriod.fullSent.quoted"</span><span class="p">:</span><span class="w">     </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// (1)!</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">"sentenceParser.removeFinalPeriod.fullSent.unquoted"</span><span class="p">:</span><span class="w">   </span><span class="kc">false</span><span class="p">,</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">"sentenceParser.removeFinalPeriod.display.quoted"</span><span class="p">:</span><span class="w">      </span><span class="kc">true</span><span class="p">,</span>
@@ -1681,7 +1681,7 @@ If you want to keep the period, you can set the desired <a href="../runtimeoptio
 <h2 id="adding-or-removing-quotes">Adding or removing quotes<a class="headerlink" href="#adding-or-removing-quotes" title="Permanent link">¶</a></h2>
 <p>The sentence display has quotes surrounding the sentence by default, to provide
 a simple indicator to differentiate between a sentence and vocab card.</p>
-<p>If you do not want quotes around the sentence, you can set the following <a href="../runtimeoptions/" target="_blank">runtime options</a> to <code>remove</code>:</p>
+<p>If you do not want quotes around the sentence, you can set the following <a href="../runtimeoptions/">runtime options</a> to <code>remove</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"sentenceParser.fullSent.quotes.processMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"remove"</span><span class="p">,</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">"sentenceParser.display.quotes.processMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"add"</span><span class="p">,</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">"sentenceParser.altDisplay.quotes.processMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"as-is"</span><span class="p">,</span>
@@ -1713,7 +1713,7 @@ This can be changed to only be shown on click, or always/never shown.</p>
 <p>TODO gif: show on click</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time option</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"fullSentenceRuby.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"click"</span><span class="p">,</span>
 </code></pre></div>
 <p>This is commonly paired with the <a href="#sentencereading-hide-spacing">hide furigana spacing</a> option,
@@ -1725,7 +1725,7 @@ so furigana does not impede with the sentence whatsoever until toggled.</p>
 <p>This is the default behavior.</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time option</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">"fullSentenceRuby.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hover"</span><span class="p">,</span>
 </code></pre></div>
 </details>
@@ -1735,7 +1735,7 @@ so furigana does not impede with the sentence whatsoever until toggled.</p>
 <p>This allows furigana to be shown on hover, and toggled on click.</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time option</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">"fullSentenceRuby.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"both"</span><span class="p">,</span>
 </code></pre></div>
 </details>
@@ -1746,7 +1746,7 @@ so furigana does not impede with the sentence whatsoever until toggled.</p>
 not be relying on furigana to understand Japanese.</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time option</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">"fullSentenceRuby.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"always"</span><span class="p">,</span>
 </code></pre></div>
 </details>
@@ -1757,7 +1757,7 @@ not be relying on furigana to understand Japanese.</p>
 However, I personally recommend toggling on click instead of removing furigana completely.</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time option</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">"fullSentenceRuby.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"never"</span><span class="p">,</span>
 </code></pre></div>
 </details>
@@ -1779,7 +1779,7 @@ due to (what I think is a) chromium based bug<sup id="fnref:1"><a class="footnot
 <p>TODO img</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time options</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">"fullSentenceRuby.fillMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"font-size"</span><span class="p">,</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">"fullSentenceRuby.fillModeFontSizeTransition"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
@@ -1789,7 +1789,7 @@ due to (what I think is a) chromium based bug<sup id="fnref:1"><a class="footnot
 <p>TODO img</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time options</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">"fullSentenceRuby.fillMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"font-size"</span><span class="p">,</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">"fullSentenceRuby.fillModeFontSizeTransition"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
@@ -1800,7 +1800,7 @@ due to (what I think is a) chromium based bug<sup id="fnref:1"><a class="footnot
 <p>This is the default behavior.</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
-<p>Change the following <a href="../compiletimeoptions/" target="_blank">compile-time option</a>:</p>
+<p>Change the following <a href="../compiletimeoptions/">compile-time option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">"fullSentenceRuby.fillMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"opacity"</span><span class="p">,</span>
 </code></pre></div>
 </details>
@@ -1840,7 +1840,7 @@ If you do this, you will need to regenerate the <code>SentenceReading</code>
 field if you are using furigana.</p>
 <p>However, these newlines are automatically removed from the display sentence
 if the width of the screen is determined to be too small.
-To override this option, you can use the following <a href="../customcss/" target="_blank">custom CSS</a>:</p>
+To override this option, you can use the following <a href="../customcss/">custom CSS</a>:</p>
 <details class="example">
 <summary>Instructions <small>(click here)</small></summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Keep all newlines</label><label for="__tabbed_4_2">Remove all newlines</label><label for="__tabbed_4_3">Remove all newlines when AltDisplay is not used</label></div>

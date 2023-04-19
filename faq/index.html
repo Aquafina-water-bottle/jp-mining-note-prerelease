@@ -1869,19 +1869,31 @@ There are two main reasons that Anki-Connect can fail:</p>
 </li>
 </ol>
 <h3 id="warning-jpmnopts-was-not-defined-in-the-options-file-was-there-an-error">(Warning) JPMNOpts was not defined in the options file. Was there an error?<a class="headerlink" href="#warning-jpmnopts-was-not-defined-in-the-options-file-was-there-an-error" title="Permanent link">¶</a></h3>
-<p>If you see this as an isolated warning without any other errors,
-it is very likely that you are using Anki version 2.1.49 or below.
-Please check your Anki version to confirm this:</p>
+<p>There are two reasons why you would be getting this warning:</p>
+<ol>
+<li>
+<p>You updated your note from a version before <code>0.12.0.0</code>,
+    to <code>0.12.0.0</code> or higher.
+    In this case, you will have to
+    <a href="../setupchanges/#v0-12-0-0-config-rework">update your config file</a>.</p>
+</li>
+<li>
+<p>You are using Anki version 2.1.49 or below.</p>
+<p>Please check your Anki version to confirm this:</p>
 <blockquote>
 <p>Main Window →  <code>Help</code> →  <code>About...</code></p>
 </blockquote>
-<p>If your Anki version is indeed 2.1.49 or below, then this should only appear on the front side of your first card of the session.
+<details class="example">
+<summary>How to fix <small>(click here)</small></summary>
+<p>If your Anki version is indeed 2.1.49 or below, then this should only appear on
+the front side of your first card of the session.
 To check, try flipping the card and back. This warning should dissappear once you do.</p>
-<p>The only side effect of this is that the user-defined runtime options will not be used for the front side of the first card,
+<p>The only side effect of this is that the user-defined runtime options
+will not be used for the front side of the first card,
 and the defaults will be used instead.</p>
 <p>There are two ways to fix this:</p>
 <ol>
-<li><a href="../setupanki/#updating-anki">Update Anki</a> to a higher version.</li>
+<li><a href="../setupanki/#updating-anki">Update Anki</a> to a higher version. <small>(highly recommended)</small></li>
 <li>Compile the card with <a href="../moddingtips/#custom-runtime-options">hard-coded defaults</a>.</li>
 </ol>
 <details class="info">
@@ -1898,6 +1910,9 @@ as it currently seems to
 <a href="../moddingtips/#avoid-asynchronous-javascript-features-in-anki">behave unpredictably</a>
 within Anki.</p>
 </details>
+</details>
+</li>
+</ol>
 <h3 id="general-error-troubleshooting">General Error Troubleshooting<a class="headerlink" href="#general-error-troubleshooting" title="Permanent link">¶</a></h3>
 <p>If none of the above worked, the following will be some general troubleshooting tips
 that can help you figure out what the error is:</p>
@@ -2059,7 +2074,7 @@ so nothing has to be done for mobile.</p>
 every time the back-side of the card is loaded.
 On faster computers, this effect is virtually neglible.
 However, this effect is more noticeable on lower end computers.</p>
-<p>To prevent document reflow, you must change the following two <a href="../runtimeoptions/" target="_blank">runtime options</a>:</p>
+<p>To prevent document reflow, you must change the following two <a href="../runtimeoptions/">runtime options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"modules"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">"img-utils"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2087,7 +2102,7 @@ and javascript text (javascript compilation time).
 Surprisingly, the time it takes for javascript to actually run is comparatively fast
 if the forced document reflow (see above) is remedied.</p>
 <p>Both the amount of HTML and javascript can be reduced at the cost of removing functionality
-using the following <a href="../compiletimeoptions/" target="_blank">compile-time options</a>:</p>
+using the following <a href="../compiletimeoptions/">compile-time options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">"hardcoded-runtime-options"</span><span class="p">:</span><span class="w"> </span><span class="err">True</span><span class="p">,</span><span class="w"> </span><span class="c1">// (1)!</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">"always-filled-fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w"> </span><span class="c1">// (2)!</span>

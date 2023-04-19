@@ -1665,7 +1665,7 @@ and all the ways to customize how the pitch accent is displayed.</p>
 <p>The reading, word and pitch overline can be automatically colored
 in Migaku style colors, according to the pitch accent.</p>
 <p>This automatic coloring behavior is <strong>disabled by default</strong>,
-and must be enabled in the <a href="../runtimeoptions/" target="_blank">runtime options</a>:</p>
+and must be enabled in the <a href="../runtimeoptions/">runtime options</a>:</p>
 <p></p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// (1)!</span>
 </code></pre></div>
 1.  The <code>autoPitchAccent</code> module must be enabled to use colored pitch accent.
@@ -1719,7 +1719,7 @@ and must be enabled in the <a href="../runtimeoptions/" target="_blank">runtime 
 </table>
 <h3 id="controlling-what-gets-colored">Controlling What Gets Colored<a class="headerlink" href="#controlling-what-gets-colored" title="Permanent link">¶</a></h3>
 <p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
-<p>There are many <a href="../runtimeoptions/" target="_blank">runtime options</a> that change exactly what is colored.
+<p>There are many <a href="../runtimeoptions/">runtime options</a> that change exactly what is colored.
 By default, everything except words found in tooltips (kanji hover and word indicators)
 are highlighted.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.wordReadingPitchOverline"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
@@ -1940,7 +1940,7 @@ For example, 身長 should be written as 「しんちょう￣」.</p>
 <details class="info">
 <summary>Removing the required ￣ symbol <small>(click here)</small></summary>
 <p>The restriction that 平板 words require the ￣ symbol at the end can be removed
-using the following <a href="../runtimeoptions/" target="_blank">runtime option</a>:</p>
+using the following <a href="../runtimeoptions/">runtime option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">"autoPitchAccent.paOverride.heibanMarkerRequired"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
 <p>This would allow any words without any downstep marker to be rendered as 平板.
@@ -2033,7 +2033,7 @@ However, only the first pitch accent is shown by default.</p>
 </div>
 </div>
 <p>If you want to show all of the pitch accent entries (in the first dictionary),
-use the following <a href="../runtimeoptions/" target="_blank">runtime option</a>:</p>
+use the following <a href="../runtimeoptions/">runtime option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">"autoPitchAccent.paPositions.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"selected-dictionary"</span><span class="p">,</span>
 </code></pre></div>
 <p>If you want to select the correct pitch accent, bold that position in <code>PAPositions</code>
@@ -2068,7 +2068,7 @@ This has a few features over the raw word reading:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you do not want the reading in <code>AJTWordPitch</code> to be used,
-change the following <a href="../runtimeoptions/" target="_blank">runtime option</a> to <code>false</code>:</p>
+change the following <a href="../runtimeoptions/">runtime option</a> to <code>false</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">"autoPitchAccent.searchForAJTWord"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
 </div>
@@ -2076,7 +2076,7 @@ change the following <a href="../runtimeoptions/" target="_blank">runtime option
 <p>If the word cannot be found under <code>AJTWordPitch</code>, then the default reading
 in <code>WordReading</code> is used, and displayed in katakana.</p>
 <p>Unlike <code>AJTWordPitch</code>, this reading can be changed to the word reading kana (usually hiragana),
-katakana, or katakana with long vowel marks in the <a href="../runtimeoptions/" target="_blank">runtime options</a>:</p>
+katakana, or katakana with long vowel marks in the <a href="../runtimeoptions/">runtime options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// The reading display to show if nothing is generated by AJT Japanese.</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">// Valid options:</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">// "word-reading"</span>

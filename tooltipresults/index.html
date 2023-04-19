@@ -1397,7 +1397,7 @@ the card yet (i.e. you may not know the word yet).
 Conversely, the first two categories (the non-new cards) represent words that you likely already
 know, so they are not greyed out.</p>
 <p>The exact numbers shown in each category can be changed in the
-<a href="../runtimeoptions/" target="_blank">runtime option</a>:</p>
+<a href="../runtimeoptions/">runtime option</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// maximum number of words per category</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">"tooltips.categoryMax.nonNew.oldest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">"tooltips.categoryMax.nonNew.newest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
@@ -1423,14 +1423,14 @@ other than by the creation date.</p>
 For example, suspended cards flagged as <code>green</code> are counted in the "non-new" cards category
 (known words), and suspended cards flagged as <code>red</code> are counted as words that you
 do not know AND will not study in the future (not shown in any category).
-This can be changed in the <a href="../runtimeoptions/" target="_blank">runtime options</a>:</p>
+This can be changed in the <a href="../runtimeoptions/">runtime options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>"tooltips.query.nonNew.base": "-is:new OR (is:suspended is:new flag:3)",
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>"tooltips.query.nonNew.hidden": "is:suspended flag:1",
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>"tooltips.query.nonNew.removed": "",
 </code></pre></div>
 <hr>
 <h2 id="customizing-sentences-pitch-accent">Customizing Sentences &amp; Pitch Accent<a class="headerlink" href="#customizing-sentences-pitch-accent" title="Permanent link">¶</a></h2>
-<p>Any <a href="../runtimeoptions/" target="_blank">runtime option</a> under the <code>sentParser</code> and <code>autoPA</code> group can be set under
+<p>Any <a href="../runtimeoptions/">runtime option</a> under the <code>sentParser</code> and <code>autoPA</code> group can be set under
 <code>tooltips.overrideOptions.sentenceParser</code> and
 <code>tooltips.overrideOptions.autoPitchAccent</code>
 respectively.
@@ -1451,7 +1451,7 @@ Therefore, only the <code>fullSent</code> group of options will affect the resul
 <p>Within the tooltips, the word within the sentence is not highlighted by default.
 This is to emphasize the importance of the kanji over the word.
 However, this comes at the cost of having to scan through the entire sentence to find the word.</p>
-<p>The following <a href="../runtimeoptions/" target="_blank">runtime option</a> re-enables the highlighted word:
+<p>The following <a href="../runtimeoptions/">runtime option</a> re-enables the highlighted word:
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"tooltips.highlightWordInSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Highlighted</label><label for="__tabbed_1_2">Not Highlighted (default)</label></div>
