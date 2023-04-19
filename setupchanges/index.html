@@ -106,8 +106,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="jp-mining-note" class="md-header__button md-logo" aria-label="jp-mining-note" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -329,8 +328,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="jp-mining-note" class="md-nav__button md-logo" aria-label="jp-mining-note" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+  <img src="../assets/logo.png" alt="logo">
 
     </a>
     jp-mining-note
@@ -636,20 +634,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-font-size" class="md-nav__link">
-    Field Font Size
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automatic-field-collapsing" class="md-nav__link">
-    Automatic Field Collapsing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#config-rework" class="md-nav__link">
     Config Rework
   </a>
@@ -664,8 +648,22 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#ankiconnectandroid" class="md-nav__link">
+    AnkiConnectAndroid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#frequency-display" class="md-nav__link">
     Frequency Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-field-collapsing" class="md-nav__link">
+    Automatic Field Collapsing
   </a>
   
 </li>
@@ -1376,20 +1374,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#field-font-size" class="md-nav__link">
-    Field Font Size
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#automatic-field-collapsing" class="md-nav__link">
-    Automatic Field Collapsing
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#config-rework" class="md-nav__link">
     Config Rework
   </a>
@@ -1404,8 +1388,22 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#ankiconnectandroid" class="md-nav__link">
+    AnkiConnectAndroid
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#frequency-display" class="md-nav__link">
     Frequency Display
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatic-field-collapsing" class="md-nav__link">
+    Automatic Field Collapsing
   </a>
   
 </li>
@@ -1519,25 +1517,24 @@ please check here first! If you can't find any solution,
 including an entire backend javascript rework.
 See the <a href="../updating/#overview">Updating</a> page on how to update the note.
 Afterwards, see below for the other necessary changes that must be made to properly update the note.</p>
-<h3 id="field-font-size">Field Font Size<a class="headerlink" href="#field-font-size" title="Permanent link">¶</a></h3>
-<p>TODO: batch commands</p>
+<!--
+## Field Font Size
+TODO: batch commands
+
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>set_font_sizes
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>set_fonts_to_key_font
 </code></pre></div>
-<p>The fields within the note editor may look a bit off, due to the font and font sizes being wrong.
+
+The fields within the note editor may look a bit off, due to the font and font sizes being wrong.
 When Anki-Connect finally updates, these fonts will be changed automatically upon installation.
 However, until then, it will have to be done manually.
-All info about the field font sizes should be found in the <a href="../fields/">fields table</a>.</p>
-<p>Additionally, all new fields will have the default font, which likely
+All info about the field font sizes should be found in the [fields table](fields.md).
+
+Additionally, all new fields will have the default font, which likely
 does not display Japanese characters correctly.
-Please set this to match your other fields.</p>
-<h3 id="automatic-field-collapsing">Automatic Field Collapsing<a class="headerlink" href="#automatic-field-collapsing" title="Permanent link">¶</a></h3>
-<p>For newer versions of Anki,
-you can set a field to be collapsed by default by heading over to:</p>
-<blockquote>
-<p>(Note editor) →  <code>Fields...</code> →  <code>Collapse by default</code></p>
-</blockquote>
-<p>Feel free to automatially collapse any fields you don't use, or very rarely use.</p>
+Please set this to match your other fields.
+-->
+
 <h3 id="config-rework">Config Rework<a class="headerlink" href="#config-rework" title="Permanent link">¶</a></h3>
 <p>You will get the following warning on all cards:
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>JPMNOptions was not defined in the options file. Was there an error?
@@ -1548,27 +1545,53 @@ To fix your config file, do the following steps:</p>
 <ol>
 <li><a href="../runtimeoptions/#accessing-editing">Locate the <code>_jpmn-options.js</code> file</a>.</li>
 <li>Make a backup of this file, say, by copying the file into your <code>Documents</code> folder.</li>
-<li>Edit the file with your favorite text editor, and replace its contents entirely with the
-    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/webpack/src/jp-mining-note/_jpmn-options.js">example config</a>.<ul>
-<li>TODO LINK TO MASTER AFTER PRERELEASE</li>
-</ul>
+<li>
+<p>Edit the file with your favorite text editor, and replace its contents entirely with the following:</p>
+<details class="example">
+<summary>New runtime options file <small>(click here)</small></summary>
+<div class="highlight"><span class="filename">_jpmn-options.js</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">JPMNOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="c1">// Insert any runtime options here! They should be of the form:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="c1">//</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="c1">//     "key": value,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="c1">//</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="c1">// To see all available options, visit the following link: (TODO non prerelease!)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="c1">// https://aquafina-water-bottle.github.io/jp-mining-note-prerelease/runtimeoptions/#available-options</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="c1">//</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="c1">// Some common examples are shown below.</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="c1">// To enable them, remove the `//` characters before the key: value pair.</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="c1">// Enables colored pitch accent</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="c1">//"autoPitchAccent.coloredPitchAccent.enabled": true,</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="c1">// Enables image blur</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">  </span><span class="c1">//"imgStylizer.mainImage.blur.enabled": true,</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="c1">// Hides the first line of most definitions, as well as the number in the list</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="c1">//"blockquotes.simplifyDefinitions.enabled": true,</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="p">}</span>
+</code></pre></div>
+</details>
 </li>
-<li>Re-add any runtime options you had changed before.
+<li>
+<p>Re-add any runtime options you had changed before.
     Common runtime-options (pitch accent coloring and image blur) are included as examples;
     remove the comment to re-enable them.
-    To see all available runtime options, see <a href="../runtimeoptions/#available-options">Runtime Options: Available Options</a>.</li>
+    To see all available runtime options, see <a href="../runtimeoptions/#available-options">Runtime Options: Available Options</a>.</p>
+</li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For people using pitch accent coloring, the entire card is now highlighted with the pitch accent group.
 To restore the previous behavior, use these runtime options:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
 </div>
 <h3 id="handlebars">Handlebars<a class="headerlink" href="#handlebars" title="Permanent link">¶</a></h3>
 <p>Yomichan's Handlebars has been updated, with some new markers and features being added.</p>
 <ul>
+<li>To update Yomichan's Anki Card Format, see <a href="../updating/#updating-yomichans-anki-card-format">here</a>.</li>
 <li>To update your handlebars templates, see <a href="../updating/#updating-yomichan-templates">here</a>.</li>
 </ul>
 <p>After updating the templates, the following fields must be changed:</p>
@@ -1582,6 +1605,9 @@ To restore the previous behavior, use these runtime options:</p>
 <li>See <a href="../updating/#updating-yomichans-anki-card-format">here</a>
   for instructions on how to update Anki Card Format.</li>
 </ul>
+<h3 id="ankiconnectandroid">AnkiConnectAndroid<a class="headerlink" href="#ankiconnectandroid" title="Permanent link">¶</a></h3>
+<p>If you are using AnkiConnectAndroid, please repeat the steps above for updating Yomichan.
+It will likely <a href="https://github.com/KamWithK/AnkiconnectAndroid#problem-on-card-add-i-get-incorrect-flds-argument">error until updated</a>.</p>
 <!--
 ### Handlebars: JMdict Extra
 <i><sup>Main Page: [Setup Yomichan: Fixing JMdict Extra](setupyomichan.md#fixing-jmdict-extra)</sup></i>
@@ -1598,7 +1624,7 @@ If you want a consistently compact format, set the
 For example:
 
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
 
 -->
@@ -1613,11 +1639,26 @@ instead of all the literal values itself.</p>
     <a href="../importing/#backfill-the-frequencysort-field">backfill the frequencies</a>.</li>
 <li>If you prefer the frequency sort display but your frequency sort is somehow invalid:<ol>
 <li>Clear out your <code>FrequencySort</code> field entirely through the following command:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3 tools/batch.py clear_field "FrequencySort"
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python3 tools/batch.py clear_field "FrequencySort"
 </code></pre></div></li>
-<li>Follow the backfill frequencies instructions in the second point.</li>
+<li><a href="../importing/#backfill-the-frequencysort-field">Backfill the frequencies</a>.</li>
 </ol>
 </li>
+</ul>
+<h3 id="automatic-field-collapsing">Automatic Field Collapsing<a class="headerlink" href="#automatic-field-collapsing" title="Permanent link">¶</a></h3>
+<p>For newer versions of Anki,
+you can set a field to be collapsed by default by heading over to:</p>
+<blockquote>
+<p>(Note editor) →  <code>Fields...</code> →  <code>Collapse by default</code></p>
+</blockquote>
+<p>Feel free to automatially collapse any fields you don't use, or very rarely use.
+By default, the following fields are collapsed by default (but are not updated automatically):</p>
+<ul>
+<li><code>AltDisplayPASentenceCard</code></li>
+<li><code>AltDisplayAudioCard</code></li>
+<li><code>SecondaryDefinition</code></li>
+<li><code>ExtraDefinitions</code></li>
+<li><code>CardCache</code></li>
 </ul>
 <h3 id="custom-scss">Custom SCSS<a class="headerlink" href="#custom-scss" title="Permanent link">¶</a></h3>
 <p>For people who are using custom SCSS (usually through <code>src/scss/extra</code>),
