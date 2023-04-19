@@ -614,13 +614,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#fixing-jmdict-extra" class="md-nav__link">
-    Fixing JMdict Extra
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1416,13 +1409,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#fixing-jmdict-extra" class="md-nav__link">
-    Fixing JMdict Extra
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -1481,7 +1467,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
     
       
     
-    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/master/docs/docs/setupyomichan.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/webpack/docs/docs/setupyomichan.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
@@ -1507,13 +1493,25 @@ Most users should have installed it from their browser's extension page, in whic
 nothing has to be done.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning for Firefox Users</p>
-<p>There appears to be an issue where the default version for Yomichan on Firefox
-is <a href="https://github.com/FooSoft/yomichan/issues/2295">three years old</a>.
+<p>The default version for Yomichan on Firefox
+is <a href="https://github.com/FooSoft/yomichan/issues/2295">over three years old</a>,
+and is not compatible with this note.
 If you are using Firefox, ensure that your Yomichan version is indeed the latest version,
-by clicking on the Yomichan icon and clicking on the question mark.
-If it isn't, you will have to download it <a href="https://github.com/FooSoft/yomichan/releases">manually</a>.</p>
-<p>You may also have to download the Firefox Developer edition, and set <code>xpinstall.signatures.required</code>
-to <code>false</code>.</p>
+by clicking on the Yomichan icon and clicking on the question mark.</p>
+<p>If it isn't, then I recommend to switch to Chrome (or Chromium) for immersion.</p>
+<p>&lt;!--
+TODO Yomitan, once it's stable...</p>
+<p>If it isn't, there are two main ways of fixing it:</p>
+<ol>
+<li><a href="https://github.com/FooSoft/yomichan/releases">Manual Download</a>
+    with
+    <a href="https://www.mozilla.org/en-US/firefox/developer/">Firefox: Developer edition</a>
+    The manual download will NOT work on regular firefox, because it is unsigned.
+    <code>xpinstall.signatures.required</code></li>
+</ol>
+<p>You may also have to download the Firefox Developer edition, and set 
+to <code>false</code>.
+--&gt;</p>
 </div>
 <hr>
 <h2 id="yomichan-fields">Yomichan Fields<a class="headerlink" href="#yomichan-fields" title="Permanent link">¶</a></h2>
@@ -1768,7 +1766,7 @@ add the following template code as follows:</p>
 <summary>Click here to show the template code to copy.</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                                                                      <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">===================</span><span class="o">=</span> <span class="nv">jp-mining-note</span> <span class="nv">handlebars</span> <span class="na">====================</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.4</span>                                 <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.5</span>                                 <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                                                                      <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>       <span class="nv">https</span><span class="err">:</span><span class="nv">//aquafina-water-bottle.github.io/jp-mining-note/</span>        <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>       <span class="err">-------------------------------------------------------</span>        <span class="m">~</span><span class="cp">}}</span>
@@ -1822,7 +1820,7 @@ add the following template code as follows:</p>
 <a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=========================</span><span class="o">=</span> <span class="nv">Other</span> <span class="nv">Options</span> <span class="na">==========================</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-primary-def-one-dict-entry-only"</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
 <a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
 <a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
@@ -1864,7 +1862,7 @@ add the following template code as follows:</p>
 <details class="examplecode">
 <summary>Click here to show the template code to copy.</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=============</span><span class="o">=</span> <span class="nv">ORIGINAL</span> <span class="nv">YOMICHAN</span> <span class="nv">TEMPLATE</span> <span class="nv">CODE</span> <span class="nv">ABOVE</span> <span class="na">==============</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.4</span>                                 <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.5</span>                                 <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="na">=================</span><span class="o">=</span>
@@ -3237,6 +3235,7 @@ add the following template code as follows:</p>
 </ol>
 <hr>
 <h2 id="make-an-example-card">Make an example card!<a class="headerlink" href="#make-an-example-card" title="Permanent link">¶</a></h2>
+<p>TODO re-record with renji's texthooker, and show result card</p>
 <p>At this point, you should be able to make cards with Yomichan!</p>
 <details class="example">
 <summary>Click here to show some example Japanese sentences.</summary>
@@ -3292,17 +3291,48 @@ especially when used across text with formatting or newlines.
 See <a href="../definitions/#primary-definition-selection-manual">this</a> for more details.</p>
 <p>With this being said, selecting the dictionary should always work.</p>
 </div>
-<h3 id="fixing-jmdict-extra">Fixing JMdict Extra<a class="headerlink" href="#fixing-jmdict-extra" title="Permanent link">¶</a></h3>
-<p>If you are using the
-<a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMdict Extra version</a>
-(JMdict with example sentences, antonyms, etc.),
-then the exported compact list will not be fully compact.
-This is a <a href="https://github.com/FooSoft/yomichan/issues/2297">known issue</a> with Yomichan's
-default handlebars.</p>
-<p>However, with the power of custom CSS and handlebars, the issue is fixed in this note type.
-To fix it, set <code>opt-jmdict-list-format</code> to <code>true</code>, i.e.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+<!--
+
+IT WORKS WITH OLD JMDICT!!
+THIS SECTION IS NO LONGER NECESSARY!!!
+
+## Legacy JMdict
+
+The newest JMdict Yomichan dictionary, informally known as "JMdict Extra",
+contains many things outside of the plain definitions,
+including antonyms, example sentences, and alternate forms.
+This dictionary can be downloaded
+[here](https://github.com/Aquafina-water-bottle/jmdict-english-yomichan).
+
+If you are using JMdict Extra, then nothing has to be done.
+
+However, if you are using a legacy versions of JMdict,
+your definitions will export incorrectly (in a non-compact form).
+
+??? example "Compact Legacy JMdict Option <small>(click here)</small>"
+    To export legacy JMdict in compact form, change the following option:
+    set the following option to `false`:
+
+
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
+
+
+
+
+then the exported compact list will not be fully compact.
+This is a [known issue](https://github.com/FooSoft/yomichan/issues/2297) with Yomichan's
+default handlebars.
+
+However, with the power of custom CSS and handlebars, the issue is fixed in this note type.
+To fix it, set `opt-jmdict-list-format` to `true`, i.e.
+
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+</code></pre></div>
+
+
+-->
 <hr>
 <h2 id="additional-instructions-for-other-platforms">Additional Instructions for Other Platforms<a class="headerlink" href="#additional-instructions-for-other-platforms" title="Permanent link">¶</a></h2>
 <p>Outside of creating cards on the PC,
@@ -3374,7 +3404,7 @@ for specific tips on a select few programs.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
       
     
   </small>

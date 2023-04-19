@@ -1201,6 +1201,19 @@ If you are looking for the stable release documentation, see <a href="https://aq
     Setup Handlebars
   </a>
   
+    <nav class="md-nav" aria-label="Setup Handlebars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monolingual-definitions" class="md-nav__link">
+    Monolingual definitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1371,6 +1384,19 @@ If you are looking for the stable release documentation, see <a href="https://aq
     Setup Handlebars
   </a>
   
+    <nav class="md-nav" aria-label="Setup Handlebars">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#monolingual-definitions" class="md-nav__link">
+    Monolingual definitions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1481,7 +1507,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
     
       
     
-    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/master/docs/docs/jpmnhandlebars.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/webpack/docs/docs/jpmnhandlebars.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
@@ -1497,7 +1523,7 @@ If you are using jp-mining-note, please see the
 page instead.</p>
 <hr>
 <h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">¶</a></h2>
-<p>This package provides all of the features that comes with the standard jp-mining-note installation:</p>
+<p>This handlebars package provides all of the features that comes with the standard jp-mining-note installation:</p>
 <ul>
 <li>A primary dictionary selector that automatically chooses the first bilingual or monolingual dictionary (depending on your settings)</li>
 <li>Ability to manually select a dictionary or highlight a definition, to override the primary dictionary selector</li>
@@ -1505,8 +1531,11 @@ page instead.</p>
 <li>Option to hide the first line of monolingual dictionaries</li>
 <li>Compatibility with <a href="#compatability-with-other-handlebars">other portable handlebars</a></li>
 </ul>
-<p>Additionally, these definitions can be exported in a minimalistic HTML format,
-which almost completely conforms with the default Yomichan handlebars.</p>
+<p>The main difference between these handlebars and the handlebars used by jp-mining-note
+is that some default settings have been manually changed,
+so that definitions are exported in a minimalistic HTML format.
+This minimal format (almost) completely conforms with the default Yomichan handlebars,
+so it should work for any note type.</p>
 <hr>
 <!--
 TODO
@@ -1528,7 +1557,7 @@ Anki note templates, and will likely work on yours as well.
 <p>Before doing anything, please
 <a href="../faq/#how-do-i-backup-yomichan-settings">make a backup of your Yomichan settings.</a></p>
 <details class="example">
-<summary>Video demo <em>(click here)</em></summary>
+<summary>Video demo <small>(click here)</small></summary>
 <p><div class="video-container"><video style="width:100%;height:100%" controls alt="type:video"><source src="../assets/setupyomichan/import_yomichan_templates.mp4" type="video/mp4"></source></video></div></p>
 </details>
 <ol>
@@ -1550,7 +1579,7 @@ add the following template code as follows:</p>
 <summary>Click here to show the template code to copy.</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                                                                      <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">===================</span><span class="o">=</span> <span class="nv">jp-mining-note</span> <span class="nv">handlebars</span> <span class="na">====================</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.4</span>                                 <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.5</span>                                 <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                                                                      <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>       <span class="nv">https</span><span class="err">:</span><span class="nv">//aquafina-water-bottle.github.io/jp-mining-note/</span>        <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>       <span class="err">-------------------------------------------------------</span>        <span class="m">~</span><span class="cp">}}</span>
@@ -1604,40 +1633,42 @@ add the following template code as follows:</p>
 <a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>
 <a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=========================</span><span class="o">=</span> <span class="nv">Other</span> <span class="nv">Options</span> <span class="na">==========================</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-primary-def-one-dict-entry-only"</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-primary-def-one-dict-entry-only"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">jpmn</span> <span class="nv">default</span><span class="err">:</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">jpmn</span> <span class="nv">default</span><span class="err">:</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>
 <a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>
 <a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>
 <a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>
 <a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
 <a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>
-<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=======================</span><span class="o">=</span> <span class="nv">Plaintext</span> <span class="nv">Options</span> <span class="na">========================</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>
 <a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>
-<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>
-<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>    <span class="nv">WARNING</span><span class="err">:</span> <span class="nv">I</span> <span class="nv">recommend</span> <span class="nv">not</span> <span class="nv">changing</span> <span class="nv">these</span> <span class="nv">options</span> <span class="nv">if</span> <span class="nv">you</span> <span class="nv">are</span> <span class="nv">using</span> <span class="nv">the</span>
-<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>    <span class="nv">jp-mining-note</span> <span class="nv">template</span><span class="err">.</span> <span class="nv">These</span> <span class="nv">options</span> <span class="nv">will</span> <span class="nv">change</span> <span class="nv">the</span> <span class="nv">general</span> <span class="nv">layout</span>
-<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>    <span class="nv">of</span> <span class="nv">the</span> <span class="nv">HTML</span><span class="err">,</span> <span class="nv">which</span> <span class="nv">will</span> <span class="nv">prevent</span> <span class="nv">certain</span> <span class="nv">features</span> <span class="nv">or</span> <span class="nv">stylizations</span>
-<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>    <span class="nv">from</span> <span class="nv">properly</span> <span class="nv">working</span><span class="err">.</span> <span class="nv">(If</span> <span class="nv">you</span> <span class="nv">aren</span><span class="err">'</span><span class="nv">t</span> <span class="nv">using</span> <span class="nv">jp-mining-note</span><span class="err">,</span> <span class="nv">please</span> <span class="nv">feel</span>
-<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>    <span class="nv">free</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">these</span> <span class="nv">options</span><span class="err">!</span><span class="nv">)</span>
-<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>
-<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>    <span class="nv">Instead</span> <span class="nv">of</span> <span class="nv">using</span> <span class="nv">these</span> <span class="nv">options</span><span class="err">,</span> <span class="nv">see</span> <span class="nv">here</span><span class="err">:</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=======================</span><span class="o">=</span> <span class="nv">Plaintext</span> <span class="nv">Options</span> <span class="na">========================</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>    <span class="nv">WARNING</span><span class="err">:</span> <span class="nv">I</span> <span class="nv">recommend</span> <span class="nv">not</span> <span class="nv">changing</span> <span class="nv">these</span> <span class="nv">options</span> <span class="nv">if</span> <span class="nv">you</span> <span class="nv">are</span> <span class="nv">using</span> <span class="nv">the</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>    <span class="nv">jp-mining-note</span> <span class="nv">template</span><span class="err">.</span> <span class="nv">These</span> <span class="nv">options</span> <span class="nv">will</span> <span class="nv">change</span> <span class="nv">the</span> <span class="nv">general</span> <span class="nv">layout</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>    <span class="nv">of</span> <span class="nv">the</span> <span class="nv">HTML</span><span class="err">,</span> <span class="nv">which</span> <span class="nv">will</span> <span class="nv">prevent</span> <span class="nv">certain</span> <span class="nv">features</span> <span class="nv">or</span> <span class="nv">stylizations</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>    <span class="nv">from</span> <span class="nv">properly</span> <span class="nv">working</span><span class="err">.</span> <span class="nv">(If</span> <span class="nv">you</span> <span class="nv">aren</span><span class="err">'</span><span class="nv">t</span> <span class="nv">using</span> <span class="nv">jp-mining-note</span><span class="err">,</span> <span class="nv">please</span> <span class="nv">feel</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>    <span class="nv">free</span> <span class="nv">to</span> <span class="nv">change</span> <span class="nv">these</span> <span class="nv">options</span><span class="err">!</span><span class="nv">)</span>
 <a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>
-<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>        <span class="nv">https</span><span class="err">:</span><span class="nv">//aquafina-water-bottle.github.io/jp-mining-note/definitions/</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>    <span class="nv">Instead</span> <span class="nv">of</span> <span class="nv">using</span> <span class="nv">these</span> <span class="nv">options</span><span class="err">,</span> <span class="nv">see</span> <span class="nv">here</span><span class="err">:</span>
 <a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>
-<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>    <span class="nv">These</span> <span class="nv">hide</span> <span class="nv">specific</span> <span class="nv">elements</span> <span class="nv">using</span> <span class="nv">CSS</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">modifying</span> <span class="nv">the</span> <span class="nv">raw</span> <span class="nv">HTML</span>
-<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>    <span class="nv">structure</span> <span class="nv">behind</span> <span class="nv">it</span><span class="err">.</span>
-<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a><span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>
-<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__enabled"</span>                     <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">Default</span> <span class="nv">overwritten</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__one-dict-entry-only-no-list"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">Default</span> <span class="nv">overwritten</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__remove-dictionary-tag"</span>       <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">Default</span> <span class="nv">overwritten</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__remove-first-line-enabled"</span>   <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">Default</span> <span class="nv">overwritten</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>
-<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a>
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>        <span class="nv">https</span><span class="err">:</span><span class="nv">//aquafina-water-bottle.github.io/jp-mining-note/definitions/</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>    <span class="nv">These</span> <span class="nv">hide</span> <span class="nv">specific</span> <span class="nv">elements</span> <span class="nv">using</span> <span class="nv">CSS</span> <span class="nv">instead</span> <span class="nv">of</span> <span class="nv">modifying</span> <span class="nv">the</span> <span class="nv">raw</span> <span class="nv">HTML</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>    <span class="nv">structure</span> <span class="nv">behind</span> <span class="nv">it</span><span class="err">.</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a><span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>
+<a id="__codelineno-0-85" name="__codelineno-0-85" href="#__codelineno-0-85"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__enabled"</span>                     <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">jpmn</span> <span class="nv">default</span><span class="err">:</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__one-dict-entry-only-no-list"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">jpmn</span> <span class="nv">default</span><span class="err">:</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__remove-dictionary-tag"</span>       <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">jpmn</span> <span class="nv">default</span><span class="err">:</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt__plaintext__remove-first-line-enabled"</span>   <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span><span class="x"> </span><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="nv">jpmn</span> <span class="nv">default</span><span class="err">:</span> <span class="nv">false</span> <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a>
-<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=============</span><span class="o">=</span> <span class="nv">ORIGINAL</span> <span class="nv">YOMICHAN</span> <span class="nv">TEMPLATE</span> <span class="nv">CODE</span> <span class="nv">BELOW</span> <span class="na">=============</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a>
+<a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a>
+<a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=============</span><span class="o">=</span> <span class="nv">ORIGINAL</span> <span class="nv">YOMICHAN</span> <span class="nv">TEMPLATE</span> <span class="nv">CODE</span> <span class="nv">BELOW</span> <span class="na">=============</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
 </details>
 </li>
@@ -1646,7 +1677,7 @@ add the following template code as follows:</p>
 <details class="examplecode">
 <summary>Click here to show the template code to copy.</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span> <span class="na">=============</span><span class="o">=</span> <span class="nv">ORIGINAL</span> <span class="nv">YOMICHAN</span> <span class="nv">TEMPLATE</span> <span class="nv">CODE</span> <span class="nv">ABOVE</span> <span class="na">==============</span><span class="o">=</span> <span class="m">~</span><span class="cp">}}</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.4</span>                                 <span class="m">~</span><span class="cp">}}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>                               <span class="nv">v1.0.5</span>                                 <span class="m">~</span><span class="cp">}}</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="cp">{{</span><span class="m m-Attribute">~!</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="na">=================</span><span class="o">=</span>
@@ -3017,28 +3048,14 @@ add the following template code as follows:</p>
 </details>
 </li>
 </ol>
-<p>There are a few common options that most people likely change.
-These options can be found at the very top of the handlebars.</p>
-<ul>
-<li>
-<p><code>opt-first-definition-type</code>:
-    By default, the handlebars exports bilingual cards.
-    Set this to <code>monolingual</code> for monolingual Anki cards.
-    <a href="../definitions/#primary-definition-selection-automatic">See here for more info</a>.</p>
-</li>
-<li>
-<p><code>opt-primary-def-one-dict-entry-only</code>:
-    This specifies whether something with multiple dictionary entries
-    has all entries exported into the primary definition, or only the first one.
-    Exports all entries by default (<code>false</code>).
-    If you only want to export one definition, set this to <code>true</code>.
-    <a href="../definitions/#exporting-only-one-dictionary-entry">See here for more info</a>.</p>
-</li>
-</ul>
+<h3 id="monolingual-definitions">Monolingual definitions<a class="headerlink" href="#monolingual-definitions" title="Permanent link">¶</a></h3>
+<p>By default, the handlebars exports bilingual cards.
+Set <code>opt-first-definition-type</code> to <code>monolingual</code> if you want monolingual Anki cards.
+<a href="../definitions/#primary-definition-selection-automatic">See here for more info</a>.</p>
 <hr>
 <h2 id="setup-fields">Setup Fields<a class="headerlink" href="#setup-fields" title="Permanent link">¶</a></h2>
 <details class="example">
-<summary>Video demo TODO <em>(click here)</em></summary>
+<summary>Video demo TODO <small>(click here)</small></summary>
 <p>TODO video</p>
 </details>
 <ol>
@@ -3080,7 +3097,7 @@ depending on the <code>opt-first-definition-type</code> option.</p>
 </tr>
 <tr>
 <td><code>{jpmn-utility-dictionaries}</code></td>
-<td>All dictionaries that fall outside the category of bilingual or monolingual. For example, JMedict, or JMdict Forms.</td>
+<td>All dictionaries that fall outside the category of bilingual or monolingual. For example, JMnedict or JMdict Forms.</td>
 </tr>
 </tbody>
 </table>
@@ -3118,7 +3135,7 @@ instead of within the function.</p>
 <p>Setting this option to <code>true</code> will no longer stylize the definition handlebars for jp-mining-note
 usage, and instead stylizes it to be virtually the same as Yomichan's default HTML structure.</p>
 <details class="example">
-<summary>Differences between default Yomichan format and JPMN plaintext <em>(click here)</em></summary>
+<summary>Differences between default Yomichan format and JPMN plaintext <small>(click here)</small></summary>
 <p>There are a few minor differences between Yomichan's format and these non-stylized definitions:</p>
 <ul>
 <li>The dictionary and tags are not italicized. This is to avoid seeing italic kanjis/kana.</li>
@@ -3189,14 +3206,14 @@ of the setting:</p>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <blockquote>
-<p>(旺文社国語辞典 第十一版) じゅう‐たん【△絨△毯・△絨△緞】<br>
+<p>じゅう‐たん【△絨△毯・△絨△緞】<br>
 床の敷物にする厚い毛織物。カーペット。「床に―を敷く」 <br>
 《季・冬》</p>
 </blockquote>
 </div>
 <div class="tabbed-block">
 <blockquote>
-<p>じゅう‐たん【△絨△毯・△絨△緞】<br>
+<p>(旺文社国語辞典 第十一版) じゅう‐たん【△絨△毯・△絨△緞】<br>
 床の敷物にする厚い毛織物。カーペット。「床に―を敷く」 <br>
 《季・冬》</p>
 </blockquote>
@@ -3247,7 +3264,7 @@ and is therefore incompatible with these handlebars.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
       
     
   </small>

@@ -967,6 +967,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
       
         <li class="md-nav__item">
+  <a href="#adding-options" class="md-nav__link">
+    Adding Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#available-options" class="md-nav__link">
     Available options
   </a>
@@ -1369,6 +1376,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
       
         <li class="md-nav__item">
+  <a href="#adding-options" class="md-nav__link">
+    Adding Options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#available-options" class="md-nav__link">
     Available options
   </a>
@@ -1483,7 +1497,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
     
       
     
-    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/master/docs/docs/runtimeoptions.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/webpack/docs/docs/runtimeoptions.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
@@ -1513,6 +1527,25 @@ Do not double-click the file.</p>
 </div>
 <p>TODO add demo for windows to opening the file &amp; editing</p>
 <hr>
+<h2 id="adding-options">Adding Options<a class="headerlink" href="#adding-options" title="Permanent link">¶</a></h2>
+<p>You can add a runtime option anywhere between the two outer-most curly brackets.
+For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">JPMNOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="c1">// Add your runtime options here.</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="s2">"autoPitchAccent.coloredPitchAccent.enabled"</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="c1">// ...</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should only add options that you want to override.
+This is to allow the default options to change, which usually
+only happens if the old option is no longer valid due to implementation details.
+In the rare occasion that default options do change, they will be recorded under the
+<a href="../setupchanges/">Setup Changes</a> page.</p>
+</div>
+<hr>
 <h2 id="available-options">Available options<a class="headerlink" href="#available-options" title="Permanent link">¶</a></h2>
 <p>All available options can be found in the
 <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/webpack/data/runtime_opts.json5">runtime_opts.json5</a>
@@ -1522,7 +1555,7 @@ file. (TODO not webpack branch!)</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This <code>json5</code> file is, strictly speaking, NOT an example configuration file.
-There are a few minor between the <code>runtime_opts.json5</code> file
+There are a few differences between the <code>runtime_opts.json5</code> file
 and the actual <code>_jpmn-opts.js</code> configuration file:</p>
 <ol>
 <li><code>runtime_opts.json5</code> does not have the <code>window.JPMNOptions</code> variable set at the very top.</li>
@@ -1532,13 +1565,13 @@ and the actual <code>_jpmn-opts.js</code> configuration file:</p>
 <p>The <code>overrides</code> key contains a dictionary that overrides the true value
 of the original key/value pair defined.
 For example,
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>"kanjiHover.enabled": true,
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>"overrides": {
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    "kanjiHover.enabled": false,
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>}
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>"kanjiHover.enabled": true,
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>"overrides": {
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    "kanjiHover.enabled": false,
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>}
 </code></pre></div>
 <p>renders in the built card as:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>"kanjiHover.enabled": false,
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>"kanjiHover.enabled": false,
 </code></pre></div>
 </li>
 </ol>
@@ -1552,25 +1585,25 @@ For example,
 <p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>All runtime options are formatted as a key/value pair.
 A simple example is the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"kanjiHover.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">"kanjiHover.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
 <p>In the above example, the key is <code>kanjiHover.enabled</code>, whereas the value is <code>true</code>.</p>
 <p>All runtime options can take special values, which are always formatted as the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDENTIFIER_STRING"</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="c1">// potentially extra arguments in "args": { ... }</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE</span><span class="p">,</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">},</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDENTIFIER_STRING"</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="c1">// potentially extra arguments in "args": { ... }</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE</span><span class="p">,</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">},</span>
 </code></pre></div>
 <p>For example, we can change the above <code>kanjiHover.enabled</code> to use this special value,
 with type type of <code>isMobile</code>:</p>
 <p>This can be changed to:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">"kanjiHover.enabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPC"</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// kanji hover is enabled on PC</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// kanji hover is not enabled on non-PC devices, i.e. mobile</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">},</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">"kanjiHover.enabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPC"</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// kanji hover is enabled on PC</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// kanji hover is not enabled on non-PC devices, i.e. mobile</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">},</span>
 </code></pre></div>
 <p>A full list of special option types is shown below.
 The source code for these can be found under src/ts/options.ts (TODO link).</p>
@@ -1578,18 +1611,18 @@ The source code for these can be found under src/ts/options.ts (TODO link).</p>
 <p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
 <p>The <code>isMobile</code> and <code>isPC</code> type allows you to specify different values depending if
 you are using Anki on a mobile device, or PC (non-mobile).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isMobile"</span><span class="p">,</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_MOBILE</span><span class="p">,</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_PC</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">},</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isMobile"</span><span class="p">,</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_MOBILE</span><span class="p">,</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_PC</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">},</span>
 </code></pre></div>
 <p><code>isPC</code> is the exact opposite of <code>isMobile</code>, and be used similarly.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPC"</span><span class="p">,</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_PC</span><span class="p">,</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_MOBILE</span><span class="p">,</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">},</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"isPC"</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_PC</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE_IF_MOBILE</span><span class="p">,</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">},</span>
 </code></pre></div>
 <h3 id="isiphoneipad"><code>isiPhoneiPad</code><a class="headerlink" href="#isiphoneipad" title="Permanent link">¶</a></h3>
 <p>TODO</p>
@@ -1601,15 +1634,15 @@ Note that the viewport width is read for each card flip.
 This means that viewport width changes after resizing a window will not be detected,
 and will only be updated when you flip the side or go to a new card.</p>
 <p>This is formatted as the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"viewportWidth"</span><span class="p">,</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">"op"</span><span class="p">:</span><span class="w"> </span><span class="err">MATH_OP</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="err">WIDTH</span><span class="p">,</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p">},</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">},</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"viewportWidth"</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="nt">"op"</span><span class="p">:</span><span class="w"> </span><span class="err">MATH_OP</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="err">WIDTH</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">  </span><span class="nt">"resultTrue"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="p">,</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="p">},</span>
 </code></pre></div>
 <p>TODO <code>MATH_OP</code> and <code>WIDTH</code></p>
 <h3 id="cardtype"><code>cardType</code><a class="headerlink" href="#cardtype" title="Permanent link">¶</a></h3>
@@ -1639,7 +1672,7 @@ and will only be updated when you flip the side or go to a new card.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
       
     
   </small>

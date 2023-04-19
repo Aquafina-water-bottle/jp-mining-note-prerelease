@@ -1535,7 +1535,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
     
       
     
-    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/master/docs/docs/setupeverythingelse.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/webpack/docs/docs/setupeverythingelse.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
@@ -1585,23 +1585,26 @@ in almost every aspect:</p>
 <li>They do not flood your clipboard.</li>
 <li>They do not require an extension that constantly polls the clipboard.</li>
 </ul>
-<p>However, it requires more specialized coordination between programs.</p>
+<p>However, it requires more specialized coordination between programs.
+Fortunately, most common workflows support websockets nowadays.</p>
 <details class="example">
-<summary>Resources <em>(click here)</em></summary>
+<summary>Resources <small>(click here)</small></summary>
 <ul>
 <li>
-<p><a href="https://github.com/Renji-XD/texthooker-ui"><strong>Renji's Texthooker Page</strong></a> (recommended)</p>
+<p><a href="https://github.com/Renji-XD/texthooker-ui"><strong>Renji's Texthooker Page</strong></a> <small>(recommended)</small></p>
 <ul>
-<li>I use <a href="../jpresources/#settings-css-for-renjis-texthooker">these settings</a> to make the text more compressed.</li>
+<li>Open source and more featureful alternative to the more popular Anacreon's texthooker page.</li>
 <li>This texthooker page comes with built in support for both websockets and
     clipboard inserter plugins.</li>
+<li>I use <a href="../jpresources/#settings-css-for-renjis-texthooker">these settings</a>
+    to make the text more compressed.</li>
 </ul>
 </li>
 <li>
-<p><a href="https://github.com/KamWithK/exSTATic/"><strong>exSTATic</strong></a> (recommended for stats lovers)</p>
+<p><a href="https://github.com/KamWithK/exSTATic/"><strong>exSTATic</strong></a> <small>(recommended for stats lovers)</small></p>
 <ul>
 <li>Its primary use is for automatic stats collection and visualizing said statistics.</li>
-<li>Integrates seamlessly with many workflows.</li>
+<li>Integrates seamlessly with many workflows, including non-texthooker related workflows.</li>
 <li>Uses a custom texthooker page, which connects with Textractor with its own custom extension.</li>
 <li>A video installation guide is available on the project's README page.</li>
 </ul>
@@ -1614,7 +1617,7 @@ in almost every aspect:</p>
 </ul>
 </details>
 <details class="example">
-<summary>Legacy Resources <em>(click here)</em></summary>
+<summary>Legacy Resources <small>(click here)</small></summary>
 <p>These resources are considered legacy, and I highly recommend using the
 standard resources above in favor of these.</p>
 <ul>
@@ -1635,7 +1638,7 @@ standard resources above in favor of these.</p>
     However, it will likely work for most other texthooker pages.</li>
 </ul>
 <details class="examplecode">
-<summary>Instructions to use the patch <em>(click here)</em></summary>
+<summary>Instructions to use the patch <small>(click here)</small></summary>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>This is a monkey patch, even according to the author. Now that better alternatives
@@ -1696,42 +1699,56 @@ have came out (see above), I recommend to use said alternatives.</p>
 via automated clipboard (copy/paste) tools.
 Most classic setups documented are for clipboard based texthooker pages.</p>
 <details class="example">
-<summary>Resources <em>(click here)</em></summary>
+<summary>Resources <small>(click here)</small></summary>
 <ul>
-<li><a href="https://github.com/kmltml/clipboard-inserter"><strong>Original Clipboard Inserter (Extension)</strong></a> (Chromium-based browsers)<ul>
-<li>WARNING: <a href="https://github.com/kmltml/clipboard-inserter/issues/14">No longer works on Firefox</a>
-    as of Firefox version 107.0. Use the extension below if you are using Firefox.</li>
+<li><a href="https://github.com/Onurtag/clipboard-inserter"><strong>Clipboard Inserter Redux (Extension)</strong></a><ul>
+<li>Updated version of the original Clipboard Inserter extension</li>
+<li>Still using manifest v2, so this extension will be deprecated in the future unless updated</li>
 </ul>
 </li>
-<li><a href="https://github.com/laplus-sadness/lap-clipboard-inserter"><strong>Lap Clipboard Inserter (Extension)</strong></a> (Firefox)<ul>
-<li>Updated version of the above.</li>
-<li>Works on Firefox, but Chrome (manifest 3) support is currently not supported.
-    Use the first extension if you are using a chromium based browser.</li>
+<li><a href="https://github.com/laplus-sadness/lap-clipboard-inserter"><strong>Lap Clipboard Inserter (Extension)</strong></a> <small>(Firefox)</small><ul>
+<li>Rewritten version of the original Clipboard Inserter extension, to use manifest v3</li>
+<li>Works on Firefox, but Chrome is
+    <a href="https://github.com/laplus-sadness/lap-clipboard-inserter#chrome">currently not supported</a>.
+    Use Clipboard Inserter Redux if you are using a chromium based browser.</li>
 </ul>
 </li>
-<li><a href="https://github.com/Renji-XD/texthooker-ui"><strong>Renji's Texthooker Page</strong></a> (recommended)<ul>
+<li><a href="https://github.com/Renji-XD/texthooker-ui"><strong>Renji's Texthooker Page</strong></a> <small>(recommended)</small><ul>
 <li>Open source and more featureful alternative to the more popular Anacreon's texthooker page.</li>
-<li>I use <a href="../jpresources/#settings-css-for-renjis-texthooker">these settings</a> to make the text more compressed.</li>
+<li>I use <a href="../jpresources/#settings-css-for-renjis-texthooker">these settings</a>
+    to make the text more compressed.</li>
+</ul>
+</li>
+</ul>
+</details>
+<details class="example">
+<summary>Guides <small>(click here)</small></summary>
+<ul>
+<li><a href="https://rentry.co/mining#browser">stegatxins0's mining guide: Texthooker</a> <small>(recommended)</small></li>
+<li><a href="https://learnjapanese.moe/vn/#playing-visual-novels-to-learn-japanese">TMW: Texthooker &amp; Visual Novels</a></li>
+<li><a href="https://rentry.co/lazyXel#clipboard-inserter">Lazy Guide: Texthooker</a></li>
+<li><a href="https://animecards.site/visualnovels/">Anime Cards: Texthooker &amp; Visual Novels</a></li>
+</ul>
+</details>
+<details class="example">
+<summary>Legacy Resources <small>(click here)</small></summary>
+<p>These resources are considered legacy, and I highly recommend using the
+standard resources above in favor of these.</p>
+<ul>
+<li><a href="https://github.com/kmltml/clipboard-inserter"><strong>Original Clipboard Inserter (Extension)</strong></a> <small>(WARNING: NO LONGER MAINTAINED!)</small><ul>
+<li>WARNING: <a href="https://github.com/kmltml/clipboard-inserter/issues/14">No longer works on Firefox</a>
+    as of Firefox version 107.0. Use either extensions above if you are using Firefox.</li>
 </ul>
 </li>
 <li><a href="https://anacreondjt.gitlab.io/docs/texthooker/"><strong>Anacreon's Texthooker Page</strong></a></li>
 <li><a href="https://learnjapanese.moe/texthooker.html"><strong>TMW's Texthooker Page</strong></a></li>
 </ul>
 </details>
-<details class="example">
-<summary>Guides <em>(click here)</em></summary>
-<ul>
-<li><a href="https://rentry.co/mining#browser">stegatxins0's mining guide: Texthooker</a> (recommended)</li>
-<li><a href="https://learnjapanese.moe/vn/#playing-visual-novels-to-learn-japanese">TMW: Texthooker &amp; Visual Novels</a></li>
-<li><a href="https://rentry.co/lazyXel#clipboard-inserter">Lazy Guide: Texthooker</a></li>
-<li><a href="https://animecards.site/visualnovels/">Anime Cards: Texthooker &amp; Visual Novels</a></li>
-</ul>
-</details>
 <hr>
 <h2 id="game-like-content-getting-text">Game-Like Content: Getting Text<a class="headerlink" href="#game-like-content-getting-text" title="Permanent link">¶</a></h2>
 <p>The following are primarily for text-heavy games, such as visual novels.</p>
 <details class="example">
-<summary>Resources <em>(click here)</em></summary>
+<summary>Resources <small>(click here)</small></summary>
 <ul>
 <li><a href="https://github.com/Artikash/Textractor">Textractor</a> (recommended)</li>
 <li><a href="https://github.com/0xDC00/agent">agent</a><ul>
@@ -1741,7 +1758,7 @@ Most classic setups documented are for clipboard based texthooker pages.</p>
 </ul>
 </details>
 <details class="example">
-<summary>Guides <em>(click here)</em></summary>
+<summary>Guides <small>(click here)</small></summary>
 <ul>
 <li><a href="https://learnjapanese.moe/vn-setup/">TMW: Installing Visual Novels</a></li>
 <li><a href="https://learnjapanese.moe/vn/#playing-visual-novels-to-learn-japanese">TMW: Texthooker &amp; Visual Novels</a></li>
@@ -1760,7 +1777,7 @@ Most classic setups documented are for clipboard based texthooker pages.</p>
 <h2 id="video-content-getting-text-sentence-audio-picture">Video Content: Getting Text, Sentence Audio, Picture<a class="headerlink" href="#video-content-getting-text-sentence-audio-picture" title="Permanent link">¶</a></h2>
 <p>Video content includes streamed content (Youtube, Netflix, etc.) and locally downloaded files.</p>
 <details class="example">
-<summary>Resources <em>(click here)</em></summary>
+<summary>Resources <small>(click here)</small></summary>
 <ul>
 <li><a href="https://github.com/Ajatt-Tools/mpvacious"><strong>mpvacious</strong></a> (recommended for downloaded videos / if you are using mpv)<ul>
 <li>Add-on for <a href="https://mpv.io/">MPV</a>, a cross platform media player. Personally tested.</li>
@@ -1772,13 +1789,15 @@ Most classic setups documented are for clipboard based texthooker pages.</p>
 </li>
 <li><a href="https://github.com/killergerbah/asbplayer"><strong>asbplayer</strong></a> (recommended for streamed sites)<ul>
 <li>Cross platform (chromium) browser video player. Personally tested.</li>
-<li>Codec support is based on the browser used.</li>
 <li>Works on video streaming sites, as well as downloaded videos.</li>
+<li>Does not require a texthooker: subtitles are displayed on the site itself.</li>
+<li>Codec support is limited, and depends on the browser used.</li>
 </ul>
 </li>
 <li><a href="https://github.com/animebook/animebook.github.io"><strong>Animebook</strong></a><ul>
 <li>Cross platform (chromium) browser video player.</li>
-<li>Codec support is based on the browser used.</li>
+<li>Does not require a texthooker: subtitles are displayed on the site itself.</li>
+<li>Codec support is limited, and depends on the browser used.</li>
 </ul>
 </li>
 <li>All of the above require subtitle files to function.
@@ -1816,7 +1835,7 @@ Most classic setups documented are for clipboard based texthooker pages.</p>
 </ul>
 </details>
 <details class="example">
-<summary>Guides <em>(click here)</em></summary>
+<summary>Guides <small>(click here)</small></summary>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=B60cj69MSmA&amp;ab_channel=mikumino">mikumino's mining workflow</a> (asbplayer + jp-mining-note)</li>
 <li><a href="https://docs.google.com/document/d/e/2PACX-1vQuEAoZFoJbULZzCJ3_tW7ayT_DcQl9eDlrXMnuPGTwDk62r5fQrXak3ayxBsEgkL85_Z-YY5W4yUom/pub">Shiki's mining workflow</a> (asbplayer)<ul>
@@ -1901,7 +1920,7 @@ As the name suggests, this works best on manga.</p>
 <p>As long as you're not using a scan (image-based), the text should already be available.
 Below will list a few ways to view these files in a browser to Yomichan.</p>
 <details class="example">
-<summary>Resources <em>(click here)</em></summary>
+<summary>Resources <small>(click here)</small></summary>
 <ul>
 <li><a href="https://reader.ttsu.app"><strong>ッツ Ebook Reader</strong></a> (EPUBs, HTMLZ) (recommended)</li>
 <li><a href="https://mozilla.github.io/pdf.js/web/viewer.html"><strong>Mozilla's PDF Viewer</strong></a> (PDF)</li>
@@ -1917,7 +1936,7 @@ Below will list a few ways to view these files in a browser to Yomichan.</p>
 </ul>
 </details>
 <details class="example">
-<summary>Guides <em>(click here)</em></summary>
+<summary>Guides <small>(click here)</small></summary>
 <ul>
 <li>Like with Mokuro,
     if you are on Android, this can be paired with
@@ -1970,7 +1989,7 @@ The primary example for this is game-like content.</p>
 <h2 id="resource-lists">Resource Lists<a class="headerlink" href="#resource-lists" title="Permanent link">¶</a></h2>
 <p>Other websites have significantly larger resource lists that may prove useful for you.</p>
 <details class="example">
-<summary>Resource Lists <em>(click here)</em></summary>
+<summary>Resource Lists <small>(click here)</small></summary>
 <ul>
 <li><a href="https://learnjapanese.moe/resources/">TheMoeWay</a></li>
 <li><a href="https://tatsumoto.neocities.org/blog/resources.html">Tatsumoto</a></li>
@@ -2051,7 +2070,7 @@ You will likely have to create the folder.</p>
 <p>To use asbplayer, add the card with Yomichan, and then update the created note with asbplayer.
     I recommend filling out the following fields as follows:</p>
 <details class="example">
-<summary>asbplayer fields <em>(click here)</em></summary>
+<summary>asbplayer fields <small>(click here)</small></summary>
 <table>
 <thead>
 <tr>
@@ -2164,7 +2183,7 @@ of creating the cards.</p></div>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
       
     
   </small>

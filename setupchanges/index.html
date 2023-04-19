@@ -1497,7 +1497,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
     
       
     
-    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/master/docs/docs/setupchanges.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/raw/webpack/docs/docs/setupchanges.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
@@ -1582,19 +1582,27 @@ To restore the previous behavior, use these runtime options:</p>
 <li>See <a href="../updating/#updating-yomichans-anki-card-format">here</a>
   for instructions on how to update Anki Card Format.</li>
 </ul>
-<h4 id="handlebars-jmdict-extra">Handlebars: JMdict Extra<a class="headerlink" href="#handlebars-jmdict-extra" title="Permanent link">¶</a></h4>
-<p><i><sup>Main Page: <a href="../setupyomichan/#fixing-jmdict-extra">Setup Yomichan: Fixing JMdict Extra</a></sup></i></p>
-<p>A new version of JMdict was released for Yomichan, called
-<a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMdict Extra</a>.
+<!--
+### Handlebars: JMdict Extra
+<i><sup>Main Page: [Setup Yomichan: Fixing JMdict Extra](setupyomichan.md#fixing-jmdict-extra)</sup></i>
+
+A new version of JMdict was released for Yomichan, called
+[JMdict Extra](https://github.com/Aquafina-water-bottle/jmdict-english-yomichan).
 This version of JMdict contains many things ontop of the the definition, including
-example sentences, antonyms, etc.</p>
-<p>When exporting this dictionary with default settings,
+example sentences, antonyms, etc.
+
+When exporting this dictionary with default settings,
 the entries are sometimes displayed in list format instead of compact format.
 If you want a consistently compact format, set the
-<code>opt-jmdict-list-format</code> Yomichan template option to <code>true</code>.
-For example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">"opt-jmdict-list-format"</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+`opt-jmdict-list-format` Yomichan template option to `true`.
+For example:
+
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
+
+-->
+
 <h3 id="frequency-display">Frequency Display<a class="headerlink" href="#frequency-display" title="Permanent link">¶</a></h3>
 <p>The frequency at the top right now defaults to using the FrequencySort value.
 This is because it is usually more useful to see a summary of the values,
@@ -1602,7 +1610,7 @@ instead of all the literal values itself.</p>
 <ul>
 <li>If you prefer the list display, see <a href="../frequencies/#list-mode">Frequencies: List Mode</a>.</li>
 <li>If you prefer the frequency sort display but you don't have a frequency sort value,
-    <a href="../importing/#6-optional-backfill-the-frequencysort-field">backfill the frequencies</a>.</li>
+    <a href="../importing/#backfill-the-frequencysort-field">backfill the frequencies</a>.</li>
 <li>If you prefer the frequency sort display but your frequency sort is somehow invalid:<ol>
 <li>Clear out your <code>FrequencySort</code> field entirely through the following command:
     <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python3 tools/batch.py clear_field "FrequencySort"
@@ -1685,7 +1693,7 @@ Full details of the changes can be found in the main
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
       
     
   </small>
