@@ -384,7 +384,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        Home (TODO)
       </a>
     </li>
   
@@ -715,8 +715,22 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
     <li class="md-nav__item">
+      <a href="../changingcardtype/" class="md-nav__link">
+        Changing Card Type (TODO)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cardtypes2/" class="md-nav__link">
-        More on Card Types
+        More on Card Types (TODO)
       </a>
     </li>
   
@@ -831,6 +845,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
         <li class="md-nav__item">
   <a href="#pitch-accent-display" class="md-nav__link">
     Pitch Accent Display
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache-tooltip-results" class="md-nav__link">
+    Cache Tooltip Results
   </a>
   
 </li>
@@ -976,17 +997,17 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_19" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_20" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_19" id="__nav_3_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="0">
           Options
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_19">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_20_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_20">
           <span class="md-nav__icon md-icon"></span>
           Options
         </label>
@@ -999,7 +1020,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../runtimeoptions/" class="md-nav__link">
-        Runtime Options
+        Runtime Options (TODO)
       </a>
     </li>
   
@@ -1013,7 +1034,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options
+        Compile-Time Options (TODO)
       </a>
     </li>
   
@@ -1111,7 +1132,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../customcss/" class="md-nav__link">
-        Custom CSS
+        Custom CSS (TODO)
       </a>
     </li>
   
@@ -1125,7 +1146,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../overrides/" class="md-nav__link">
-        Custom HTML (Overrides)
+        Custom HTML (Overrides) (TODO)
       </a>
     </li>
   
@@ -1139,7 +1160,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../modules/" class="md-nav__link">
-        Custom JS (Modules)
+        Custom JS (Modules) (TODO)
       </a>
     </li>
   
@@ -1153,7 +1174,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../moddingtips/" class="md-nav__link">
-        Tips & Tricks
+        Tips & Tricks (TODO)
       </a>
     </li>
   
@@ -1245,7 +1266,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts
+        Anki Scripts (TODO)
       </a>
     </li>
   
@@ -1299,6 +1320,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
         <li class="md-nav__item">
   <a href="#pitch-accent-display" class="md-nav__link">
     Pitch Accent Display
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache-tooltip-results" class="md-nav__link">
+    Cache Tooltip Results
   </a>
   
 </li>
@@ -1382,6 +1410,27 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
 </ul>
 <hr>
+<h2 id="cache-tooltip-results">Cache Tooltip Results<a class="headerlink" href="#cache-tooltip-results" title="Permanent link">¶</a></h2>
+<p>TODO</p>
+<ul>
+<li>problem: mobile (and anki-web) does not have access to Anki-Connect<ul>
+<li>yes, Android has AnkiConnect Android, but its implementation is incomplete</li>
+<li>even if it were complete, it is currently a lot slower than the standard desktop Anki-Connect</li>
+<li>kanji hover and word indicators fully depend on Anki-Connect in order to work!</li>
+</ul>
+</li>
+<li>solution: cache results of kanji hover and word indicators, into the <code>CardCache</code> field</li>
+<li>requires building the note!!!<ul>
+<li>may be implemented as a separate note in the future (so you can run the script within Anki)</li>
+</ul>
+</li>
+<li>also requires node (npx node)</li>
+</ul>
+<p>how to:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># assumption: the current note version has been successfully built</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>node<span class="w"> </span>./src/_js/jpmn_card_cache.js
+</code></pre></div>
+<hr>
 <h2 id="result-queries-categorization">Result Queries &amp; Categorization<a class="headerlink" href="#result-queries-categorization" title="Permanent link">¶</a></h2>
 <p>TODO add writeup on new.newest</p>
 <p>The exact results shown through Kanji Hover is not completely trivial,
@@ -1398,14 +1447,14 @@ Conversely, the first two categories (the non-new cards) represent words that yo
 know, so they are not greyed out.</p>
 <p>The exact numbers shown in each category can be changed in the
 <a href="../runtimeoptions/">runtime option</a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// maximum number of words per category</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">"tooltips.categoryMax.nonNew.oldest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nt">"tooltips.categoryMax.nonNew.newest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">"tooltips.categoryMax.new.oldest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nt">"tooltips.categoryMax.new.newest"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// maximum number of words per category</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">"tooltips.categoryMax.nonNew.oldest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">"tooltips.categoryMax.nonNew.newest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nt">"tooltips.categoryMax.new.oldest"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nt">"tooltips.categoryMax.new.newest"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
 </code></pre></div>
 <p>TODO: add this to each query to hide results from cards that are due today
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-(prop:due=0 -rated:1)
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>-(prop:due=0 -rated:1)
 </code></pre></div>
 <hr>
 <h2 id="results-sorting">Results Sorting<a class="headerlink" href="#results-sorting" title="Permanent link">¶</a></h2>
@@ -1424,12 +1473,13 @@ For example, suspended cards flagged as <code>green</code> are counted in the "n
 (known words), and suspended cards flagged as <code>red</code> are counted as words that you
 do not know AND will not study in the future (not shown in any category).
 This can be changed in the <a href="../runtimeoptions/">runtime options</a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>"tooltips.query.nonNew.base": "-is:new OR (is:suspended is:new flag:3)",
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>"tooltips.query.nonNew.hidden": "is:suspended flag:1",
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>"tooltips.query.nonNew.removed": "",
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>"tooltips.query.nonNew.base": "-is:new OR (is:suspended is:new flag:3)",
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>"tooltips.query.nonNew.hidden": "is:suspended flag:1",
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>"tooltips.query.nonNew.removed": "",
 </code></pre></div>
 <hr>
 <h2 id="customizing-sentences-pitch-accent">Customizing Sentences &amp; Pitch Accent<a class="headerlink" href="#customizing-sentences-pitch-accent" title="Permanent link">¶</a></h2>
+<p>TODO link to runtime options? or visa versa?</p>
 <p>Any <a href="../runtimeoptions/">runtime option</a> under the <code>sentParser</code> and <code>autoPA</code> group can be set under
 <code>tooltips.overrideOptions.sentenceParser</code> and
 <code>tooltips.overrideOptions.autoPitchAccent</code>
@@ -1447,12 +1497,12 @@ Therefore, only the <code>fullSent</code> group of options will affect the resul
 </div>
 <hr>
 <h2 id="highlight-the-word-within-the-tooltips">Highlight the word within the tooltips<a class="headerlink" href="#highlight-the-word-within-the-tooltips" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-4</code>)</i></sup></p>
 <p>Within the tooltips, the word within the sentence is not highlighted by default.
 This is to emphasize the importance of the kanji over the word.
 However, this comes at the cost of having to scan through the entire sentence to find the word.</p>
 <p>The following <a href="../runtimeoptions/">runtime option</a> re-enables the highlighted word:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"tooltips.highlightWordInSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">"tooltips.highlightWordInSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Highlighted</label><label for="__tabbed_1_2">Not Highlighted (default)</label></div>
 <div class="tabbed-content">
@@ -1471,7 +1521,7 @@ However, this comes at the cost of having to scan through the entire sentence to
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2023</span>
       
     
   </small>

@@ -384,7 +384,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
-        Home
+        Home (TODO)
       </a>
     </li>
   
@@ -786,6 +786,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#simpifying-the-definition-per-blockquote" class="md-nav__link">
+    Simpifying the definition per blockquote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#removing-the-first-line-algorithms-discussion" class="md-nav__link">
     Removing the first line: Algorithms Discussion
   </a>
@@ -868,8 +875,22 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
     <li class="md-nav__item">
+      <a href="../changingcardtype/" class="md-nav__link">
+        Changing Card Type (TODO)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cardtypes2/" class="md-nav__link">
-        More on Card Types
+        More on Card Types (TODO)
       </a>
     </li>
   
@@ -1057,17 +1078,17 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_19" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_20" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_19" id="__nav_3_19_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_20" id="__nav_3_20_label" tabindex="0">
           Options
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_19">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_20_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_20">
           <span class="md-nav__icon md-icon"></span>
           Options
         </label>
@@ -1080,7 +1101,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../runtimeoptions/" class="md-nav__link">
-        Runtime Options
+        Runtime Options (TODO)
       </a>
     </li>
   
@@ -1094,7 +1115,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options
+        Compile-Time Options (TODO)
       </a>
     </li>
   
@@ -1192,7 +1213,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../customcss/" class="md-nav__link">
-        Custom CSS
+        Custom CSS (TODO)
       </a>
     </li>
   
@@ -1206,7 +1227,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../overrides/" class="md-nav__link">
-        Custom HTML (Overrides)
+        Custom HTML (Overrides) (TODO)
       </a>
     </li>
   
@@ -1220,7 +1241,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../modules/" class="md-nav__link">
-        Custom JS (Modules)
+        Custom JS (Modules) (TODO)
       </a>
     </li>
   
@@ -1234,7 +1255,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../moddingtips/" class="md-nav__link">
-        Tips & Tricks
+        Tips & Tricks (TODO)
       </a>
     </li>
   
@@ -1326,7 +1347,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts
+        Anki Scripts (TODO)
       </a>
     </li>
   
@@ -1461,6 +1482,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#simpifying-the-definition-per-blockquote" class="md-nav__link">
+    Simpifying the definition per blockquote
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#removing-the-first-line-algorithms-discussion" class="md-nav__link">
     Removing the first line: Algorithms Discussion
   </a>
@@ -1542,37 +1570,60 @@ customizations for each individual dictionary.</p>
 and how to properly customize them for your setup.</p>
 <h3 id="expected-dictionary-placement">Expected Dictionary Placement<a class="headerlink" href="#expected-dictionary-placement" title="Permanent link">¶</a></h3>
 <p>Dictionaries from Yomichan are sorted into the following fields:</p>
-<ul>
-<li>
-<p><code>PrimaryDefinition</code>:
-    A dictionary specified by the user. Bilingual by default.</p>
-<p>This can be changed <a href="#primary-definition-selection">in many different ways</a>.</p>
-</li>
-<li>
-<p><code>SecondaryDefinition</code>:
-    All bilingual dictionaries outside of the one in <code>PrimaryDefinition</code></p>
-</li>
-<li>
-<p><code>ExtraDefinitions</code>:
-    All monolingual dictionaries outside of the one in <code>PrimaryDefinition</code></p>
-</li>
-<li>
-<p><code>UtilityDictionaries</code>:
+<!--
+* `PrimaryDefinition`:
+    A dictionary specified by the user. Bilingual by default.
+
+    This can be changed [in many different ways](#primary-definition-selection).
+
+* `SecondaryDefinition`:
+    All bilingual dictionaries outside of the one in `PrimaryDefinition`
+
+* `ExtraDefinitions`:
+    All monolingual dictionaries outside of the one in `PrimaryDefinition`
+
+* `UtilityDictionaries`:
     All traditionally-formatted dictionaries that
     do not belong in any of the above categories
-    (in other words, does not provide the meaning of the word).</p>
-<p>Some examples include:</p>
-<ul>
-<li><a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMdict Forms</a></li>
-<li><a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMedict</a></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This does not include pitch accent dictionaries, frequency lists, or kanji dictionaries,
-as these are not traditionally-formatted dictionaries.</p>
-</div>
-</li>
-</ul>
+    (in other words, does not provide the meaning of the word).
+
+    Some examples include:
+
+    - [JMdict Forms](https://github.com/Aquafina-water-bottle/jmdict-english-yomichan)
+    - [JMedict](https://github.com/Aquafina-water-bottle/jmdict-english-yomichan)
+
+    !!! note
+        This does not include pitch accent dictionaries, frequency lists, or kanji dictionaries,
+        as these are not traditionally-formatted dictionaries.
+
+-->
+
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PrimaryDefinition</td>
+<td>The highest priority monolingual or bilingual dictionary (depending on the value of <code>opt-first-definition-type</code>). If you want to manually select a different dictionary, see <a href="./#primary-definition-selection">here</a></td>
+</tr>
+<tr>
+<td>SecondaryDefinition</td>
+<td>All bilingual dictionaries outside of the one selected in the primary definition.</td>
+</tr>
+<tr>
+<td>ExtraDefinition</td>
+<td>All monolingual dictionaries outside of the one selected in the primary definition.</td>
+</tr>
+<tr>
+<td>UtilityDictionaries</td>
+<td>All dictionaries that fall outside the category of bilingual or monolingual. For example, <a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMnedict</a> or <a href="https://github.com/Aquafina-water-bottle/jmdict-english-yomichan">JMdict Forms</a>.</td>
+</tr>
+</tbody>
+</table>
 <p>The way that the dictionaries are sorted into the appropriate fields is by assigning
 a category to each individual dictionary.</p>
 <h3 id="verifying-categories">Verifying Categories<a class="headerlink" href="#verifying-categories" title="Permanent link">¶</a></h3>
@@ -1848,6 +1899,11 @@ Both of these can be automatically hidden with the following <a href="../runtime
 </div>
 </div>
 </div>
+<h3 id="simpifying-the-definition-per-blockquote">Simpifying the definition per blockquote<a class="headerlink" href="#simpifying-the-definition-per-blockquote" title="Permanent link">¶</a></h3>
+<ul>
+<li>TODO implement RTO</li>
+<li>TODO briefly document existing RTOs</li>
+</ul>
 <!--
 TODO find examples that this is useful for...
 
@@ -1890,7 +1946,7 @@ There are many ways to control exactly what content is removed, and in what way.
         meaning it hides the dictionary tag and the text to the right.
 
     ??? example "CSS to hide the entire first line for all dictionaries <small>(click here)</small>"
-        <sup><i>New in version `0.11.0.0` (latest version: `0.12.0.0-prerelease-2`)</i></sup>
+        <sup><i>New in version `0.11.0.0` (latest version: `0.12.0.0-prerelease-4`)</i></sup>
 
         1. Under `extra/style.scss`, add the following code:
 
@@ -1943,7 +1999,7 @@ There are many ways to control exactly what content is removed, and in what way.
     * This hides all the text to the right of the dictionary tag.
 
     ??? example "CSS to hide extra text <small>(click here)</small>"
-        <sup><i>New in version `0.11.0.0` (latest version: `0.12.0.0-prerelease-2`)</i></sup>
+        <sup><i>New in version `0.11.0.0` (latest version: `0.12.0.0-prerelease-4`)</i></sup>
 
         {{ css_oubunsha }}
 
@@ -2081,7 +2137,7 @@ There are many ways to control exactly what content is removed, and in what way.
 </li>
 </ul>
 <h3 id="when-html-can-break">When HTML can break<a class="headerlink" href="#when-html-can-break" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-4</code>)</i></sup></p>
 <p>TODO rework with the previous section</p>
 <p>In order to even have the possibility of removing the first line,
 the HTML is parsed with regex in order to find the text before the first line break.
@@ -2095,7 +2151,7 @@ be invalid HTML.</p>
 <p>If you do not plan on using this feature, you should set <code>opt-wrap-first-line-spans</code> to <code>false</code>
 to remove the possibility of invalid HTML.</p>
 <h3 id="hide-the-first-line-for-select-dictionaries">Hide the first line for select dictionaries<a class="headerlink" href="#hide-the-first-line-for-select-dictionaries" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-2</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-4</code>)</i></sup></p>
 <p>TODO rework with the previous sections</p>
 <p>The following two options are useful if you want to ignore certain problematic dictionaries,
 that do not play well with the regex above.</p>
@@ -2190,7 +2246,7 @@ instead of collapsing them.
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2023</span>
       
     
   </small>
