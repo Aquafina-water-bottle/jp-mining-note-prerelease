@@ -1094,20 +1094,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#how-to-directly-edit-the-css" class="md-nav__link">
-    Option 1: How to directly edit the CSS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-extend-the-css" class="md-nav__link">
-    Option 2: How to extend the CSS
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1302,20 +1288,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#how-to-directly-edit-the-css" class="md-nav__link">
-    Option 1: How to directly edit the CSS
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-extend-the-css" class="md-nav__link">
-    Option 2: How to extend the CSS
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1344,62 +1316,65 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
   <h1>Custom CSS (TODO)</h1>
 
-<div><p>TODO redo this entire page...</p>
+<div><p>TODO introduction</p>
 <ul>
-<li>videos for post-build setup</li>
-<li>link extra/style.scss to the correct setup</li>
-<li>link styles tab to the correct setup</li>
+<li>CSS: styles for the note</li>
+<li>can change font size, colors, hide elements, reposition certain elements, etc.</li>
 </ul>
 <hr>
 <h2 id="how-to-add-custom-css">How To Add Custom CSS<a class="headerlink" href="#how-to-add-custom-css" title="Permanent link">¶</a></h2>
-<p>If you have already read the <a href="../modding/">Modding Overview</a> page,
-you should already know that there are two ways of modding the note:</p>
+<p>There are two options to add custom CSS:</p>
 <ol>
 <li>
-<p>You can <a href="#option-1-how-to-directly-edit-the-css">directly edit the note's CSS</a>,
-    but lose all the changes you made when you update.</p>
-<p>This is the plug-and-play solution and requires no additional setup.</p>
+<p><strong>Edit the styles directly.</strong></p>
+<p>This is the recommended way for most people to modify the CSS.</p>
 </li>
 <li>
-<p><em>(Recommended)</em> <a href="#option-2-how-to-extend-the-css">Create new CSS files</a>,
-    which are built with the note to extend the current CSS.
-    This allows you to <strong>not lose changes</strong> between updates.</p>
-<p>Unfortunately, this <strong>requires additional setup</strong>, and will likely take some time to get working.</p>
+<p><strong>Add SCSS files.</strong></p>
+<p>These SCSS files are built with the note to extend the current CSS.</p>
+<p>This is recommended way for people who <a href="../building/">build the note</a>.</p>
 </li>
 </ol>
-<hr>
-<h2 id="how-to-directly-edit-the-css">Option 1: How to directly edit the CSS<a class="headerlink" href="#how-to-directly-edit-the-css" title="Permanent link">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When editing any of the style sheets below, it is recommended to append the given CSS code
-to the <em>very bottom</em> of the existing CSS instead of adding to the existing CSS.
-This is to avoid potential errors where the existing CSS may potentially override your custom CSS.
-This would also help with copying/pasting your CSS changes between updates.</p>
-</div>
-<ul>
+<!--
+
+You can [directly edit the note's CSS](#option-1-how-to-directly-edit-the-css),
+but lose all the changes you made when you update.
+
+If you want to keep CSS changes between updates, please only **add** CSS
+to the very end of the styles sheet.
+
+-->
+
+<details class="info">
+<summary>Option 1: Edit the styles directly <small>(click here)</small></summary>
+<p>TODO video</p>
+<ol>
 <li>
-<p>Any time <code>style.scss</code> is mentioned, edit the styles sheet in the Anki template.
-    This can be accessed by:</p>
+<p>Navigate to the following:</p>
 <blockquote>
 <p>(Main window) →  <code>Browse</code> →  <code>Cards...</code> (middle of the screen) →  <code>Styling</code> (top left)</p>
 </blockquote>
 </li>
 <li>
-<p>Any time <code>fields.scss</code> is mentioned, edit the <code>fields.css</code> file under the
-    <a href="../faq/#where-is-the-x-folder-in-anki">addons folder</a>:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Anki2/addons21/181103283/user_files/field.css
-</code></pre></div>
+<p>Scroll all the way to the bottom, and add any CSS to the bottom of the styles.</p>
 </li>
-<li>
-<p>Any time <code>editor.scss</code> is mentioned, edit the <code>editor.css</code> file under the
+</ol>
+</details>
+<!--
+
+* Any time `fields.scss` is mentioned, edit the `fields.css` file under the
+    [addons folder](faq.md#where-is-the-x-folder-in-anki):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Anki2/addons21/181103283/user_files/field.css
+</code></pre></div>
+
+* Any time `editor.scss` is mentioned, edit the `editor.css` file under the
     addons folder:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Anki2/addons21/181103283/user_files/editor.css
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Anki2/addons21/181103283/user_files/editor.css
 </code></pre></div>
-</li>
-</ul>
-<hr>
-<h2 id="how-to-extend-the-css">Option 2: How to extend the CSS<a class="headerlink" href="#how-to-extend-the-css" title="Permanent link">¶</a></h2>
-<p>TODO video!</p>
+-->
+
+<details class="info">
+<summary>Option 2: Add SCSS Files <small>(click here)</small></summary>
 <ol>
 <li>
 <p><a href="../building/">Build the note</a> if you haven't already, and ensure everything works.</p>
@@ -1409,8 +1384,8 @@ This would also help with copying/pasting your CSS changes between updates.</p>
     The project root is usually <code>jp-mining-note</code>.</p>
 </li>
 <li>
-<p>Add the folder to the end of <code>css-folders</code> in <code>config.py</code>.
-    This should result in the following:
+<p>Add the folder to the end of <code>css-folders</code> list in <code>config.py</code>.
+    For example:
     </p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>"css-folders": ["base", "responsive", "dictionaries", "extra"],
 </code></pre></div>
 <p>TODO update the exact folders</p>
@@ -1418,7 +1393,8 @@ This would also help with copying/pasting your CSS changes between updates.</p>
 <li>
 <p>Under the <code>extra</code> folder, use the following files to override the correct CSS:</p>
 <ul>
-<li><code>style.scss</code>: The main CSS for the card templates.</li>
+<li><code>style.scss</code>: The main CSS for the card templates.
+    This is likely the file you want to edit, when adding custom CSS.</li>
 <li><code>field.scss</code>: The CSS used by <a href="../setupanki/#css-injector">CSS injector</a>
     to customize individual fields.</li>
 <li><code>editor.scss</code>: The CSS used by CSS injector to customize the editor around the fields.</li>
@@ -1440,21 +1416,22 @@ for the folder to be valid.</p>
     The CSS should be automatically applied to the note.</p>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You might have noticed that this is the SCSS, not CSS.
-However, SCSS is complete superset of CSS
-(with some small exceptions).
-In other words, if you don't know any SCSS, you can write normal CSS
-and have it behave completely the same.</p>
-</div></div>
+</details>
+<!--
+!!! note
+    You might have noticed that this is the SCSS, not CSS.
+    However, SCSS is complete superset of CSS
+    (with some small exceptions).
+    In other words, if you don't know any SCSS, you can write normal CSS
+    and have it behave completely the same.
+--></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
       
     
   </small>

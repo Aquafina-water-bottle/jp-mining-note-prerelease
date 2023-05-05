@@ -647,6 +647,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#v0-12-0-0-multiple-devices" class="md-nav__link">
+    Updating Multiple Devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v0-12-0-0-handlebars" class="md-nav__link">
     Handlebars
   </a>
@@ -1401,6 +1408,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#v0-12-0-0-multiple-devices" class="md-nav__link">
+    Updating Multiple Devices
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v0-12-0-0-handlebars" class="md-nav__link">
     Handlebars
   </a>
@@ -1556,36 +1570,37 @@ Please set this to match your other fields.
 -->
 
 <h3 id="v0-12-0-0-config-rework">Config Rework<a class="headerlink" href="#v0-12-0-0-config-rework" title="Permanent link">¶</a></h3>
-<p>You will get the following warning on all cards:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>JPMNOptions was not defined in the options file. Was there an error?
+<!--
+
+You will get the following warning on all cards:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>JPMNOptions was not defined in the options file. Was there an error?
 </code></pre></div>
-<p>This is because the <code>_jpmn-options.js</code> runtime options file has been completely reworked,
+
+This is because the `_jpmn-options.js` runtime options file has been completely reworked,
 meaning your config will no longer work.
-To fix your config file, do one of the following:</p>
-<details class="info">
-<summary>Option 1: JPMN Manager <small>(click here)</small></summary>
-<p>Run the following <a href="../batch/">batch command</a>:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">replace_runtime_options_file_anki</span>
+To fix your config file, do one of the following:
+
+??? info "Option 1: JPMN Manager <small>(click here)</small>"
+    Run the following [batch command](batch.md):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">replace_runtime_options_file_anki</span>
 </code></pre></div>
-</details>
-<details class="info">
-<summary>Option 2: Command Line <small>(click here)</small></summary>
-<p>Run the following <a href="../batch/">batch command</a>:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">python3</span><span class="w"> </span>tools/batch.py<span class="w"> </span>replace_runtime_options_file
+
+??? info "Option 2: Command Line <small>(click here)</small>"
+    Run the following [batch command](batch.md):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">python3</span><span class="w"> </span>tools/batch.py<span class="w"> </span>replace_runtime_options_file
 </code></pre></div>
-</details>
-<details class="info">
-<summary>Option 3: Manually <small>(click here)</small></summary>
-<ol>
-<li><a href="../runtimeoptions/#accessing-editing">Locate the <code>_jpmn-options.js</code> file</a>.</li>
-<li>Make a backup of this file, say, by copying the file into your <code>Documents</code> folder.</li>
-<li>
-<p>Edit the file with your favorite text editor, and replace its contents entirely with the following:</p>
-<div class="highlight"><span class="filename">_jpmn-options.js</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">JPMNOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+
+??? info "Option 3: Manually <small>(click here)</small>"
+
+    1. [Locate the `_jpmn-options.js` file](runtimeoptions.md#accessing-editing).
+    1. Make a backup of this file, say, by copying the file into your `Documents` folder.
+    1. Edit the file with your favorite text editor, and replace its contents entirely with the following:
+
+        <div class="highlight"><span class="filename">_jpmn-options.js</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">JPMNOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="c1">// Insert any runtime options here! They should be of the form:</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="c1">//</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="c1">//     "key": value,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="c1">//     &quot;key&quot;: value,</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="c1">//</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1">// To see all available options, visit the following link: (TODO non prerelease!)</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="c1">// https://aquafina-water-bottle.github.io/jp-mining-note-prerelease/runtimeoptions/#available-options</span>
@@ -1594,31 +1609,96 @@ To fix your config file, do one of the following:</p>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="c1">// To enable them, remove the `//` characters before the key: value pair.</span>
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
 <a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="c1">// Enables colored pitch accent</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="c1">//"autoPitchAccent.coloredPitchAccent.enabled": true,</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="c1">//&quot;autoPitchAccent.coloredPitchAccent.enabled&quot;: true,</span>
 <a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
 <a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="c1">// Enables image blur</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="c1">//"imgStylizer.mainImage.blur.enabled": true,</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="c1">//&quot;imgStylizer.mainImage.blur.enabled&quot;: true,</span>
 <a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
 <a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="c1">// Hides the first line of most definitions, as well as the number in the list</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="c1">//"blockquotes.simplifyDefinitions.enabled": true,</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="c1">//&quot;blockquotes.simplifyDefinitions.enabled&quot;: true,</span>
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="p">}</span>
 </code></pre></div>
-</li>
-</ol>
-</details>
-<p>Afterwards, re-add any runtime options you had changed before.
+
+Afterwards, re-add any runtime options you had changed before.
+The runtime options file can be found [here](runtimeoptions.md#accessing-editing).
+-->
+
+<p>The <code>_jpmn-options.js</code> runtime options file has been completely reworked,
+meaning your config will no longer work.
+With this update, the file has been replaced automatically.
 The runtime options file can be found <a href="../runtimeoptions/#accessing-editing">here</a>.</p>
-<p>Common runtime-options (pitch accent coloring and image blur) are included as examples;
+<p>If you have edited your runtime options before, you will need to re-enable them.
+Common runtime-options (pitch accent coloring and image blur) are included as examples;
 remove the comment to re-enable them.
 To see all available runtime options, see
 <a href="../runtimeoptions/#available-options">Runtime Options: Available Options</a>.</p>
+<p>A backup of your previous runtime options should be made.
+The location of the backup is different depending on the updating method used:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">JPMN Manager</label><label for="__tabbed_1_2">Command Line</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Anki2/addons21/1732829476/user_files/backup
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>(repo root)/backup
+</code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For people using pitch accent coloring, the entire card is now highlighted with the pitch accent group.
 To restore the previous behavior, use these runtime options:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
+</div>
+<h3 id="v0-12-0-0-multiple-devices">Updating Multiple Devices<a class="headerlink" href="#v0-12-0-0-multiple-devices" title="Permanent link">¶</a></h3>
+<p>A common issue with updating multiple devices (for example, updating your phone)
+is that the new runtime options file may not be synced properly.
+This will lead into one of two behaviors:</p>
+<ul>
+<li>On anything that is not AnkiMobile, you will get the following warning:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>JPMNOptions was not defined in the options file. Was there an error?
+</code></pre></div></li>
+<li>On AnkiMobile, no javascript is ran, meaning the mobile tabs will not work.</li>
+</ul>
+<p>The official documentation says that
+<a href="https://docs.ankiweb.net/syncing.html?highlight=sync%20media#media">adding or removing a media file</a>
+should fix this issue.
+However, I received various reports from people saying this does not work.
+A <a href="https://forums.ankiweb.net/t/how-to-sync-updated-css-external-file/5455/3">fool-proof workaround</a>
+that is guaranteed to work is documented below.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Batch Commands</label><label for="__tabbed_2_2">Manually</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Make sure all devices are synced.</li>
+<li>Run the following {{ BATCH_COMMAND }}:
+    <code>move_runtime_options_file_to_temp</code></li>
+<li>Sync to AnkiWeb</li>
+<li>Run the following {{ BATCH_COMMAND }}:
+    <code>move_runtime_options_file_to_original</code></li>
+<li>Sync to AnkiWeb</li>
+<li>On all other devices, sync from AnkiWeb</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>Make sure all devices are synced.</li>
+<li>Run the following {{ BATCH_COMMAND }}:
+    Rename the <code>_jpmn-options.js</code> file to something different manually,
+    i.e. <code>_jpmn-options-TEMP.js</code>.</li>
+<li>Sync to AnkiWeb</li>
+<li>Run the following {{ BATCH_COMMAND }}:
+    Rename the temporary file (in the example above: <code>_jpmn-options-TEMP.js</code>)
+    to the original name (<code>_jpmn-options.js</code>).</li>
+<li>Sync to AnkiWeb</li>
+<li>On all other devices, sync from AnkiWeb</li>
+</ol>
+</div>
+</div>
 </div>
 <h3 id="v0-12-0-0-handlebars">Handlebars<a class="headerlink" href="#v0-12-0-0-handlebars" title="Permanent link">¶</a></h3>
 <p>Yomichan's Handlebars has been updated, with some new markers and features being added.</p>
@@ -1656,7 +1736,7 @@ If you want a consistently compact format, set the
 For example:
 
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
 
 -->
@@ -1671,7 +1751,7 @@ instead of all the literal values itself.</p>
     <a href="../importing/#backfill-the-frequencysort-field">backfill the frequencies</a>.</li>
 <li>If you prefer the frequency sort display but your frequency sort is somehow invalid:<ol>
 <li>Clear out your <code>FrequencySort</code> field entirely through the following command:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3 tools/batch.py clear_field "FrequencySort"
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>python3 tools/batch.py clear_field "FrequencySort"
 </code></pre></div></li>
 <li><a href="../importing/#backfill-the-frequencysort-field">Backfill the frequencies</a>.</li>
 </ol>
@@ -1759,7 +1839,7 @@ Full details of the changes can be found in the main
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 3, 2023</span>
       
     
   </small>
