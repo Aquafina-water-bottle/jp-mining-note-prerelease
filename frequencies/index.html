@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sorting-by-frequency" class="md-skip">
+        <a href="#unknown-frequency" class="md-skip">
           Skip to content
         </a>
       
@@ -544,8 +544,51 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
     <li class="md-nav__item">
-      <a href="../setupeverythingelse/" class="md-nav__link">
-        Setup: Everything Else
+      <a href="../setuptextmedia/" class="md-nav__link">
+        Setup: Text & Media
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          Extra Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Extra Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupextrayomichan/" class="md-nav__link">
+        Extra: Yomichan
       </a>
     </li>
   
@@ -558,8 +601,50 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
     <li class="md-nav__item">
-      <a href="../setupother/" class="md-nav__link">
-        Setup: Other
+      <a href="../setupextraanki/" class="md-nav__link">
+        Extra: Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupandroid/" class="md-nav__link">
+        Extra: Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupios/" class="md-nav__link">
+        Extra: iOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupereaders/" class="md-nav__link">
+        Extra: eReaders
       </a>
     </li>
   
@@ -579,6 +664,42 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 
             
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -603,6 +724,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
       <a href="../setupchanges/" class="md-nav__link">
         Setup Changes
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -875,6 +1003,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unknown-frequency" class="md-nav__link">
+    Unknown Frequency
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#sorting-by-frequency" class="md-nav__link">
@@ -1302,6 +1437,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#unknown-frequency" class="md-nav__link">
+    Unknown Frequency
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sorting-by-frequency" class="md-nav__link">
     Sorting by Frequency
   </a>
@@ -1362,6 +1504,19 @@ at the top right corner.</p>
 All other frequencies can be viewed by hovering over the dropdown arrow.</p>
 <p>(TODO gif)</p>
 <hr>
+<h2 id="unknown-frequency">Unknown Frequency<a class="headerlink" href="#unknown-frequency" title="Permanent link">¶</a></h2>
+<p>TODO image of unknown</p>
+<ul>
+<li>TODO if you see "unknown" at the top right of all your cards, you likely don't have any frequency list installed</li>
+<li>"unknown" shows if both FrequenciesStylized and FrequencySort are not filled</li>
+<li>recommend <a href="../importing/#backfill-the-frequencysort-field">backfilling</a> existing cards</li>
+<li>if you don't want to see "unknown", you can remove with <a href="../customcss/">CSS</a>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">.</span><span class="nc">frequencies</span><span class="w"> </span><span class="o">[</span><span class="nt">data-is-unknown</span><span class="o">]</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<hr>
 <h2 id="sorting-by-frequency">Sorting by Frequency<a class="headerlink" href="#sorting-by-frequency" title="Permanent link">¶</a></h2>
 <p>This note type comes with a <code>FrequencySort</code> field,
 which is the equivalent of Marv's <code>Frequency</code> field in
@@ -1382,22 +1537,23 @@ to see exactly that.</p>
 <p>Older versions of the note displayed the frequencies similarly to
 Yomichan: as a list of existing frequencies.
 If you wish to do this, set the following <a href="../runtimeoptions/">runtime option</a> to <code>list-all</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"freqUtils.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list-all"</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">"freqUtils.displayMode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list-all"</span><span class="p">,</span>
 </code></pre></div>
-<p>(TODO IMAGE)</p>
+<p>(TODO GIF with dropdown)</p>
 <h3 id="list-mode-maximum">List Mode Maximum<a class="headerlink" href="#list-mode-maximum" title="Permanent link">¶</a></h3>
 <p>The list mode defaults to showing a total of 4 frequencies by default,
 before overflowing into the dropdown.
 This limit can be changed with the following <a href="../runtimeoptions/">runtime option</a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">"freqUtils.listAll.max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
-</code></pre></div></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"freqUtils.listAll.max"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+</code></pre></div>
+<p>(TODO IMAGE without dropdown)</p></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 9, 2023</span>
       
     
   </small>

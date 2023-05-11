@@ -544,8 +544,51 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
     <li class="md-nav__item">
-      <a href="../setupeverythingelse/" class="md-nav__link">
-        Setup: Everything Else
+      <a href="../setuptextmedia/" class="md-nav__link">
+        Setup: Text & Media
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          Extra Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Extra Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupextrayomichan/" class="md-nav__link">
+        Extra: Yomichan
       </a>
     </li>
   
@@ -558,8 +601,50 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
     <li class="md-nav__item">
-      <a href="../setupother/" class="md-nav__link">
-        Setup: Other
+      <a href="../setupextraanki/" class="md-nav__link">
+        Extra: Anki
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupandroid/" class="md-nav__link">
+        Extra: Android
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupios/" class="md-nav__link">
+        Extra: iOS
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setupereaders/" class="md-nav__link">
+        Extra: eReaders
       </a>
     </li>
   
@@ -579,6 +664,42 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 
             
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Updating
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Updating
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -603,6 +724,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
       <a href="../setupchanges/" class="md-nav__link">
         Setup Changes
       </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -963,26 +1091,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
   <a href="#comment-field" class="md-nav__link">
     Comment field
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-ruby-positioning" class="md-nav__link">
-    Fix Ruby Positioning (for legacy Anki versions)
-  </a>
-  
-    <nav class="md-nav" aria-label="Fix Ruby Positioning (for legacy Anki versions)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-this-happens" class="md-nav__link">
-    Why this happens
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1398,26 +1506,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
       
         <li class="md-nav__item">
-  <a href="#fix-ruby-positioning" class="md-nav__link">
-    Fix Ruby Positioning (for legacy Anki versions)
-  </a>
-  
-    <nav class="md-nav" aria-label="Fix Ruby Positioning (for legacy Anki versions)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#why-this-happens" class="md-nav__link">
-    Why this happens
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#remove-the-na-on-cards-with-no-pitch-accents" class="md-nav__link">
     Remove the "(N/A)" on cards with no pitch accents
   </a>
@@ -1546,43 +1634,52 @@ I personally like using this field to test handlebars from Yomichan.</p>
 <p>This is named <code>Comment</code> in reference to comments in code (comments do not change
 the execution of the code).</p>
 <hr>
-<h2 id="fix-ruby-positioning">Fix Ruby Positioning <small>(for legacy Anki versions)</small><a class="headerlink" href="#fix-ruby-positioning" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-5</code>)</i></sup></p>
-<p>If the furigana appears higher than normal on your card,
-the following <a href="../runtimeoptions/">runtime option</a> serves as a quick fix to lower the furigana:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">"fixRubyPositioning.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<!--
+
+# Fix Ruby Positioning <small>(for legacy Anki versions)</small> { #fix-ruby-positioning }
+<sup><i>New in version `0.11.0.0` (latest version: `0.12.0.0-prerelease-6`)</i></sup>
+
+If the furigana appears higher than normal on your card,
+the following [runtime option](runtimeoptions.md) serves as a quick fix to lower the furigana:
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&quot;fixRubyPositioning.enabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
-<p>See the pictures below to compare between furigana positions.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Higher than Normal</label><label for="__tabbed_1_2">Quick Fix</label><label for="__tabbed_1_3">Normal</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="../assets/uicustomization/fixruby/qt5.png"><img alt="" src="../assets/uicustomization/fixruby/qt5.png"></a></p>
-</div>
-<div class="tabbed-block">
-<p><a href="../assets/uicustomization/fixruby/quickfix.png"><img alt="" src="../assets/uicustomization/fixruby/quickfix.png"></a></p>
-</div>
-<div class="tabbed-block">
-<p><a href="../assets/uicustomization/fixruby/normal.png"><img alt="" src="../assets/uicustomization/fixruby/normal.png"></a></p>
-</div>
-</div>
-</div>
-<h3 id="why-this-happens">Why this happens<a class="headerlink" href="#why-this-happens" title="Permanent link">¶</a></h3>
-<p>There are a few reasons why this can happen:</p>
-<ol>
-<li>Your Anki version is 2.1.49 or below.</li>
-<li>Your Anki version is 2.1.50 and above, but using the older Qt5 version.</li>
-<li>You are using AnkiMobile.</li>
-</ol>
-<p>If you have this issue with the desktop version of Anki,
+
+See the pictures below to compare between furigana positions.
+
+=== "Higher than Normal"
+    [![](assets/uicustomization/fixruby/qt5.png)](assets/uicustomization/fixruby/qt5.png)
+
+=== "Quick Fix"
+    [![](assets/uicustomization/fixruby/quickfix.png)](assets/uicustomization/fixruby/quickfix.png)
+
+=== "Normal"
+    [![](assets/uicustomization/fixruby/normal.png)](assets/uicustomization/fixruby/normal.png)
+
+
+## Why this happens
+
+There are a few reasons why this can happen:
+
+1. Your Anki version is 2.1.49 or below.
+1. Your Anki version is 2.1.50 and above, but using the older Qt5 version.
+1. You are using AnkiMobile.
+
+If you have this issue with the desktop version of Anki,
 it is recommended that you update a version with Qt6 support.
-This will allow the furigana to behave as expected.</p>
-<p>If you are unable to do that for any reason, or you are using AnkiMobile,
-this option serves as a quick <em>but imperfect</em> fix to make the furigana lower.
+This will allow the furigana to behave as expected.
+
+If you are unable to do that for any reason, or you are using AnkiMobile,
+this option serves as a quick *but imperfect* fix to make the furigana lower.
 This fix is imperfect because it adds even more spacing to the left and right than normal
-if the furigana text is too long.</p>
-<hr>
+if the furigana text is too long.
+
+---
+
+-->
+
 <h2 id="remove-the-na-on-cards-with-no-pitch-accents">Remove the "(N/A)" on cards with no pitch accents<a class="headerlink" href="#remove-the-na-on-cards-with-no-pitch-accents" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-5</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-6</code>)</i></sup></p>
 <p>If the word has no pitch accent, the pitch accent is usually displayed as <code>(N/A)</code>.
 This indicator can be removed with the following <a href="../customcss/">CSS</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">.</span><span class="nc">dh-left__word-pitch-text</span><span class="p">:</span><span class="nd">empty</span><span class="p">:</span><span class="nd">before</span><span class="w"> </span><span class="p">{</span>
@@ -1633,8 +1730,8 @@ the color for night mode. You must use <code>.night_mode</code>.</p>
 </div>
 <hr>
 <h2 id="removing-the-word-sentence-at-the-top-of-the-back-side">Removing the word / sentence at the top of the back side<a class="headerlink" href="#removing-the-word-sentence-at-the-top-of-the-back-side" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-5</code>)</i></sup></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Hidden tested content</label><label for="__tabbed_2_2">Shown tested content <small>(default)</small></label></div>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-6</code>)</i></sup></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Hidden tested content</label><label for="__tabbed_1_2">Shown tested content <small>(default)</small></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>TODO image</p>
@@ -1689,7 +1786,7 @@ so the text still stands out compared to other text.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 9, 2023</span>
       
     
   </small>
