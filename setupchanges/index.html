@@ -1020,6 +1020,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#font-size-changes" class="md-nav__link">
+    Font Size Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v0-12-0-0-final-steps" class="md-nav__link">
     Final Steps
   </a>
@@ -1927,6 +1934,13 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
+  <a href="#font-size-changes" class="md-nav__link">
+    Font Size Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v0-12-0-0-final-steps" class="md-nav__link">
     Final Steps
   </a>
@@ -2028,83 +2042,12 @@ please check here first! If you can't find any solution,
 including an entire backend javascript rework.
 See the <a href="../updating/#overview">Updating</a> page on how to update the note.
 Afterwards, see below for the other necessary changes that must be made to properly update the note.</p>
-<!--
-## Field Font Size
-TODO: batch commands
-
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>set_font_sizes
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>set_fonts_to_key_font
-</code></pre></div>
-
-The fields within the note editor may look a bit off, due to the font and font sizes being wrong.
-When Anki-Connect finally updates, these fonts will be changed automatically upon installation.
-However, until then, it will have to be done manually.
-All info about the field font sizes should be found in the [fields table](fields.md).
-
-Additionally, all new fields will have the default font, which likely
-does not display Japanese characters correctly.
-Please set this to match your other fields.
--->
-
 <h3 id="v0-12-0-0-config-rework">Config Rework<a class="headerlink" href="#v0-12-0-0-config-rework" title="Permanent link">¶</a></h3>
-<!--
-
-You will get the following warning on all cards:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>JPMNOptions was not defined in the options file. Was there an error?
-</code></pre></div>
-
-This is because the `_jpmn-options.js` runtime options file has been completely reworked,
-meaning your config will no longer work.
-To fix your config file, do one of the following:
-
-??? info "Option 1: JPMN Manager <small>(click here)</small>"
-    Run the following [batch command](batch.md):
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">replace_runtime_options_file_anki</span>
-</code></pre></div>
-
-??? info "Option 2: Command Line <small>(click here)</small>"
-    Run the following [batch command](batch.md):
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">python3</span><span class="w"> </span>tools/batch.py<span class="w"> </span>replace_runtime_options_file
-</code></pre></div>
-
-??? info "Option 3: Manually <small>(click here)</small>"
-
-    1. [Locate the `_jpmn-options.js` file](runtimeoptions.md#accessing-editing).
-    1. Make a backup of this file, say, by copying the file into your `Documents` folder.
-    1. Edit the file with your favorite text editor, and replace its contents entirely with the following:
-
-        <div class="highlight"><span class="filename">_jpmn-options.js</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">window</span><span class="p">.</span><span class="nx">JPMNOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="c1">// Insert any runtime options here! They should be of the form:</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="c1">//</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="c1">//     &quot;key&quot;: value,</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="c1">//</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1">// To see all available options, visit the following link: (TODO non prerelease!)</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">  </span><span class="c1">// https://aquafina-water-bottle.github.io/jp-mining-note-prerelease/runtimeoptions/#available-options</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="c1">//</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="c1">// Some common examples are shown below.</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">  </span><span class="c1">// To enable them, remove the `//` characters before the key: value pair.</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="c1">// Enables colored pitch accent</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="c1">//&quot;autoPitchAccent.coloredPitchAccent.enabled&quot;: true,</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="c1">// Enables image blur</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">  </span><span class="c1">//&quot;imgStylizer.mainImage.blur.enabled&quot;: true,</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">  </span><span class="c1">// Hides the first line of most definitions, as well as the number in the list</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">  </span><span class="c1">//&quot;blockquotes.simplifyDefinitions.enabled&quot;: true,</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="p">}</span>
-</code></pre></div>
-
-Afterwards, re-add any runtime options you had changed before.
-The runtime options file can be found [here](runtimeoptions.md#accessing-editing).
--->
-
 <p>The <code>_jpmn-options.js</code> runtime options file has been completely reworked,
 meaning your config will no longer work.
 With this update, the file has been replaced automatically.
 The runtime options file can be found <a href="../runtimeoptions/#accessing-editing">here</a>.</p>
-<p>If you have edited your runtime options before, you will need to re-enable them.
+<p>If you have changed any runtime options before, you will need change them again.
 Common runtime-options (pitch accent coloring and image blur) are included as examples;
 remove the comment to re-enable them.
 To see all available runtime options, see
@@ -2114,11 +2057,11 @@ The location of the backup is different depending on the updating method used:</
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">JPMN Manager</label><label for="__tabbed_1_2">Command Line</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Anki2/addons21/1732829476/user_files/backup
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Anki2/addons21/1732829476/user_files/backup
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>(repo root)/backup
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(repo root)/backup
 </code></pre></div>
 </div>
 </div>
@@ -2127,8 +2070,8 @@ The location of the backup is different depending on the updating method used:</
 <p class="admonition-title">Note</p>
 <p>For people using pitch accent coloring, the entire card is now highlighted with the pitch accent group.
 To restore the previous behavior, use these runtime options:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.fullSentence"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">"autoPitchAccent.coloredPitchAccent.color.definitions"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 </code></pre></div>
 </div>
 <h3 id="v0-12-0-0-multiple-devices">Updating Multiple Devices<a class="headerlink" href="#v0-12-0-0-multiple-devices" title="Permanent link">¶</a></h3>
@@ -2136,7 +2079,7 @@ To restore the previous behavior, use these runtime options:</p>
 is that the new runtime options file may not be synced properly.
 In the case that the file is not synced properly,
 you will get the following warning:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>JPMNOptions was not defined in the options file. Was there an error?
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>JPMNOptions was not defined in the options file. Was there an error?
 </code></pre></div>
 <p>The official documentation says that
 <a href="https://docs.ankiweb.net/syncing.html?highlight=sync%20media#media">adding or removing a media file</a>
@@ -2151,7 +2094,7 @@ that is guaranteed to work is documented below.</p>
 <li>Make sure all devices are synced.</li>
 <li>
 <p>Run the following <a href="../batch/">batch command</a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>move_runtime_options_file_to_temp
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>move_runtime_options_file_to_temp
 </code></pre></div>
 </li>
 <li>
@@ -2159,7 +2102,7 @@ that is guaranteed to work is documented below.</p>
 </li>
 <li>
 <p>Run the following <a href="../batch/">batch command</a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>move_runtime_options_file_to_original
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>move_runtime_options_file_to_original
 </code></pre></div>
 </li>
 <li>
@@ -2218,7 +2161,7 @@ If you want a consistently compact format, set the
 For example:
 
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="cp">{{</span><span class="m m-Attribute">~set</span> <span class="s2">&quot;opt-jmdict-list-format&quot;</span> <span class="nv">true</span> <span class="m">~</span><span class="cp">}}</span>
 </code></pre></div>
 
 -->
@@ -2234,7 +2177,7 @@ instead of all the literal values itself.</p>
     <a href="../importing/#backfill-the-frequencysort-field">backfill the frequencies</a>.</li>
 <li>If you prefer the frequency sort display but your frequency sort is somehow invalid:<ol>
 <li>Clear out your <code>FrequencySort</code> field entirely through the following command:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>python3 tools/batch.py clear_field "FrequencySort"
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3 tools/batch.py clear_field "FrequencySort"
 </code></pre></div></li>
 <li><a href="../importing/#backfill-the-frequencysort-field">Backfill the frequencies</a>.</li>
 </ol>
@@ -2249,9 +2192,34 @@ you can set a field to be collapsed by default by heading over to:</p>
 <p>Feel free to automatially collapse any fields you don't use, or very rarely use.
 The fields that are collapsed by default can be found <a href="../fields/">here</a>.</p>
 <h3 id="v0-12-0-0-custom-scss">Custom SCSS<a class="headerlink" href="#v0-12-0-0-custom-scss" title="Permanent link">¶</a></h3>
-<p>For people who are using custom SCSS (usually through <code>src/scss/extra</code>),
+<p>For people who are using custom SCSS (usually through <code>src/scss/extra</code>, when building the note),
 it is now recommended that the <code>extra</code> folder is moved to the <code>overrides/scss</code> folder.
 This is purely a stylistic change, to better separate user-defined changes and source code.</p>
+<h3 id="font-size-changes">Font Size Changes<a class="headerlink" href="#font-size-changes" title="Permanent link">¶</a></h3>
+<p>The default font sizes of certain sections have been changed to be a bit bigger,
+in order to make kanji more readable.
+If you prefer the smaller font sizes, use the following <a href="../customcss/">CSS</a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">.</span><span class="nc">hover-tooltip__word-div</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="k">font-size</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">}</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="p">.</span><span class="nc">hover-tooltip__word-div</span><span class="w"> </span><span class="nt">b</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--bold-font-weight</span><span class="p">);</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">.</span><span class="nc">hover-tooltip__card--sentence-only</span><span class="w"> </span><span class="p">.</span><span class="nc">hover-tooltip__sent-div</span><span class="w"> </span><span class="nt">b</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="k">font-weight</span><span class="p">:</span><span class="w"> </span><span class="nf">var</span><span class="p">(</span><span class="nv">--bold-font-weight</span><span class="p">);</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">}</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="w">  </span><span class="nv">--glossary-font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">1.125</span><span class="kt">rem</span><span class="p">;</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="p">}</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">850px</span><span class="o">),</span><span class="w"> </span><span class="o">(</span><span class="nt">max-height</span><span class="o">:</span><span class="w"> </span><span class="nt">700px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="w">  </span><span class="p">:</span><span class="nd">root</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">    </span><span class="nv">--glossary-font-size</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9375</span><span class="kt">rem</span><span class="p">;</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="p">}</span>
+</code></pre></div>
 <h3 id="v0-12-0-0-final-steps">Final Steps<a class="headerlink" href="#v0-12-0-0-final-steps" title="Permanent link">¶</a></h3>
 <p>After changing everything, don't forget to <a href="../updating/#final-steps">test that the card works!</a>
 If you reached this point, then congratulations! You are finally done with updating the note!
@@ -2322,7 +2290,7 @@ Full details of the changes can be found in the main
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2023</span>
       
     
   </small>
