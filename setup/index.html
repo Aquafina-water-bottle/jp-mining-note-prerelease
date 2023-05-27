@@ -1881,7 +1881,8 @@ I recommend downloading the latest version, to avoid having to do extra steps du
 <h2 id="installing-jp-mining-note">Installing jp-mining-note<a class="headerlink" href="#installing-jp-mining-note" title="Permanent link">¶</a></h2>
 <p>There are three ways of installing the note:</p>
 <ol>
-<li>Via <strong>JPMN Manager</strong>, a small Anki add-on that can install and update jp-mining-note.
+<li>Via <strong>JPMN Manager</strong>, a small Anki add-on that can install and update jp-mining-note,
+    as well as notify you when updates are available.
     <em>If you don't know which method to choose, choose this one</em>.</li>
 <li>Via <strong>command line</strong>.
     This method is recommended for people who are familiar with <code>git</code> and <code>python</code>,
@@ -1928,24 +1929,28 @@ Note: Installing jp-mining-note might take a while, and Anki may appear frozen.<
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git clone <span class="s2">"https://github.com/Aquafina-water-bottle/jp-mining-note.git"</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">cd</span> jp-mining-note
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">:</span><span class="c1">: Ensure you have Anki open, and with Anki-Connect running</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">:</span><span class="c1">: Also ensure that you have python 3.9+ installed.</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">:</span><span class="c1">: It *MAY* work with lower versions of python, but I make no such guarantee. ;)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>python tools\install.py
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">:</span><span class="c1">: TODO change this to master branch</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>git checkout testing
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">cd</span> jp-mining-note
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">:</span><span class="c1">: Ensure you have Anki open, and with Anki-Connect running</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">:</span><span class="c1">: Also ensure that you have python 3.9+ installed.</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">:</span><span class="c1">: It *MAY* work with lower versions of python, but I make no such guarantee. ;)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>python tools\install.py
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span><span class="s2">"https://github.com/Aquafina-water-bottle/jp-mining-note.git"</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>jp-mining-note
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Ensure you have Anki open, and with Anki-Connect running</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Also ensure that you have python 3.9+ installed.</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># It *MAY* work with lower versions of python, but I make no such guarantee. ;)</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># You may have to use `python3` instead of `python`.</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>python<span class="w"> </span>tools/install.py
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>::<span class="w"> </span>TODO<span class="w"> </span>change<span class="w"> </span>this<span class="w"> </span>to<span class="w"> </span>master<span class="w"> </span>branch
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>git<span class="w"> </span>checkout<span class="w"> </span>testing
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">cd</span><span class="w"> </span>jp-mining-note
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># Ensure you have Anki open, and with Anki-Connect running</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Also ensure that you have python 3.9+ installed.</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># It *MAY* work with lower versions of python, but I make no such guarantee. ;)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># You may have to use `python3` instead of `python`.</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>python<span class="w"> </span>tools/install.py
 </code></pre></div>
 </div>
 </div>
@@ -2026,7 +2031,7 @@ In particular, some add-ons are required for the note to work.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2023</span>
       
     
   </small>
