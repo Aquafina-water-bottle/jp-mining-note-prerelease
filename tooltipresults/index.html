@@ -19,7 +19,7 @@
         <link rel="next" href="../infocircle/">
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.9">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -27,10 +27,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -2134,15 +2134,14 @@ then the kanji hover will not be able to recognize that.</p>
 other than by the creation date.</p>
 <hr>
 <h2 id="suspended-cards">Suspended Cards<a class="headerlink" href="#suspended-cards" title="Permanent link">¶</a></h2>
-<p>TODO add difference between hidden and removed</p>
+<p>TODO make sure this is correct with <code>hidden</code> now removed</p>
 <p>Some assumptions are made about suspended cards.
 For example, suspended cards flagged as <code>green</code> are counted in the "non-new" cards category
 (known words), and suspended cards flagged as <code>red</code> are counted as words that you
 do not know AND will not study in the future (not shown in any category).
 This can be changed in the <a href="../runtimeoptions/">runtime options</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>"tooltips.query.nonNew.base": "-is:new OR (is:suspended is:new flag:3)",
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>"tooltips.query.nonNew.hidden": "is:suspended flag:1",
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>"tooltips.query.nonNew.removed": "",
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>"tooltips.query.nonNew.removed": "is:suspended flag:1",
 </code></pre></div>
 <hr>
 <h2 id="customizing-sentences-pitch-accent">Customizing Sentences &amp; Pitch Accent<a class="headerlink" href="#customizing-sentences-pitch-accent" title="Permanent link">¶</a></h2>
@@ -2195,7 +2194,7 @@ However, this comes at the cost of having to scan through the entire sentence to
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2023</span>
       
     
   </small>
@@ -2235,7 +2234,7 @@ However, this comes at the cost of having to scan through the entire sentence to
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "toc.follow", "header.autohide", "navigation.tabs", "navigation.sections", "content.code.annotate", "content.code.copy", "content.action.view"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>
