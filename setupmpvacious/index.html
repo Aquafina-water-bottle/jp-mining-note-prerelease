@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#installation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -627,9 +632,72 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          mpvacious (TODO)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         mpvacious (TODO)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-configuration" class="md-nav__link">
+    Creating the configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-configuration-changes" class="md-nav__link">
+    Other configuration changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1720,6 +1788,55 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-the-configuration" class="md-nav__link">
+    Creating the configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-configuration-changes" class="md-nav__link">
+    Other configuration changes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1746,53 +1863,114 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
   <h1>mpvacious (TODO)</h1>
 
-<div><p>TODO</p>
-<p><a href="https://github.com/Ajatt-Tools/mpvacious">mpvacious</a></p>
+<div><p><a href="https://github.com/Ajatt-Tools/mpvacious"><strong>mpvacious</strong></a></p>
+<p>TODO</p>
+<hr>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h2>
+<!-- TODO more detailed steps? -->
+
+<p>Installation steps should be found <a href="https://github.com/Ajatt-Tools/mpvacious#installation">here</a>.</p>
+<p>For Windows users, you must install this under your
+<a href="https://github.com/mpv-player/mpv/wiki/User-Scripts">mpv scripts folder</a>.
+The <code>scripts</code> folder does not exist by default; it must be created manually.</p>
+<hr>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+<p>You will have to change <a href="https://github.com/Ajatt-Tools/mpvacious#configuration">mpvacious's configuration</a>
+in order for mpvacious to work with JPMN.</p>
+<h3 id="creating-the-configuration">Creating the configuration<a class="headerlink" href="#creating-the-configuration" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case nothing works, always make sure to check the
+<a href="https://github.com/Ajatt-Tools/mpvacious#configuration">official documentation</a>,
+as it is guaranteed to have the latest instructions if they ever change.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">Mac / Linux (Terminal)</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>Navigate to <code>%APPDATA%\Roaming</code>
+    You can access this by opening the file manager, and
+    typing <code>%APPDATA%\Roaming</code> in the location field.</li>
+<li>Create the <code>mpv</code> folder if it doesn't exist, and open the folder.</li>
+<li>Create the <code>script-opts</code> folder if it doesn't exist, and open the folder.
+    By now, you should be under:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%APPDATA%\Roaming\mpv\script-opts
+</code></pre></div></li>
+<li>Create a text file with your favorite text editor.
+    If you do not have any custom text editor downloaded,
+    notepad should work.
+    TODO exact steps on creating the text file</li>
+<li>Copy/paste the following, and save as <code>subs2srs.conf</code>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Model names are listed in `Tools -&gt; Manage note types` menu in Anki.</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">model_name</span><span class="o">=</span><span class="s">JP Mining Note</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Field names as they appear in the selected note type.</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># If you set `audio_field` or `image_field` empty,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># the corresponding media file will not be created.</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="na">sentence_field</span><span class="o">=</span><span class="s">Sentence</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1">#secondary_field=SentEng  # Not used by the note. This is ignored entirely.</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="na">audio_field</span><span class="o">=</span><span class="s">SentenceAudio</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="na">image_field</span><span class="o">=</span><span class="s">Picture</span>
+</code></pre></div>
+    Ensure that your file is indeed a .conf file when saved.
+    If your file browser says that it is a text file, then
+    the file was likely incorrectly saved as <code>subs2srs.conf.txt</code>.
+    TODO exact instructions on renaming</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>The following installs the correct configuration,
+along with all the recommended settings stated below.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.config/mpv/script-opts
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># TODO change this to the master branch eventually</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>curl<span class="w"> </span>https://raw.githubusercontent.com/Aquafina-water-bottle/jp-mining-note/dev/docs/docs/assets/setupmpvacious/subs2srs.conf<span class="w"> </span>&gt;<span class="w"> </span>~/.config/mpv/script-opts/subs2srs.conf
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Be sure to restart mpv after changing the config to make sure your configuration is applied.</p>
+<h3 id="other-configuration-changes">Other configuration changes<a class="headerlink" href="#other-configuration-changes" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p>You will have to change the <a href="https://github.com/Ajatt-Tools/mpvacious#configuration">configuration</a>
-    in order for mpvacious to work with JPMN.</p>
-<details class="examplecode">
-<summary>Click here to see some basic config changes to get it working with JPMN.</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Be sure to change deck_name to whatever your deck is!</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># Model names are listed in `Tools -&gt; Manage note types` menu in Anki.</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="na">model_name</span><span class="o">=</span><span class="s">JP Mining Note</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Field names as they appear in the selected note type.</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># If you set `audio_field` or `image_field` empty,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># the corresponding media file will not be created.</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="na">sentence_field</span><span class="o">=</span><span class="s">Sentence</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1">#secondary_field=SentEng  # Not used by the note. This is ignored entirely.</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="na">audio_field</span><span class="o">=</span><span class="s">SentenceAudio</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="na">image_field</span><span class="o">=</span><span class="s">Picture</span>
-</code></pre></div>
 <p>You may want to increase the picture and audio quality, as it's extremely low by default.
-I personally use the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Sane values are 16k-32k for opus, 64k-128k for mp3.</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">audio_bitrate</span><span class="o">=</span><span class="s">32k</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Quality of produced image files. 0 = lowest, 100=highest.</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1">#snapshot_quality=15</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="na">snapshot_quality</span><span class="o">=</span><span class="s">50</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Image dimensions</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1"># If either (but not both) of the width or height parameters is -2,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># the value will be calculated preserving the aspect-ratio.</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#snapshot_width=-2</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="c1">#snapshot_height=200</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="na">snapshot_width</span><span class="o">=</span><span class="s">800</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="na">snapshot_height</span><span class="o">=</span><span class="s">-2</span>
+    I personally use the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Sane values are 16k-32k for opus, 64k-128k for mp3.</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">audio_bitrate</span><span class="o">=</span><span class="s">32k</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Quality of produced image files. 0 = lowest, 100=highest.</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">#snapshot_quality=15</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="na">snapshot_quality</span><span class="o">=</span><span class="s">50</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Image dimensions</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># If either (but not both) of the width or height parameters is -2,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># the value will be calculated preserving the aspect-ratio.</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">#snapshot_width=-2</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1">#snapshot_height=200</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="na">snapshot_width</span><span class="o">=</span><span class="s">800</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="na">snapshot_height</span><span class="o">=</span><span class="s">-2</span>
 </code></pre></div>
-</details>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>When creating the config file, ensure that the config file is placed in the correct folder.
-This <code>script-opts</code> folder does not exist by default.
-You will likely have to create the folder.</p>
-<p>Additionally, be sure to restart MPV after changing the config to apply the changes.</p>
-</div>
 </li>
+<li>
+<p>By default, you can see secondary subs (usually subtitles in your native language)
+    if you hover to the top 15% of the screen. If you don't want to see this, use the following:
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>secondary_sub_visibility=auto
+</code></pre></div>
+</li>
+<li>
+<p>You might not want the Anki browser to appear every time you add the card.
+    In that case, use the following:
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>disable_gui_browse=yes
+</code></pre></div>
+</li>
+<li>
+<p>In general, I recommend looking through the
+    <a href="https://github.com/Ajatt-Tools/mpvacious/blob/master/.github/RELEASE/subs2srs.conf">example configuration</a>
+    to see if there are other options that you may want to change.</p>
+</li>
+</ul>
+<hr>
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">¶</a></h2>
+<ul>
 <li>
 <p>A common issue with mpvacious is that
     the <code>SentenceReading</code> field may differ from the <code>Sentence</code> field,
@@ -1812,7 +1990,7 @@ You will likely have to create the folder.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2023</span>
       
     
   </small>
