@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sharex-scripts" class="md-skip">
+        <a href="#sharex-hotkeys-introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -1699,11 +1699,18 @@ If you are looking for the stable release documentation, see <a href="https://aq
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sharex-scripts" class="md-nav__link">
-    ShareX Scripts
+  <a href="#sharex-hotkeys-introduction" class="md-nav__link">
+    ShareX Hotkeys Introduction
   </a>
   
-    <nav class="md-nav" aria-label="ShareX Scripts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharex-screenshot-hotkey" class="md-nav__link">
+    ShareX Screenshot Hotkey
+  </a>
+  
+    <nav class="md-nav" aria-label="ShareX Screenshot Hotkey">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1841,11 +1848,18 @@ If you are looking for the stable release documentation, see <a href="https://aq
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sharex-scripts" class="md-nav__link">
-    ShareX Scripts
+  <a href="#sharex-hotkeys-introduction" class="md-nav__link">
+    ShareX Hotkeys Introduction
   </a>
   
-    <nav class="md-nav" aria-label="ShareX Scripts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharex-screenshot-hotkey" class="md-nav__link">
+    ShareX Screenshot Hotkey
+  </a>
+  
+    <nav class="md-nav" aria-label="ShareX Screenshot Hotkey">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1957,26 +1971,80 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
   <h1>Anki Scripts (TODO)</h1>
 
-<div><h2 id="sharex-scripts">ShareX Scripts<a class="headerlink" href="#sharex-scripts" title="Permanent link">¶</a></h2>
-<p>Many people have already documented how to setup your ShareX to work with Anki, such as:</p>
+<div><h2 id="sharex-hotkeys-introduction">ShareX Hotkeys Introduction<a class="headerlink" href="#sharex-hotkeys-introduction" title="Permanent link">¶</a></h2>
+<p>(TODO rewrite since better instructions are now documented here instead)</p>
+<p>Windows users can use <a href="https://getsharex.com/">ShareX</a> as a general purpose tool
+to add images and audio to an existing card.
+There are two main hotkeys that you can setup: a screenshot hotkey, and an audio hotkey.
+Both of these will automatically send the data to your most recently added card.</p>
+<p>TODO demo</p>
+<hr>
+<h2 id="sharex-screenshot-hotkey">ShareX Screenshot Hotkey<a class="headerlink" href="#sharex-screenshot-hotkey" title="Permanent link">¶</a></h2>
+<ol>
+<li>
+<p><strong>Create the hotkey</strong>.</p>
 <ul>
-<li><a href="https://github.com/Aquafina-water-bottle/stegatxins0-mining/tree/master#sharex">stegatxins0</a> (recommended)</li>
-<li><a href="https://animecards.site/media/#setting-up-sharex">Anime Cards</a></li>
+<li>Right click on ShareX icon and click <code>Hotkey Settings</code>.
+    (TODO image)</li>
+<li>Click <code>add</code>. Close the windows and select None on the right hand side and define key combination for screenshots. Mine is <code>F6</code>.
+    (TODO image)</li>
 </ul>
-<p>Instead of re-telling the steps they have already showed,
-I present <strong>alternative ShareX scripts</strong>
-(the long one-liner to paste within the <code>Actions</code> argument section)
-for stegatxins0's guide.</p>
-<p>The following scripts have the following changes:</p>
+</li>
+<li>
+<p><strong>Change the hotkey settings</strong>.</p>
+<ol>
+<li>Click on the settings icon on the left hand side.
+    (TODO image)</li>
+<li>Select <code>Capture region</code> for <code>Task</code>.
+    (TODO image)</li>
+<li>Check <code>Override after capture settings</code>. Uncheck <code>Save image to file</code> and <code>Perform actions</code></li>
+<li>Check <code>Override screenshot folder</code>. Click <code>Browse</code> and select Anki collection media location (usually something following this format <code>C:\Users\______\AppData\Roaming\Anki2\______\collection.media</code> ).</li>
+<li>Insert <code>anki-screenshot</code> or anything you want in description .</li>
+<li>Click on <code>Image</code> tab. Check <code>Override image settings</code>. Under <code>Image format</code> select <code>JPEG</code> to save space.
+    <img alt="" src="assets/sharex_screenshot_jpeg.jpg"></li>
+</ol>
+</li>
+<li>
+<p><strong>Change the hotkey actions</strong>.</p>
 <ul>
-<li>They all work with jp-mining-note by default.</li>
-<li>They have been rewritten so it can be presented in human-readable format
-    right below the one-liner.</li>
-<li>The one-liners can be re-compiled from the source code at your own discretion
-    (by <a href="/building.md#building-the-documentation">building the documentation</a>).
+<li>Click on <code>Actions</code> tab. Check <code>Override actions</code>. Click <code>Add</code>. A new window will pop up. Fill in the following values:<ul>
+<li><strong>Name</strong>: <code>anki-screenshot</code> (or anything you want)</li>
+<li><strong>File path</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</code></pre></div></li>
+<li><strong>Argument</strong>: (if you're not using my card type, replace <code>Picture</code> with your screenshot field name. Use <a href="http://www.unit-conversion.info/texttools/replace-text/">this tool</a>)
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-NoProfile -Command "$medianame = \"%input\" | Split-Path -leaf; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body '{\"action\": \"findNotes\", \"version\": 6, \"params\": {\"query\":\"added:1\"}}'; $sortedlist = $data.result | Sort-Object -Descending {[Long]$_}; $noteid = $sortedlist[0]; Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body \"{`\"action`\": `\"updateNoteFields`\", `\"version`\": 6, `\"params`\": {`\"note`\":{`\"id`\":$noteid, `\"fields`\":{`\"Picture`\":`\"&lt;img src=$medianame&gt;`\"}}}}\"; "
+</code></pre></div></li>
+</ul>
+</li>
+<li>Check <code>Hidden window</code> and click <code>OK</code>. Close <code>Task settings</code> windows.</li>
+</ul>
+</li>
+</ol>
+<!--
+
+Many people have already documented how to setup your ShareX to work with Anki, such as:
+
+* [stegatxins0](https://github.com/Aquafina-water-bottle/stegatxins0-mining/tree/master#sharex) (recommended)
+* [Anime Cards](https://animecards.site/media/#setting-up-sharex)
+
+Instead of re-telling the steps they have already showed,
+I present **alternative ShareX scripts**
+(the long one-liner to paste within the `Actions` argument section)
+for stegatxins0's guide.
+
+The following scripts have the following changes:
+
+- They all work with jp-mining-note by default.
+- They have been rewritten so it can be presented in human-readable format
+    right below the one-liner.
+- The one-liners can be re-compiled from the source code at your own discretion
+    (by [building the documentation](/building.md#building-the-documentation)).
     All the powershell source code can be found
-    <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/master/docs/docs/sharex_input.ps1">here</a>.</li>
-</ul>
+    [here](https://github.com/Aquafina-water-bottle/jp-mining-note/blob/master/docs/docs/sharex_input.ps1).
+
+-->
+
 <hr>
 <h3 class="text-yellow" id="screenshot-and-clipboard-hotkey">Screenshot and Clipboard Hotkey<a class="headerlink" href="#screenshot-and-clipboard-hotkey" title="Permanent link">¶</a></h3>
 <h4 id="features">Features<a class="headerlink" href="#features" title="Permanent link">¶</a></h4>
@@ -1993,97 +2061,7 @@ for stegatxins0's guide.</p>
 and use this script in place of step 8's <code>argument</code>.</p>
 <details class="example">
 <summary>ShareX Script <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $clipboard = (Get-Clipboard | where{$_ -ne \"\"}) -join \"&lt;br&gt;\"; $media_name = '$input' | Split-Path -leaf; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; $curr_note_sent = $curr_note_data.result.fields.Sentence.value; $result_clipboard = $clipboard; if ($curr_note_sent -match '&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;') { $bolded = $matches['bolded']; $result_clipboard = $clipboard.replace($bolded, \"&lt;b&gt;$bolded&lt;/b&gt;\"); }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Picture = \"&lt;img data-editor-shrink=`\"true`\" src=`\"$media_name`\"&gt;\"; AdditionalNotes = $result_clipboard; } } } }; if ($media_name -match '(?&lt;tag&gt;.+)_.*') { $tag = $matches['tag']; } Run-Json @{ action = 'addTags'; version = 6; params = @{ notes = @($curr_note_id); tags = $tag; } };"
-</code></pre></div>
-</details>
-<details class="example">
-<summary>Original ShareX Code <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># (common begin)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">};</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c"># (common end)</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nv">$clipboard</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Clipboard</span> <span class="p">|</span> <span class="n">where</span><span class="p">{</span><span class="nv">$_</span> <span class="o">-ne</span> <span class="s2">""</span><span class="p">})</span> <span class="n">-join</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c"># gets only the file name</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="nv">$media_name</span> <span class="p">=</span> <span class="s1">'$input'</span> <span class="p">|</span> <span class="nb">Split-Path</span> <span class="n">-leaf</span><span class="p">;</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
-<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="p">}</span>
-<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="p">};</span>
-<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
-<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
-<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>
-<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
-<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
-<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
-<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="c"># attempts to bold the found word within the clipboard</span>
-<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="nv">$curr_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
-<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
-<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>    <span class="p">}</span>
-<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="p">};</span>
-<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="nv">$curr_note_sent</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Sentence</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="nv">$result_clipboard</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">;</span>
-<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$curr_note_sent</span> <span class="o">-match</span> <span class="s1">'&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;'</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>    <span class="nv">$bolded</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'bolded'</span><span class="p">];</span>
-<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    <span class="c"># may not replace anything</span>
-<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>    <span class="nv">$result_clipboard</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="nv">$bolded</span><span class="p">,</span> <span class="s2">"&lt;b&gt;$bolded&lt;/b&gt;"</span><span class="p">);</span>
-<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="p">};</span>
-<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
-<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
-<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
-<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
-<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
-<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>                <span class="n">Picture</span> <span class="p">=</span> <span class="s2">"&lt;img data-editor-shrink=</span><span class="se">`"</span><span class="s2">true</span><span class="se">`"</span><span class="s2"> src=</span><span class="se">`"</span><span class="s2">$media_name</span><span class="se">`"</span><span class="s2">&gt;"</span><span class="p">;</span>
-<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>                <span class="n">AdditionalNotes</span> <span class="p">=</span> <span class="nv">$result_clipboard</span><span class="p">;</span>
-<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>            <span class="p">}</span>
-<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>        <span class="p">}</span>
-<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>    <span class="p">}</span>
-<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a><span class="p">};</span>
-<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>
-<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$media_name</span> <span class="o">-match</span> <span class="s1">'(?&lt;tag&gt;.+)_.*'</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>    <span class="nv">$tag</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">];</span>
-<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a><span class="p">}</span>
-<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>
-<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'addTags'</span><span class="p">;</span>
-<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
-<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>        <span class="n">tags</span> <span class="p">=</span> <span class="nv">$tag</span><span class="p">;</span>
-<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>    <span class="p">}</span>
-<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="p">};</span>
-</code></pre></div>
-</details>
-<hr>
-<h3 class="text-yellow" id="screenshot-only-hotkey">Screenshot (only) Hotkey<a class="headerlink" href="#screenshot-only-hotkey" title="Permanent link">¶</a></h3>
-<p>This is the same as the above, but without setting the <code>AdditionalNotes</code> field to the current clipboard.</p>
-<details class="example">
-<summary>ShareX Script <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $media_name = '$input' | Split-Path -leaf; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Picture = \"&lt;img data-editor-shrink=`\"true`\" src=`\"$media_name`\"&gt;\"; } } } }; if ($media_name -match '(?&lt;tag&gt;.+)_.*') { $tag = $matches['tag'] } Run-Json @{ action = 'addTags'; version = 6; params = @{ notes = @($curr_note_id); tags = $tag; } };"
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $clipboard = (Get-Clipboard | where{$_ -ne \"\"}) -join \"&lt;br&gt;\"; $media_name = '$input' | Split-Path -leaf; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; $curr_note_sent = $curr_note_data.result.fields.Sentence.value; $result_clipboard = $clipboard; if ($curr_note_sent -match '&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;') { $bolded = $matches['bolded']; $result_clipboard = $clipboard.replace($bolded, \"&lt;b&gt;$bolded&lt;/b&gt;\"); }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Picture = \"&lt;img data-editor-shrink=`\"true`\" src=`\"$media_name`\"&gt;\"; AdditionalNotes = $result_clipboard; } } } }; if ($media_name -match '(?&lt;tag&gt;.+)_.*') { $tag = $matches['tag']; } Run-Json @{ action = 'addTags'; version = 6; params = @{ notes = @($curr_note_id); tags = $tag; } };"
 </code></pre></div>
 </details>
 <details class="example">
@@ -2103,60 +2081,77 @@ and use this script in place of step 8's <code>argument</code>.</p>
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c"># (common end)</span>
 <a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c"># gets only the file name</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nv">$media_name</span> <span class="p">=</span> <span class="s1">'$input'</span> <span class="p">|</span> <span class="nb">Split-Path</span> <span class="n">-leaf</span><span class="p">;</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="nv">$clipboard</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Clipboard</span> <span class="p">|</span> <span class="n">where</span><span class="p">{</span><span class="nv">$_</span> <span class="o">-ne</span> <span class="s2">""</span><span class="p">})</span> <span class="n">-join</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="p">}</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="p">};</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
-<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>
-<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c"># gets only the file name</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="nv">$media_name</span> <span class="p">=</span> <span class="s1">'$input'</span> <span class="p">|</span> <span class="nb">Split-Path</span> <span class="n">-leaf</span><span class="p">;</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>    <span class="p">}</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="p">};</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
 <a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>
-<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
-<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>                <span class="n">Picture</span> <span class="p">=</span> <span class="s2">"&lt;img data-editor-shrink=</span><span class="se">`"</span><span class="s2">true</span><span class="se">`"</span><span class="s2"> src=</span><span class="se">`"</span><span class="s2">$media_name</span><span class="se">`"</span><span class="s2">&gt;"</span><span class="p">;</span>
-<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>            <span class="p">}</span>
-<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>        <span class="p">}</span>
-<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>    <span class="p">}</span>
-<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="p">};</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>
-<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$media_name</span> <span class="o">-match</span> <span class="s1">'(?&lt;tag&gt;.+)_.*'</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>    <span class="nv">$tag</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">]</span>
-<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="p">}</span>
-<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
-<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'addTags'</span><span class="p">;</span>
-<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
-<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>        <span class="n">tags</span> <span class="p">=</span> <span class="nv">$tag</span><span class="p">;</span>
-<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>    <span class="p">}</span>
-<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a><span class="p">};</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="c"># attempts to bold the found word within the clipboard</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="nv">$curr_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>    <span class="p">}</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="p">};</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="nv">$curr_note_sent</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Sentence</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="nv">$result_clipboard</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">;</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$curr_note_sent</span> <span class="o">-match</span> <span class="s1">'&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;'</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>    <span class="nv">$bolded</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'bolded'</span><span class="p">];</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>    <span class="c"># may not replace anything</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>    <span class="nv">$result_clipboard</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="nv">$bolded</span><span class="p">,</span> <span class="s2">"&lt;b&gt;$bolded&lt;/b&gt;"</span><span class="p">);</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="p">};</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>                <span class="n">Picture</span> <span class="p">=</span> <span class="s2">"&lt;img data-editor-shrink=</span><span class="se">`"</span><span class="s2">true</span><span class="se">`"</span><span class="s2"> src=</span><span class="se">`"</span><span class="s2">$media_name</span><span class="se">`"</span><span class="s2">&gt;"</span><span class="p">;</span>
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>                <span class="n">AdditionalNotes</span> <span class="p">=</span> <span class="nv">$result_clipboard</span><span class="p">;</span>
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>            <span class="p">}</span>
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>        <span class="p">}</span>
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>    <span class="p">}</span>
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a><span class="p">};</span>
+<a id="__codelineno-3-66" name="__codelineno-3-66" href="#__codelineno-3-66"></a>
+<a id="__codelineno-3-67" name="__codelineno-3-67" href="#__codelineno-3-67"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$media_name</span> <span class="o">-match</span> <span class="s1">'(?&lt;tag&gt;.+)_.*'</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-3-68" name="__codelineno-3-68" href="#__codelineno-3-68"></a>    <span class="nv">$tag</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">];</span>
+<a id="__codelineno-3-69" name="__codelineno-3-69" href="#__codelineno-3-69"></a><span class="p">}</span>
+<a id="__codelineno-3-70" name="__codelineno-3-70" href="#__codelineno-3-70"></a>
+<a id="__codelineno-3-71" name="__codelineno-3-71" href="#__codelineno-3-71"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-3-72" name="__codelineno-3-72" href="#__codelineno-3-72"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'addTags'</span><span class="p">;</span>
+<a id="__codelineno-3-73" name="__codelineno-3-73" href="#__codelineno-3-73"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-3-74" name="__codelineno-3-74" href="#__codelineno-3-74"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-3-75" name="__codelineno-3-75" href="#__codelineno-3-75"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
+<a id="__codelineno-3-76" name="__codelineno-3-76" href="#__codelineno-3-76"></a>        <span class="n">tags</span> <span class="p">=</span> <span class="nv">$tag</span><span class="p">;</span>
+<a id="__codelineno-3-77" name="__codelineno-3-77" href="#__codelineno-3-77"></a>    <span class="p">}</span>
+<a id="__codelineno-3-78" name="__codelineno-3-78" href="#__codelineno-3-78"></a><span class="p">};</span>
 </code></pre></div>
 </details>
 <hr>
-<h3 class="text-yellow" id="audio-hotkey">Audio Hotkey<a class="headerlink" href="#audio-hotkey" title="Permanent link">¶</a></h3>
-<p>This script works <em>exactly the same</em> as stegatxins0's version,
-except rewritten in a more readable format.
-If you already have the audio hotkey setup, there is no reason to change the old script.</p>
-<p>To use this, follow the steps for setting up the
-<a href="https://github.com/Aquafina-water-bottle/stegatxins0-mining/tree/master#hotkey-for-audio">audio hotkey</a>,
-and use this script in place of step 14's <code>Argument</code>.</p>
+<h3 class="text-yellow" id="screenshot-only-hotkey">Screenshot (only) Hotkey<a class="headerlink" href="#screenshot-only-hotkey" title="Permanent link">¶</a></h3>
+<p>This is the same as the above, but without setting the <code>AdditionalNotes</code> field to the current clipboard.</p>
 <details class="example">
 <summary>ShareX Script <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $media_name = '$input' | Split-Path -leaf; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ SentenceAudio = \"[sound:$media_name]\"; } } } };"
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $media_name = '$input' | Split-Path -leaf; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Picture = \"&lt;img data-editor-shrink=`\"true`\" src=`\"$media_name`\"&gt;\"; } } } }; if ($media_name -match '(?&lt;tag&gt;.+)_.*') { $tag = $matches['tag'] } Run-Json @{ action = 'addTags'; version = 6; params = @{ notes = @($curr_note_id); tags = $tag; } };"
 </code></pre></div>
 </details>
 <details class="example">
@@ -2199,11 +2194,84 @@ and use this script in place of step 14's <code>Argument</code>.</p>
 <a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
 <a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
 <a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                <span class="n">SentenceAudio</span> <span class="p">=</span> <span class="s2">"[sound:$media_name]"</span><span class="p">;</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>                <span class="n">Picture</span> <span class="p">=</span> <span class="s2">"&lt;img data-editor-shrink=</span><span class="se">`"</span><span class="s2">true</span><span class="se">`"</span><span class="s2"> src=</span><span class="se">`"</span><span class="s2">$media_name</span><span class="se">`"</span><span class="s2">&gt;"</span><span class="p">;</span>
 <a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a>            <span class="p">}</span>
 <a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>        <span class="p">}</span>
 <a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a>    <span class="p">}</span>
 <a id="__codelineno-5-43" name="__codelineno-5-43" href="#__codelineno-5-43"></a><span class="p">};</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44" href="#__codelineno-5-44"></a>
+<a id="__codelineno-5-45" name="__codelineno-5-45" href="#__codelineno-5-45"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$media_name</span> <span class="o">-match</span> <span class="s1">'(?&lt;tag&gt;.+)_.*'</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46" href="#__codelineno-5-46"></a>    <span class="nv">$tag</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">]</span>
+<a id="__codelineno-5-47" name="__codelineno-5-47" href="#__codelineno-5-47"></a><span class="p">}</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48" href="#__codelineno-5-48"></a>
+<a id="__codelineno-5-49" name="__codelineno-5-49" href="#__codelineno-5-49"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50" href="#__codelineno-5-50"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'addTags'</span><span class="p">;</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51" href="#__codelineno-5-51"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52" href="#__codelineno-5-52"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-5-53" name="__codelineno-5-53" href="#__codelineno-5-53"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54" href="#__codelineno-5-54"></a>        <span class="n">tags</span> <span class="p">=</span> <span class="nv">$tag</span><span class="p">;</span>
+<a id="__codelineno-5-55" name="__codelineno-5-55" href="#__codelineno-5-55"></a>    <span class="p">}</span>
+<a id="__codelineno-5-56" name="__codelineno-5-56" href="#__codelineno-5-56"></a><span class="p">};</span>
+</code></pre></div>
+</details>
+<hr>
+<h3 class="text-yellow" id="audio-hotkey">Audio Hotkey<a class="headerlink" href="#audio-hotkey" title="Permanent link">¶</a></h3>
+<p>This script works <em>exactly the same</em> as stegatxins0's version,
+except rewritten in a more readable format.
+If you already have the audio hotkey setup, there is no reason to change the old script.</p>
+<p>To use this, follow the steps for setting up the
+<a href="https://github.com/Aquafina-water-bottle/stegatxins0-mining/tree/master#hotkey-for-audio">audio hotkey</a>,
+and use this script in place of step 14's <code>Argument</code>.</p>
+<details class="example">
+<summary>ShareX Script <small>(click here)</small></summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $media_name = '$input' | Split-Path -leaf; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ SentenceAudio = \"[sound:$media_name]\"; } } } };"
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Original ShareX Code <small>(click here)</small></summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c"># (common begin)</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">};</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c"># (common end)</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="c"># gets only the file name</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="nv">$media_name</span> <span class="p">=</span> <span class="s1">'$input'</span> <span class="p">|</span> <span class="nb">Split-Path</span> <span class="n">-leaf</span><span class="p">;</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="p">}</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="p">};</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+<a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
+<a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a>
+<a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>
+<a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
+<a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
+<a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>                <span class="n">SentenceAudio</span> <span class="p">=</span> <span class="s2">"[sound:$media_name]"</span><span class="p">;</span>
+<a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>            <span class="p">}</span>
+<a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>        <span class="p">}</span>
+<a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>    <span class="p">}</span>
+<a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a><span class="p">};</span>
 </code></pre></div>
 </details>
 <hr>
@@ -2296,17 +2364,17 @@ Make sure you <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/b
 </div>
 <p>If you don't want to use ShareX, or you are not using Windows,
 you can simply run a python script with command line.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Your python version should be 3.8 or higher.</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># It may work for lower python versions, but I make no guarantee.</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>python3<span class="w"> </span>/path/to/jp-mining-note/tools/hotkey.py<span class="w"> </span>-f<span class="w"> </span>FUNCTION_NAME
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Your python version should be 3.8 or higher.</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># It may work for lower python versions, but I make no guarantee.</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>python3<span class="w"> </span>/path/to/jp-mining-note/tools/hotkey.py<span class="w"> </span>-f<span class="w"> </span>FUNCTION_NAME
 </code></pre></div>
 <details class="example">
 <summary>Examples <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># default</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>python3<span class="w"> </span>/path/to/jp-mining-note/tools/hotkey.py<span class="w"> </span>-f<span class="w"> </span>update_sentence
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># opens card browser automatically</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>python3<span class="w"> </span>/path/to/jp-mining-note/tools/hotkey.py<span class="w"> </span>-f<span class="w"> </span>update_sentence<span class="w"> </span>--enable-gui-browse
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># default</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>python3<span class="w"> </span>/path/to/jp-mining-note/tools/hotkey.py<span class="w"> </span>-f<span class="w"> </span>update_sentence
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># opens card browser automatically</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>python3<span class="w"> </span>/path/to/jp-mining-note/tools/hotkey.py<span class="w"> </span>-f<span class="w"> </span>update_sentence<span class="w"> </span>--enable-gui-browse
 </code></pre></div>
 </details>
 <p>If you want to use these as keybinds, I will leave it up to you to determine
@@ -2341,18 +2409,18 @@ until you set the action values.</p>
 </li>
 <li>
 <p>Within the script, run any function thusly:
-    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">hotkey</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">FUNCTION_NAME</span><span class="p">()</span>
+    </p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">hotkey</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">FUNCTION_NAME</span><span class="p">()</span>
 </code></pre></div>
 <p>Example:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">hotkey</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">update_sentence</span><span class="p">()</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">import</span> <span class="nn">hotkey</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">update_sentence</span><span class="p">()</span>
 </code></pre></div>
 <p>Example with GUI:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">hotkey</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">_browse_anki</span><span class="p">(</span><span class="s2">"nid:1"</span><span class="p">)</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">note_id</span> <span class="o">=</span> <span class="n">hotkey</span><span class="o">.</span><span class="n">update_sentence</span><span class="p">()</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">_browse_anki</span><span class="p">(</span><span class="sa">f</span><span class="s2">"nid:</span><span class="si">{</span><span class="n">note_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">import</span> <span class="nn">hotkey</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">_browse_anki</span><span class="p">(</span><span class="s2">"nid:1"</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">note_id</span> <span class="o">=</span> <span class="n">hotkey</span><span class="o">.</span><span class="n">update_sentence</span><span class="p">()</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="n">hotkey</span><span class="o">.</span><span class="n">_browse_anki</span><span class="p">(</span><span class="sa">f</span><span class="s2">"nid:</span><span class="si">{</span><span class="n">note_id</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </code></pre></div>
 </li>
 </ol>
@@ -2378,7 +2446,7 @@ as shown <a href="../faq/#how-do-i-bulk-generate-furigana">here</a>.</p>
 <summary>How-To: Fix incorrectly-bolded words <small>(click here)</small></summary>
 <p>As an example, The target word 希望 in the sentence 「入部希望なんですけど…」
 will be parsed by Yomichan as the following:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>入部&lt;b&gt;希望な&lt;/b&gt;んですけど…
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>入部&lt;b&gt;希望な&lt;/b&gt;んですけど…
 </code></pre></div>
 <p>Within the original popup, you can add two versions of the word by default:</p>
 <ol>
@@ -2417,100 +2485,16 @@ Instead, do the following:</p>
 <p>The bolded word is preserved if the exact content within the bolded word is found within the clipboard,
 which should be almost always the case.</p>
 <p>For example, assume the added sentence is the following:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>さては<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>偽者<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>だな！
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>さては<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>偽者<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>だな！
 </code></pre></div>
 <p>As long as the clipboard contains the word 「偽者」, then the bold is preserved.
 For example, the following clipboard contents will preserve the bold:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>かわいげのある女じゃない。さては偽者だな！
+</p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>かわいげのある女じゃない。さては偽者だな！
 </code></pre></div>
 </details>
 <details class="example">
 <summary>ShareX Script <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $clipboard = (Get-Clipboard | where{$_ -ne ''}) -join ''; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; $curr_note_sent = $curr_note_data.result.fields.Sentence.value; $result_sent = ''; if ($curr_note_sent -match '&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;') { $bolded = $matches['bolded']; $result_sent = $clipboard.replace($bolded, \"&lt;b&gt;$bolded&lt;/b&gt;\"); } else { $result_sent = $clipboard; }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Sentence = $result_sent; SentenceReading = ''; } } } };"
-</code></pre></div>
-</details>
-<details class="example">
-<summary>Original ShareX Code <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># (common begin)</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="p">};</span>
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="c"># (common end)</span>
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a><span class="nv">$clipboard</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Clipboard</span> <span class="p">|</span> <span class="n">where</span><span class="p">{</span><span class="nv">$_</span> <span class="o">-ne</span> <span class="s1">''</span><span class="p">})</span> <span class="n">-join</span> <span class="s1">''</span><span class="p">;</span>
-<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
-<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
-<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>    <span class="p">}</span>
-<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="p">};</span>
-<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>
-<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
-<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
-<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
-<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>
-<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a><span class="nv">$curr_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
-<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-15-34" name="__codelineno-15-34" href="#__codelineno-15-34"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-15-35" name="__codelineno-15-35" href="#__codelineno-15-35"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
-<a id="__codelineno-15-36" name="__codelineno-15-36" href="#__codelineno-15-36"></a>    <span class="p">}</span>
-<a id="__codelineno-15-37" name="__codelineno-15-37" href="#__codelineno-15-37"></a><span class="p">};</span>
-<a id="__codelineno-15-38" name="__codelineno-15-38" href="#__codelineno-15-38"></a>
-<a id="__codelineno-15-39" name="__codelineno-15-39" href="#__codelineno-15-39"></a><span class="nv">$curr_note_sent</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Sentence</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-15-40" name="__codelineno-15-40" href="#__codelineno-15-40"></a><span class="nv">$result_sent</span> <span class="p">=</span> <span class="s1">''</span><span class="p">;</span>
-<a id="__codelineno-15-41" name="__codelineno-15-41" href="#__codelineno-15-41"></a>
-<a id="__codelineno-15-42" name="__codelineno-15-42" href="#__codelineno-15-42"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$curr_note_sent</span> <span class="o">-match</span> <span class="s1">'&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;'</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-15-43" name="__codelineno-15-43" href="#__codelineno-15-43"></a>    <span class="nv">$bolded</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'bolded'</span><span class="p">];</span>
-<a id="__codelineno-15-44" name="__codelineno-15-44" href="#__codelineno-15-44"></a>    <span class="c"># may not replace anything</span>
-<a id="__codelineno-15-45" name="__codelineno-15-45" href="#__codelineno-15-45"></a>    <span class="nv">$result_sent</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="nv">$bolded</span><span class="p">,</span> <span class="s2">"&lt;b&gt;$bolded&lt;/b&gt;"</span><span class="p">);</span>
-<a id="__codelineno-15-46" name="__codelineno-15-46" href="#__codelineno-15-46"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-15-47" name="__codelineno-15-47" href="#__codelineno-15-47"></a>    <span class="c"># default</span>
-<a id="__codelineno-15-48" name="__codelineno-15-48" href="#__codelineno-15-48"></a>    <span class="nv">$result_sent</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">;</span>
-<a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a><span class="p">};</span>
-<a id="__codelineno-15-50" name="__codelineno-15-50" href="#__codelineno-15-50"></a>
-<a id="__codelineno-15-51" name="__codelineno-15-51" href="#__codelineno-15-51"></a>
-<a id="__codelineno-15-52" name="__codelineno-15-52" href="#__codelineno-15-52"></a><span class="c"># updates current card with result_sent</span>
-<a id="__codelineno-15-53" name="__codelineno-15-53" href="#__codelineno-15-53"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-15-54" name="__codelineno-15-54" href="#__codelineno-15-54"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
-<a id="__codelineno-15-55" name="__codelineno-15-55" href="#__codelineno-15-55"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-15-56" name="__codelineno-15-56" href="#__codelineno-15-56"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-15-57" name="__codelineno-15-57" href="#__codelineno-15-57"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-15-58" name="__codelineno-15-58" href="#__codelineno-15-58"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
-<a id="__codelineno-15-59" name="__codelineno-15-59" href="#__codelineno-15-59"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-15-60" name="__codelineno-15-60" href="#__codelineno-15-60"></a>                <span class="n">Sentence</span> <span class="p">=</span> <span class="nv">$result_sent</span><span class="p">;</span>
-<a id="__codelineno-15-61" name="__codelineno-15-61" href="#__codelineno-15-61"></a>                <span class="n">SentenceReading</span> <span class="p">=</span> <span class="s1">''</span><span class="p">;</span>
-<a id="__codelineno-15-62" name="__codelineno-15-62" href="#__codelineno-15-62"></a>            <span class="p">}</span>
-<a id="__codelineno-15-63" name="__codelineno-15-63" href="#__codelineno-15-63"></a>        <span class="p">}</span>
-<a id="__codelineno-15-64" name="__codelineno-15-64" href="#__codelineno-15-64"></a>    <span class="p">}</span>
-<a id="__codelineno-15-65" name="__codelineno-15-65" href="#__codelineno-15-65"></a><span class="p">};</span>
-</code></pre></div>
-</details>
-<hr>
-<h3 class="text-yellow" id="update-additionalnotes-with-clipboard">Update AdditionalNotes with Clipboard<a class="headerlink" href="#update-additionalnotes-with-clipboard" title="Permanent link">¶</a></h3>
-<blockquote>
-<p><em>Function Name</em>: <code>update_additional_notes</code></p>
-</blockquote>
-<p>This script does the exact same thing as the above script, but with
-<code>AdditionalNotes</code> instead of <code>Sentence</code>.
-The tested word, if found, is also automatically highlighted.</p>
-<p>This is useful to copy/paste context for the sentence (the surrounding lines
-around the sentence).</p>
-<details class="example">
-<summary>ShareX Script <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $clipboard = (Get-Clipboard | where{$_ -ne \"\"}) -join \"&lt;br&gt;\"; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; $curr_note_sent = $curr_note_data.result.fields.Sentence.value; $result_sent = ''; if ($curr_note_sent -match '&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;') { $bolded = $matches['bolded']; $result_sent = $clipboard.replace($bolded, \"&lt;b&gt;$bolded&lt;/b&gt;\"); } else { $result_sent = $clipboard; }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ AdditionalNotes = $result_sent; } } } };"
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $clipboard = (Get-Clipboard | where{$_ -ne ''}) -join ''; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; $curr_note_sent = $curr_note_data.result.fields.Sentence.value; $result_sent = ''; if ($curr_note_sent -match '&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;') { $bolded = $matches['bolded']; $result_sent = $clipboard.replace($bolded, \"&lt;b&gt;$bolded&lt;/b&gt;\"); } else { $result_sent = $clipboard; }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Sentence = $result_sent; SentenceReading = ''; } } } };"
 </code></pre></div>
 </details>
 <details class="example">
@@ -2531,7 +2515,7 @@ around the sentence).</p>
 <a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>
 <a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
 <a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>
-<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="nv">$clipboard</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Clipboard</span> <span class="p">|</span> <span class="n">where</span><span class="p">{</span><span class="nv">$_</span> <span class="o">-ne</span> <span class="s2">""</span><span class="p">})</span> <span class="n">-join</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="nv">$clipboard</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Clipboard</span> <span class="p">|</span> <span class="n">where</span><span class="p">{</span><span class="nv">$_</span> <span class="o">-ne</span> <span class="s1">''</span><span class="p">})</span> <span class="n">-join</span> <span class="s1">''</span><span class="p">;</span>
 <a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
 <a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
 <a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
@@ -2574,11 +2558,95 @@ around the sentence).</p>
 <a id="__codelineno-17-57" name="__codelineno-17-57" href="#__codelineno-17-57"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
 <a id="__codelineno-17-58" name="__codelineno-17-58" href="#__codelineno-17-58"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
 <a id="__codelineno-17-59" name="__codelineno-17-59" href="#__codelineno-17-59"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a>                <span class="n">AdditionalNotes</span> <span class="p">=</span> <span class="nv">$result_sent</span><span class="p">;</span>
-<a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a>            <span class="p">}</span>
-<a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>        <span class="p">}</span>
-<a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a>    <span class="p">}</span>
-<a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a><span class="p">};</span>
+<a id="__codelineno-17-60" name="__codelineno-17-60" href="#__codelineno-17-60"></a>                <span class="n">Sentence</span> <span class="p">=</span> <span class="nv">$result_sent</span><span class="p">;</span>
+<a id="__codelineno-17-61" name="__codelineno-17-61" href="#__codelineno-17-61"></a>                <span class="n">SentenceReading</span> <span class="p">=</span> <span class="s1">''</span><span class="p">;</span>
+<a id="__codelineno-17-62" name="__codelineno-17-62" href="#__codelineno-17-62"></a>            <span class="p">}</span>
+<a id="__codelineno-17-63" name="__codelineno-17-63" href="#__codelineno-17-63"></a>        <span class="p">}</span>
+<a id="__codelineno-17-64" name="__codelineno-17-64" href="#__codelineno-17-64"></a>    <span class="p">}</span>
+<a id="__codelineno-17-65" name="__codelineno-17-65" href="#__codelineno-17-65"></a><span class="p">};</span>
+</code></pre></div>
+</details>
+<hr>
+<h3 class="text-yellow" id="update-additionalnotes-with-clipboard">Update AdditionalNotes with Clipboard<a class="headerlink" href="#update-additionalnotes-with-clipboard" title="Permanent link">¶</a></h3>
+<blockquote>
+<p><em>Function Name</em>: <code>update_additional_notes</code></p>
+</blockquote>
+<p>This script does the exact same thing as the above script, but with
+<code>AdditionalNotes</code> instead of <code>Sentence</code>.
+The tested word, if found, is also automatically highlighted.</p>
+<p>This is useful to copy/paste context for the sentence (the surrounding lines
+around the sentence).</p>
+<details class="example">
+<summary>ShareX Script <small>(click here)</small></summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $clipboard = (Get-Clipboard | where{$_ -ne \"\"}) -join \"&lt;br&gt;\"; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; $curr_note_sent = $curr_note_data.result.fields.Sentence.value; $result_sent = ''; if ($curr_note_sent -match '&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;') { $bolded = $matches['bolded']; $result_sent = $clipboard.replace($bolded, \"&lt;b&gt;$bolded&lt;/b&gt;\"); } else { $result_sent = $clipboard; }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ AdditionalNotes = $result_sent; } } } };"
+</code></pre></div>
+</details>
+<details class="example">
+<summary>Original ShareX Code <small>(click here)</small></summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c"># (common begin)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">};</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="c"># (common end)</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="nv">$clipboard</span> <span class="p">=</span> <span class="p">(</span><span class="nb">Get-Clipboard</span> <span class="p">|</span> <span class="n">where</span><span class="p">{</span><span class="nv">$_</span> <span class="o">-ne</span> <span class="s2">""</span><span class="p">})</span> <span class="n">-join</span> <span class="s2">"&lt;br&gt;"</span><span class="p">;</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
+<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>    <span class="p">}</span>
+<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="p">};</span>
+<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
+<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
+<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>
+<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
+<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
+<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a><span class="nv">$curr_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
+<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
+<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>    <span class="p">}</span>
+<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a><span class="p">};</span>
+<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>
+<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a><span class="nv">$curr_note_sent</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Sentence</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a><span class="nv">$result_sent</span> <span class="p">=</span> <span class="s1">''</span><span class="p">;</span>
+<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>
+<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$curr_note_sent</span> <span class="o">-match</span> <span class="s1">'&lt;b&gt;(?&lt;bolded&gt;.+)&lt;/b&gt;'</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>    <span class="nv">$bolded</span> <span class="p">=</span> <span class="nv">$matches</span><span class="p">[</span><span class="s1">'bolded'</span><span class="p">];</span>
+<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>    <span class="c"># may not replace anything</span>
+<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>    <span class="nv">$result_sent</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="nv">$bolded</span><span class="p">,</span> <span class="s2">"&lt;b&gt;$bolded&lt;/b&gt;"</span><span class="p">);</span>
+<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>    <span class="c"># default</span>
+<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>    <span class="nv">$result_sent</span> <span class="p">=</span> <span class="nv">$clipboard</span><span class="p">;</span>
+<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a><span class="p">};</span>
+<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>
+<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>
+<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a><span class="c"># updates current card with result_sent</span>
+<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
+<a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
+<a id="__codelineno-19-59" name="__codelineno-19-59" href="#__codelineno-19-59"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a>                <span class="n">AdditionalNotes</span> <span class="p">=</span> <span class="nv">$result_sent</span><span class="p">;</span>
+<a id="__codelineno-19-61" name="__codelineno-19-61" href="#__codelineno-19-61"></a>            <span class="p">}</span>
+<a id="__codelineno-19-62" name="__codelineno-19-62" href="#__codelineno-19-62"></a>        <span class="p">}</span>
+<a id="__codelineno-19-63" name="__codelineno-19-63" href="#__codelineno-19-63"></a>    <span class="p">}</span>
+<a id="__codelineno-19-64" name="__codelineno-19-64" href="#__codelineno-19-64"></a><span class="p">};</span>
 </code></pre></div>
 </details>
 <hr>
@@ -2602,75 +2670,75 @@ of a visual novel, as it prevents you from having to run the screenshot hotkey.<
 </ol>
 <details class="example">
 <summary>ShareX Script <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $prev_note_id = $sorted_list[1]; $curr_note_id = $sorted_list[0]; $prev_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($prev_note_id); } }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Picture = $prev_note_data.result.fields.Picture.value; AdditionalNotes = $prev_note_data.result.fields.AdditionalNotes.value; } } } }; foreach ($tag in $prev_note_data.result.tags) { Run-Json @{ action = 'addTags'; version = 6; params = @{ notes = @($curr_note_id); tags = $tag; } } };"
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $prev_note_id = $sorted_list[1]; $curr_note_id = $sorted_list[0]; $prev_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($prev_note_id); } }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $curr_note_id; fields = @{ Picture = $prev_note_data.result.fields.Picture.value; AdditionalNotes = $prev_note_data.result.fields.AdditionalNotes.value; } } } }; foreach ($tag in $prev_note_data.result.tags) { Run-Json @{ action = 'addTags'; version = 6; params = @{ notes = @($curr_note_id); tags = $tag; } } };"
 </code></pre></div>
 </details>
 <details class="example">
 <summary>Original ShareX Code <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c"># (common begin)</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="p">};</span>
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
-<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="c"># (common end)</span>
-<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
-<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
-<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
-<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
-<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>    <span class="p">}</span>
-<a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a><span class="p">};</span>
-<a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>
-<a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
-<a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>
-<a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a><span class="nv">$prev_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">1</span><span class="p">];</span>
-<a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
-<a id="__codelineno-19-29" name="__codelineno-19-29" href="#__codelineno-19-29"></a>
-<a id="__codelineno-19-30" name="__codelineno-19-30" href="#__codelineno-19-30"></a>
-<a id="__codelineno-19-31" name="__codelineno-19-31" href="#__codelineno-19-31"></a><span class="nv">$prev_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-19-32" name="__codelineno-19-32" href="#__codelineno-19-32"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
-<a id="__codelineno-19-33" name="__codelineno-19-33" href="#__codelineno-19-33"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-19-34" name="__codelineno-19-34" href="#__codelineno-19-34"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-19-35" name="__codelineno-19-35" href="#__codelineno-19-35"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$prev_note_id</span><span class="p">);</span>
-<a id="__codelineno-19-36" name="__codelineno-19-36" href="#__codelineno-19-36"></a>    <span class="p">}</span>
-<a id="__codelineno-19-37" name="__codelineno-19-37" href="#__codelineno-19-37"></a><span class="p">};</span>
-<a id="__codelineno-19-38" name="__codelineno-19-38" href="#__codelineno-19-38"></a>
-<a id="__codelineno-19-39" name="__codelineno-19-39" href="#__codelineno-19-39"></a><span class="c"># copies picture &amp; additional notes to current note</span>
-<a id="__codelineno-19-40" name="__codelineno-19-40" href="#__codelineno-19-40"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-19-41" name="__codelineno-19-41" href="#__codelineno-19-41"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
-<a id="__codelineno-19-42" name="__codelineno-19-42" href="#__codelineno-19-42"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-19-43" name="__codelineno-19-43" href="#__codelineno-19-43"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-19-44" name="__codelineno-19-44" href="#__codelineno-19-44"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-19-45" name="__codelineno-19-45" href="#__codelineno-19-45"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
-<a id="__codelineno-19-46" name="__codelineno-19-46" href="#__codelineno-19-46"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-19-47" name="__codelineno-19-47" href="#__codelineno-19-47"></a>                <span class="n">Picture</span> <span class="p">=</span> <span class="nv">$prev_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Picture</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-19-48" name="__codelineno-19-48" href="#__codelineno-19-48"></a>                <span class="n">AdditionalNotes</span> <span class="p">=</span> <span class="nv">$prev_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">AdditionalNotes</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-19-49" name="__codelineno-19-49" href="#__codelineno-19-49"></a>            <span class="p">}</span>
-<a id="__codelineno-19-50" name="__codelineno-19-50" href="#__codelineno-19-50"></a>        <span class="p">}</span>
-<a id="__codelineno-19-51" name="__codelineno-19-51" href="#__codelineno-19-51"></a>    <span class="p">}</span>
-<a id="__codelineno-19-52" name="__codelineno-19-52" href="#__codelineno-19-52"></a><span class="p">};</span>
-<a id="__codelineno-19-53" name="__codelineno-19-53" href="#__codelineno-19-53"></a>
-<a id="__codelineno-19-54" name="__codelineno-19-54" href="#__codelineno-19-54"></a><span class="c"># copies tags</span>
-<a id="__codelineno-19-55" name="__codelineno-19-55" href="#__codelineno-19-55"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$tag</span> <span class="k">in</span> <span class="nv">$prev_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">tags</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-19-56" name="__codelineno-19-56" href="#__codelineno-19-56"></a>    <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-19-57" name="__codelineno-19-57" href="#__codelineno-19-57"></a>        <span class="n">action</span> <span class="p">=</span> <span class="s1">'addTags'</span><span class="p">;</span>
-<a id="__codelineno-19-58" name="__codelineno-19-58" href="#__codelineno-19-58"></a>        <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-19-59" name="__codelineno-19-59" href="#__codelineno-19-59"></a>        <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-19-60" name="__codelineno-19-60" href="#__codelineno-19-60"></a>            <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
-<a id="__codelineno-19-61" name="__codelineno-19-61" href="#__codelineno-19-61"></a>            <span class="n">tags</span> <span class="p">=</span> <span class="nv">$tag</span><span class="p">;</span>
-<a id="__codelineno-19-62" name="__codelineno-19-62" href="#__codelineno-19-62"></a>        <span class="p">}</span>
-<a id="__codelineno-19-63" name="__codelineno-19-63" href="#__codelineno-19-63"></a>    <span class="p">}</span>
-<a id="__codelineno-19-64" name="__codelineno-19-64" href="#__codelineno-19-64"></a><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># (common begin)</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="p">};</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c"># (common end)</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>    <span class="p">}</span>
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a><span class="p">};</span>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="nv">$prev_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">1</span><span class="p">];</span>
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>
+<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a><span class="nv">$prev_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
+<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$prev_note_id</span><span class="p">);</span>
+<a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a>    <span class="p">}</span>
+<a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a><span class="p">};</span>
+<a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a>
+<a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a><span class="c"># copies picture &amp; additional notes to current note</span>
+<a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
+<a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$curr_note_id</span><span class="p">;</span>
+<a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a>                <span class="n">Picture</span> <span class="p">=</span> <span class="nv">$prev_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Picture</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a>                <span class="n">AdditionalNotes</span> <span class="p">=</span> <span class="nv">$prev_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">AdditionalNotes</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-21-49" name="__codelineno-21-49" href="#__codelineno-21-49"></a>            <span class="p">}</span>
+<a id="__codelineno-21-50" name="__codelineno-21-50" href="#__codelineno-21-50"></a>        <span class="p">}</span>
+<a id="__codelineno-21-51" name="__codelineno-21-51" href="#__codelineno-21-51"></a>    <span class="p">}</span>
+<a id="__codelineno-21-52" name="__codelineno-21-52" href="#__codelineno-21-52"></a><span class="p">};</span>
+<a id="__codelineno-21-53" name="__codelineno-21-53" href="#__codelineno-21-53"></a>
+<a id="__codelineno-21-54" name="__codelineno-21-54" href="#__codelineno-21-54"></a><span class="c"># copies tags</span>
+<a id="__codelineno-21-55" name="__codelineno-21-55" href="#__codelineno-21-55"></a><span class="k">foreach</span> <span class="p">(</span><span class="nv">$tag</span> <span class="k">in</span> <span class="nv">$prev_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">tags</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-21-56" name="__codelineno-21-56" href="#__codelineno-21-56"></a>    <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-21-57" name="__codelineno-21-57" href="#__codelineno-21-57"></a>        <span class="n">action</span> <span class="p">=</span> <span class="s1">'addTags'</span><span class="p">;</span>
+<a id="__codelineno-21-58" name="__codelineno-21-58" href="#__codelineno-21-58"></a>        <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-21-59" name="__codelineno-21-59" href="#__codelineno-21-59"></a>        <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-21-60" name="__codelineno-21-60" href="#__codelineno-21-60"></a>            <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
+<a id="__codelineno-21-61" name="__codelineno-21-61" href="#__codelineno-21-61"></a>            <span class="n">tags</span> <span class="p">=</span> <span class="nv">$tag</span><span class="p">;</span>
+<a id="__codelineno-21-62" name="__codelineno-21-62" href="#__codelineno-21-62"></a>        <span class="p">}</span>
+<a id="__codelineno-21-63" name="__codelineno-21-63" href="#__codelineno-21-63"></a>    <span class="p">}</span>
+<a id="__codelineno-21-64" name="__codelineno-21-64" href="#__codelineno-21-64"></a><span class="p">};</span>
 </code></pre></div>
 </details>
 <hr>
@@ -2713,72 +2781,72 @@ Orthographic Forms dictionary.</p>
 </ol>
 <details class="example">
 <summary>ShareX Script <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $prev_note_id = $sorted_list[1]; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $prev_note_id; fields = @{ FrequenciesStylized = $curr_note_data.result.fields.FrequenciesStylized.value; Sentence = $curr_note_data.result.fields.Sentence.value; SentenceReading = $curr_note_data.result.fields.SentenceReading.value; } } } }; Run-Json @{ action = 'deleteNotes'; version = 6; params = @{ notes = @($curr_note_id); } };"
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>-NoProfile -Command "function Run-Json { param( $json_map ); $json = $json_map | ConvertTo-Json -Depth 5; $data = Invoke-RestMethod -Uri http://127.0.0.1:8765 -Method Post -ContentType 'application/json; charset=UTF-8' -Body $json; return $data; }; $added_notes = Run-Json @{ action = 'findNotes'; version = 6; params = @{ query = 'added:1'; } }; $sorted_list = $added_notes.result | Sort-Object -Descending {[Long]$_}; $prev_note_id = $sorted_list[1]; $curr_note_id = $sorted_list[0]; $curr_note_data = Run-Json @{ action = 'notesInfo'; version = 6; params = @{ notes = @($curr_note_id); } }; Run-Json @{ action = 'updateNoteFields'; version = 6; params = @{ note = @{ id = $prev_note_id; fields = @{ FrequenciesStylized = $curr_note_data.result.fields.FrequenciesStylized.value; Sentence = $curr_note_data.result.fields.Sentence.value; SentenceReading = $curr_note_data.result.fields.SentenceReading.value; } } } }; Run-Json @{ action = 'deleteNotes'; version = 6; params = @{ notes = @($curr_note_id); } };"
 </code></pre></div>
 </details>
 <details class="example">
 <summary>Original ShareX Code <small>(click here)</small></summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c"># (common begin)</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="p">};</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="c"># (common end)</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
-<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
-<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>    <span class="p">}</span>
-<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="p">};</span>
-<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
-<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
-<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>
-<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a><span class="nv">$prev_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">1</span><span class="p">];</span>
-<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
-<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>
-<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>
-<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a><span class="nv">$curr_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
-<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
-<a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>    <span class="p">}</span>
-<a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a><span class="p">};</span>
-<a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a>
-<a id="__codelineno-21-38" name="__codelineno-21-38" href="#__codelineno-21-38"></a><span class="c"># copies frequency, sentence, sentence reading to previous note</span>
-<a id="__codelineno-21-39" name="__codelineno-21-39" href="#__codelineno-21-39"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-21-40" name="__codelineno-21-40" href="#__codelineno-21-40"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
-<a id="__codelineno-21-41" name="__codelineno-21-41" href="#__codelineno-21-41"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-21-42" name="__codelineno-21-42" href="#__codelineno-21-42"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-21-43" name="__codelineno-21-43" href="#__codelineno-21-43"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-21-44" name="__codelineno-21-44" href="#__codelineno-21-44"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$prev_note_id</span><span class="p">;</span>
-<a id="__codelineno-21-45" name="__codelineno-21-45" href="#__codelineno-21-45"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-21-46" name="__codelineno-21-46" href="#__codelineno-21-46"></a>                <span class="n">FrequenciesStylized</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">FrequenciesStylized</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-21-47" name="__codelineno-21-47" href="#__codelineno-21-47"></a>                <span class="n">Sentence</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Sentence</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-21-48" name="__codelineno-21-48" href="#__codelineno-21-48"></a>                <span class="n">SentenceReading</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">SentenceReading</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
-<a id="__codelineno-21-49" name="__codelineno-21-49" href="#__codelineno-21-49"></a>            <span class="p">}</span>
-<a id="__codelineno-21-50" name="__codelineno-21-50" href="#__codelineno-21-50"></a>        <span class="p">}</span>
-<a id="__codelineno-21-51" name="__codelineno-21-51" href="#__codelineno-21-51"></a>    <span class="p">}</span>
-<a id="__codelineno-21-52" name="__codelineno-21-52" href="#__codelineno-21-52"></a><span class="p">};</span>
-<a id="__codelineno-21-53" name="__codelineno-21-53" href="#__codelineno-21-53"></a>
-<a id="__codelineno-21-54" name="__codelineno-21-54" href="#__codelineno-21-54"></a><span class="c"># removes current note</span>
-<a id="__codelineno-21-55" name="__codelineno-21-55" href="#__codelineno-21-55"></a><span class="n">Run-Json</span> <span class="p">@{</span>
-<a id="__codelineno-21-56" name="__codelineno-21-56" href="#__codelineno-21-56"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'deleteNotes'</span><span class="p">;</span>
-<a id="__codelineno-21-57" name="__codelineno-21-57" href="#__codelineno-21-57"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
-<a id="__codelineno-21-58" name="__codelineno-21-58" href="#__codelineno-21-58"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-21-59" name="__codelineno-21-59" href="#__codelineno-21-59"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
-<a id="__codelineno-21-60" name="__codelineno-21-60" href="#__codelineno-21-60"></a>    <span class="p">}</span>
-<a id="__codelineno-21-61" name="__codelineno-21-61" href="#__codelineno-21-61"></a><span class="p">};</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c"># (common begin)</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="k">function</span> <span class="n">Run-Json</span> <span class="p">{</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    <span class="k">param</span><span class="p">(</span> <span class="nv">$json_map</span> <span class="p">);</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>    <span class="nv">$json</span> <span class="p">=</span> <span class="nv">$json_map</span> <span class="p">|</span> <span class="nb">ConvertTo-Json</span> <span class="n">-Depth</span> <span class="n">5</span><span class="p">;</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>    <span class="nv">$data</span> <span class="p">=</span> <span class="nb">Invoke-RestMethod</span> <span class="n">-Uri</span> <span class="n">http</span><span class="p">://</span><span class="n">127</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">0</span><span class="p">.</span><span class="n">1</span><span class="p">:</span><span class="n">8765</span> <span class="n">-Method</span> <span class="n">Post</span> <span class="n">-ContentType</span> <span class="p">`</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>        <span class="s1">'application/json; charset=UTF-8'</span> <span class="n">-Body</span> <span class="nv">$json</span><span class="p">;</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>    <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="p">};</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a><span class="c"># (common end)</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a><span class="nv">$added_notes</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'findNotes'</span><span class="p">;</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>        <span class="n">query</span> <span class="p">=</span> <span class="s1">'added:1'</span><span class="p">;</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>    <span class="p">}</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a><span class="p">};</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a><span class="nv">$sorted_list</span> <span class="p">=</span> <span class="nv">$added_notes</span><span class="p">.</span><span class="n">result</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Descending</span> <span class="p">{</span><span class="no">[Long]</span><span class="nv">$_</span><span class="p">};</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a><span class="nv">$prev_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">1</span><span class="p">];</span>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="nv">$curr_note_id</span> <span class="p">=</span> <span class="nv">$sorted_list</span><span class="p">[</span><span class="n">0</span><span class="p">];</span>
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a><span class="nv">$curr_note_data</span> <span class="p">=</span> <span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'notesInfo'</span><span class="p">;</span>
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a>    <span class="p">}</span>
+<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a><span class="p">};</span>
+<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a>
+<a id="__codelineno-23-38" name="__codelineno-23-38" href="#__codelineno-23-38"></a><span class="c"># copies frequency, sentence, sentence reading to previous note</span>
+<a id="__codelineno-23-39" name="__codelineno-23-39" href="#__codelineno-23-39"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-23-40" name="__codelineno-23-40" href="#__codelineno-23-40"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'updateNoteFields'</span><span class="p">;</span>
+<a id="__codelineno-23-41" name="__codelineno-23-41" href="#__codelineno-23-41"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-23-42" name="__codelineno-23-42" href="#__codelineno-23-42"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-23-43" name="__codelineno-23-43" href="#__codelineno-23-43"></a>        <span class="n">note</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-23-44" name="__codelineno-23-44" href="#__codelineno-23-44"></a>            <span class="n">id</span> <span class="p">=</span> <span class="nv">$prev_note_id</span><span class="p">;</span>
+<a id="__codelineno-23-45" name="__codelineno-23-45" href="#__codelineno-23-45"></a>            <span class="n">fields</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-23-46" name="__codelineno-23-46" href="#__codelineno-23-46"></a>                <span class="n">FrequenciesStylized</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">FrequenciesStylized</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-23-47" name="__codelineno-23-47" href="#__codelineno-23-47"></a>                <span class="n">Sentence</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">Sentence</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-23-48" name="__codelineno-23-48" href="#__codelineno-23-48"></a>                <span class="n">SentenceReading</span> <span class="p">=</span> <span class="nv">$curr_note_data</span><span class="p">.</span><span class="n">result</span><span class="p">.</span><span class="n">fields</span><span class="p">.</span><span class="n">SentenceReading</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
+<a id="__codelineno-23-49" name="__codelineno-23-49" href="#__codelineno-23-49"></a>            <span class="p">}</span>
+<a id="__codelineno-23-50" name="__codelineno-23-50" href="#__codelineno-23-50"></a>        <span class="p">}</span>
+<a id="__codelineno-23-51" name="__codelineno-23-51" href="#__codelineno-23-51"></a>    <span class="p">}</span>
+<a id="__codelineno-23-52" name="__codelineno-23-52" href="#__codelineno-23-52"></a><span class="p">};</span>
+<a id="__codelineno-23-53" name="__codelineno-23-53" href="#__codelineno-23-53"></a>
+<a id="__codelineno-23-54" name="__codelineno-23-54" href="#__codelineno-23-54"></a><span class="c"># removes current note</span>
+<a id="__codelineno-23-55" name="__codelineno-23-55" href="#__codelineno-23-55"></a><span class="n">Run-Json</span> <span class="p">@{</span>
+<a id="__codelineno-23-56" name="__codelineno-23-56" href="#__codelineno-23-56"></a>    <span class="n">action</span> <span class="p">=</span> <span class="s1">'deleteNotes'</span><span class="p">;</span>
+<a id="__codelineno-23-57" name="__codelineno-23-57" href="#__codelineno-23-57"></a>    <span class="n">version</span> <span class="p">=</span> <span class="n">6</span><span class="p">;</span>
+<a id="__codelineno-23-58" name="__codelineno-23-58" href="#__codelineno-23-58"></a>    <span class="n">params</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-23-59" name="__codelineno-23-59" href="#__codelineno-23-59"></a>        <span class="n">notes</span> <span class="p">=</span> <span class="p">@(</span><span class="nv">$curr_note_id</span><span class="p">);</span>
+<a id="__codelineno-23-60" name="__codelineno-23-60" href="#__codelineno-23-60"></a>    <span class="p">}</span>
+<a id="__codelineno-23-61" name="__codelineno-23-61" href="#__codelineno-23-61"></a><span class="p">};</span>
 </code></pre></div>
 </details></div>
 
@@ -2787,7 +2855,7 @@ Orthographic Forms dictionary.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 10, 2023</span>
       
     
   </small>
