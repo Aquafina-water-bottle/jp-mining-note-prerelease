@@ -622,7 +622,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupmpvacious/" class="md-nav__link">
-        mpvacious (TODO)
+        mpvacious
       </a>
     </li>
   
@@ -636,7 +636,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupasbplayer/" class="md-nav__link">
-        asbplayer (TODO)
+        asbplayer
       </a>
     </li>
   
@@ -1425,7 +1425,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options (TODO)
+        Compile Options (TODO)
       </a>
     </li>
   
@@ -1761,7 +1761,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts (TODO)
+        Anki Hotkeys (TODO)
       </a>
     </li>
   
@@ -1916,8 +1916,8 @@ fill the field in <a href="../setupyomichan/#yomichan-fields">Yomichan's Anki Ca
 <li>Navigate to Yomichan settings, and then to <code>Anki</code> →  <code>Configure Anki card format...</code>.</li>
 <li>Set <code>IsSentenceCard</code> to <code>1</code>.</li>
 </ul>
-<p>This will set all new cards to be a sentence card by default.
-However, what if we don't want <em>ALL</em> new cards to be sentence cards?
+<p>This will set all new cards to be a sentence card by default.</p>
+<p>However, what if we don't want <em>ALL</em> new cards to be sentence cards?
 With the power of Yomichan handlebars, we can selectively fill fields depending
 on select properties of the target word.</p>
 <h3 id="is-hiragana">Is Hiragana<a class="headerlink" href="#is-hiragana" title="Permanent link">¶</a></h3>
@@ -1995,9 +1995,9 @@ To do exactly that, do the following:</p>
 </ul>
 <hr>
 <h2 id="batch-change-card-type">Batch Change Card Type<a class="headerlink" href="#batch-change-card-type" title="Permanent link">¶</a></h2>
-<ul>
-<li>TODO explanation: may have old cards ported from previous cards, or cards not created by Yomichan</li>
-</ul>
+<p>You may want to change the card type of many existing cards all at once.
+For example, you may have cards imported into JPMN,
+or cards that were simply not created by Yomichan in the first place.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>As always, before mass editing your collection, please
@@ -2024,18 +2024,25 @@ to do the changes.</p>
 </div>
 </div>
 <h3 id="batch-change-is-hiragana">Batch Change: Is Hiragana<a class="headerlink" href="#batch-change-is-hiragana" title="Permanent link">¶</a></h3>
-<ul>
-<li>hiragana: <code>fill_field_if_hiragana</code> batch command</li>
-<li>reminder: above will affect all cards, create a backup!</li>
-<li>
-</ul></div>
+<p>If you used to have
+<a href="https://github.com/MarvNC/JP-Resources#anki-automatic-hint-sentence-for-kana-cards">Marv's "Automatic Hint Sentence for Kana Cards"</a>
+setup, you might be interested in replicating that for old cards.
+In order to do so, the <code>fill_field_if_hiragana</code> <a href="../batch/">batch command</a> is provided
+to fill the provided field of all cards that have hiragana-only terms.</p>
+<p>For example, the following batch command fills the <code>IsHintCard</code>,
+which turns all cards with hiragana-only terms into <a href="../cardtypes/#hint-cards">Hint Cards</a>,
+meaning a hint sentence is shown below the word.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">fill_field_if_hiragana</span><span class="w"> </span>IsHintCard
+</code></pre></div>
+<p>If you want to have this be the default for all new cards,
+see <a href="#is-hiragana">here</a>.</p></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 24, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
       
     
   </small>

@@ -622,7 +622,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupmpvacious/" class="md-nav__link">
-        mpvacious (TODO)
+        mpvacious
       </a>
     </li>
   
@@ -636,7 +636,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupasbplayer/" class="md-nav__link">
-        asbplayer (TODO)
+        asbplayer
       </a>
     </li>
   
@@ -1206,15 +1206,15 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
-  <a href="#primary-definition" class="md-nav__link">
-    Primary Definition
+  <a href="#primarydefinition" class="md-nav__link">
+    PrimaryDefinition
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#additional-notes" class="md-nav__link">
-    Additional Notes
+  <a href="#additionalnotes" class="md-nav__link">
+    AdditionalNotes
   </a>
   
 </li>
@@ -1556,7 +1556,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options (TODO)
+        Compile Options (TODO)
       </a>
     </li>
   
@@ -1892,7 +1892,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts (TODO)
+        Anki Hotkeys (TODO)
       </a>
     </li>
   
@@ -2110,15 +2110,15 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
         
           <li class="md-nav__item">
-  <a href="#primary-definition" class="md-nav__link">
-    Primary Definition
+  <a href="#primarydefinition" class="md-nav__link">
+    PrimaryDefinition
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#additional-notes" class="md-nav__link">
-    Additional Notes
+  <a href="#additionalnotes" class="md-nav__link">
+    AdditionalNotes
   </a>
   
 </li>
@@ -2212,7 +2212,7 @@ in that order.</p>
 </div>
 <div class="tabbed-block">
 <p>This is where the image from the <code>Picture</code> field appears.
-If there is no picture, then the word box takes up the entire spacethe word box takes up the entire space.</p>
+If there is no picture, then the word box takes up the entire space.</p>
 </div>
 <div class="tabbed-block">
 <p>This is where the text in <code>PrimaryDefinition</code>, and optionally, the picture(s)
@@ -2233,7 +2233,7 @@ See [here TODO]() to see the reasons why these design decisions were made.
 <p>The interface for mobile should be mostly the same as the desktop.
 However, there are a few important differences to note:</p>
 <ol>
-<li>Instead of collapsing sections, these are replaced with tabs.</li>
+<li>Collapsing sections, are replaced with tabs.</li>
 <li>The sentence appears below the definition instead of above.</li>
 <li>The audio buttons appear at the bottom left of the card, instead of right below the pitch accent.</li>
 </ol>
@@ -2275,33 +2275,29 @@ TODO Summarize compile time options and runtime options here
 
 <h2 id="changing-the-card-type">Changing the Card Type<a class="headerlink" href="#changing-the-card-type" title="Permanent link">¶</a></h2>
 <p><i><sup>Main Page: <a href="../changingcardtype/">Changing Card Type</a></sup></i></p>
-<blockquote>
-<p>Fields: <code>IsSentenceCard</code>, <code>IsTargetedSentenceCard</code>, etc.</p>
-</blockquote>
+<p>For the purposes of this documentation, the "card type" of a card
+refers to how the content is displayed and tested.
+For example, vocab cards and sentence cards are two different "card types".</p>
+<p>In order to change the card type of any card:</p>
+<p>(TODO video)</p>
+<ol>
+<li>Select any JPMN card within Anki's Card browser</li>
+<li>Within the card editor, fill in any <a href="../fields/">binary field</a>.
+    For example, fill <code>IsSentenceCard</code> with <code>1</code>.</li>
+<li>Preview the card. You should now see that the card is a sentence card!</li>
+</ol>
+<p>As you can tell, this only changes the card type for <strong>one individual card</strong>.
+Of course, this does not mean you must manually edit each individual card
+to change its card type!</p>
 <ul>
-<li>TODO changing card type</li>
-<li>TODO explanation: done within Anki, affects only one card</li>
-<li>TODO: example: sentence card</li>
-<li>TODO video</li>
-</ul>
-<blockquote>
-<p>(main window) -&gt; <code>Browse</code> -&gt; (select any created jp-mining-note card) -&gt; fill a binary field with any character, say <code>1</code></p>
-</blockquote>
-<p>As you may have noticed, this only changes the card type of one individual card.</p>
-<ul>
-<li>If you want to change the card type for all new cards, see
+<li>If you want to <strong>change the default card type</strong>
+    (i.e. change the card type for all new/future cards), see
     <a href="../changingcardtype/#default-card-type">here</a>.</li>
-<li>If you want to change the card type for all exising cards, see
+<li>If you want to change the card type for <strong>all exising cards</strong>, see
     <a href="../changingcardtype/#batch-change-card-type">here</a>.</li>
+<li>A comprehensive list of all possible card types can be found
+    <a href="../cardtypes/">here</a>.</li>
 </ul>
-<!--
-- TODO basic explanation of how it works + screenshot in Anki
-    - example `IsSentenceCard`
-- TODO link to Changing Card Type
-- TODO how to make it default for new cards: Yomichan →  "Anki Card Format"
-- TODO backfill batch commands: link to cardtypes.md
--->
-
 <hr>
 <h2 id="selecting-definitions">Selecting Definitions<a class="headerlink" href="#selecting-definitions" title="Permanent link">¶</a></h2>
 <p><i><sup>Main Page: <a href="../definitions/#primary-definition-selection-manual">Definitions: Primary Definition Selection (Manual)</a></sup></i></p>
@@ -2450,7 +2446,7 @@ sections of the card.</p>
 <p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-10</code>)</i></sup></p>
 <p>By default, the display language is in English.
 Currently, Japanese and English are supported as display languages.</p>
-<p>To change the display language (say, to Japanese), use the following <a href="../compiletimeoptions/">compile-time option</a>:
+<p>To change the display language (say, to Japanese), use the following <a href="../compiletimeoptions/">compile option</a>:
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>"display-languages": ["jp", "en"],
 </code></pre></div>
 <div class="admonition note">
@@ -2467,16 +2463,16 @@ will still be in English.</p>
 </blockquote>
 <p>This note type comes with a <code>FrequencySort</code> field,
 which is the equivalent of Marv's <code>Frequency</code> field in
-<a href="https://github.com/MarvNC/JP-Resources#sorting-mined-anki-cards-by-frequency">this</a> guide.
-Visit the aformentioned link (and scroll down to <code>Usage</code>)
+<a href="https://github.com/MarvNC/JP-Resources#sorting-mined-anki-cards-by-frequency">his guide</a>.</p>
+<p><strong>This note does not sort via frequency by default.</strong>
+It simply contains the frequency data so you can sort by frequency if you choose to do so.
+Visit <a href="https://github.com/MarvNC/JP-Resources#sorting-mined-anki-cards-by-frequency">Marv's guide</a>
+(and scroll down to <code>Usage</code>)
 to see how to sort and review your cards by frequency.</p>
 <hr>
 <h2 id="field-summary">Field Summary<a class="headerlink" href="#field-summary" title="Permanent link">¶</a></h2>
 <p>Some important fields that were not introduced above will be discussed below.</p>
 <h3 id="key">Key<a class="headerlink" href="#key" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>Field: <code>Key</code></p>
-</blockquote>
 <ul>
 <li>
 <p>This field contains the tested word.
@@ -2491,19 +2487,13 @@ etc. and add a new card.</p>
 a warning will appear on cards that have a duplicate key.</p>
 </li>
 </ul>
-<h3 id="primary-definition">Primary Definition<a class="headerlink" href="#primary-definition" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>Field: <code>PrimaryDefinition</code></p>
-</blockquote>
+<h3 id="primarydefinition">PrimaryDefinition<a class="headerlink" href="#primarydefinition" title="Permanent link">¶</a></h3>
 <ul>
 <li>This field contains the main content, and is the only
     block of text that is shown by default.
     This field should have everything you require to understand the tested content.</li>
 </ul>
-<h3 id="additional-notes">Additional Notes<a class="headerlink" href="#additional-notes" title="Permanent link">¶</a></h3>
-<blockquote>
-<p>Field: <code>AdditionalNotes</code></p>
-</blockquote>
+<h3 id="additionalnotes">AdditionalNotes<a class="headerlink" href="#additionalnotes" title="Permanent link">¶</a></h3>
 <ul>
 <li>
 <p>This field is useful if you want to write down even more notes,
@@ -2535,7 +2525,7 @@ TODO
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
       
     
   </small>

@@ -23,7 +23,7 @@
     
     
       
-        <title>asbplayer (TODO) - jp-mining-note</title>
+        <title>asbplayer - jp-mining-note</title>
       
     
     
@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#existing-guides" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -117,7 +122,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              asbplayer (TODO)
+              asbplayer
             
           </span>
         </div>
@@ -621,7 +626,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupmpvacious/" class="md-nav__link">
-        mpvacious (TODO)
+        mpvacious
       </a>
     </li>
   
@@ -641,9 +646,66 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          asbplayer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        asbplayer (TODO)
+        asbplayer
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#existing-guides" class="md-nav__link">
+    Existing Guides
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card-creation" class="md-nav__link">
+    Card Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1339,7 +1401,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options (TODO)
+        Compile Options (TODO)
       </a>
     </li>
   
@@ -1675,7 +1737,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts (TODO)
+        Anki Hotkeys (TODO)
       </a>
     </li>
   
@@ -1720,6 +1782,49 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#existing-guides" class="md-nav__link">
+    Existing Guides
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#card-creation" class="md-nav__link">
+    Card Creation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    Other
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1744,17 +1849,41 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 
 
-  <h1>asbplayer (TODO)</h1>
+  <h1>asbplayer</h1>
 
-<div><p>TODO</p>
-<p>TODO link guides and all?</p>
-<p><a href="https://github.com/killergerbah/asbplayer">asbplayer</a></p>
+<div><p><a href="https://github.com/killergerbah/asbplayer"><strong>asbplayer</strong></a>
+is a browser-based media player and Chrome extension,
+used for subtitle sentence mining and video playing.
+asbplayer works on both video streaming sites and downloaded videos.
+However, <a href="https://github.com/killergerbah/asbplayer#browser-compatibility">codec support for downloaded videos is limited</a>, and is purely dependent on the browser used.</p>
+<p>If you are looking to create cards using downloaded videos, I recommend <a href="../setupmpvacious/">mpvacious</a>.</p>
+<hr>
+<h2 id="existing-guides">Existing Guides<a class="headerlink" href="#existing-guides" title="Permanent link">¶</a></h2>
+<p>There are a bunch of existing guides out there for asbplayer.
+A few are listed below.</p>
 <ul>
-<li>
-<p>To use asbplayer, add the card with Yomichan, and then update the created note with asbplayer.
-    I recommend filling out the following fields as follows:</p>
-<details class="example">
-<summary>asbplayer fields <small>(click here)</small></summary>
+<li><a href="https://www.youtube.com/watch?v=B60cj69MSmA">mikumino's mining workflow</a> (asbplayer + jp-mining-note)</li>
+<li><a href="https://github.com/killergerbah/asbplayer#community-guides">asbplayer's list of community guides</a></li>
+<li><a href="https://docs.google.com/document/d/e/2PACX-1vQuEAoZFoJbULZzCJ3_tW7ayT_DcQl9eDlrXMnuPGTwDk62r5fQrXak3ayxBsEgkL85_Z-YY5W4yUom/pub">Shiki's mining workflow</a> (asbplayer)<ul>
+<li>Contact info: <code>boundary-of-emptiness#3065</code> <!-- 152563705345867778 -->
+    on the Refold (JP) Discord server</li>
+</ul>
+</li>
+<li><a href="https://docs.google.com/document/d/e/2PACX-1vTnCEECFTJ_DyBID0uIQ5AZkbrb5ynSmYgkdi6OVyvX-fs9X40btEbpSToTmsct5JzrQJ2e9wcrc6h-/pub">Tigy01's mining workflow</a> (asbplayer)<ul>
+<li>Contact info: <code>Tigy01#1231</code> <!-- 451194927515172864 -->
+    on the Refold (JP) Discord server</li>
+</ul>
+</li>
+<li><a href="https://soyuz18.notion.site/Sentence-mining-from-Netflix-and-YouTube-with-asbplayer-83a03590cd8349ba81ca10340645b565#92ca8ce0251f4eeba89776950b8cef11">Brian's "Sentence mining from Netflix and YouTube with asbplayer"</a></li>
+</ul>
+<hr>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">¶</a></h2>
+<p>Install the extension from asbplayer's
+<a href="https://github.com/killergerbah/asbplayer/releases/latest">releases page</a>.</p>
+<hr>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h2>
+<p>asbplayer's settings can be found <a href="https://killergerbah.github.io/asbplayer/?view=settings">here</a>.</p>
+<p>I recommend filling out the following fields as follows:</p>
 <table>
 <thead>
 <tr>
@@ -1793,25 +1922,29 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Chances are that you are using subtitles. However, if you are not using subtitles,
-it is fine to keep the Sentence Field empty.</p>
-</div>
-</details>
-</li>
+<hr>
+<h2 id="card-creation">Card Creation<a class="headerlink" href="#card-creation" title="Permanent link">¶</a></h2>
+<p>To create JPMN cards with asbplayer:</p>
+<ul>
+<li><a href="https://github.com/killergerbah/asbplayer#syncing-with-streaming-video">Attach asbplayer to the desired video</a>,
+    or
+    <a href="https://github.com/killergerbah/asbplayer#loading-files">drag/drop a downloaded video into the asbplayer site</a>.</li>
+<li>Create the card with Yomichan</li>
+<li>Capture the audio (TODO specific instructions! What default keybinds?)</li>
+<li>Update the last card (TODO is this the exact text?)</li>
+</ul>
+<hr>
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">¶</a></h2>
+<ul>
 <li>
-<p>Any version of asbplayer released after
-    <a href="https://github.com/killergerbah/asbplayer/issues/205">2023/01/16</a> (version 0.25.0 or higher)
-    will now preserve the bolded word within the sentence!
-    However, asbplayer shares the same common issue with mpvacious, where
+<p>A common issue with asbplayer is that
     the <code>SentenceReading</code> field may differ from the <code>Sentence</code> field.
     See the
     <a href="../faq/#the-sentencereading-field-is-not-updated-is-different-from-the-sentence-field">FAQ</a>
     on how to fix it.</p>
 </li>
 <li>
-<p>To create cards with asbplayer, update last card (TODO ask for help with specific instructions)</p>
+<p>You have to export the audio as <code>mp3</code> if you plan on using AnkiMobile (iOS), or AnkiWeb.</p>
 </li>
 </ul></div>
 
@@ -1820,7 +1953,7 @@ it is fine to keep the Sentence Field empty.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
       
     
   </small>

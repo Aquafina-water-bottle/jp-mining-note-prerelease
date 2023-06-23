@@ -76,6 +76,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#fields-table" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -617,7 +622,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupmpvacious/" class="md-nav__link">
-        mpvacious (TODO)
+        mpvacious
       </a>
     </li>
   
@@ -631,7 +636,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupasbplayer/" class="md-nav__link">
-        asbplayer (TODO)
+        asbplayer
       </a>
     </li>
   
@@ -1236,9 +1241,45 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fields (TODO)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Fields (TODO)
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fields-table" class="md-nav__link">
+    Fields Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Definitions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1337,7 +1378,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options (TODO)
+        Compile Options (TODO)
       </a>
     </li>
   
@@ -1673,7 +1714,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts (TODO)
+        Anki Hotkeys (TODO)
       </a>
     </li>
   
@@ -1718,6 +1759,28 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fields-table" class="md-nav__link">
+    Fields Table
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Definitions
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1744,6 +1807,9 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
   <h1>Fields (TODO)</h1>
 
+<div><p>This page contains a table with some specific information on the fields used by this note type.
+If you are instead looking for what a particular field does, try using the search bar instead.</p>
+<h2 id="fields-table">Fields Table<a class="headerlink" href="#fields-table" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -2079,13 +2145,28 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </tr>
 </tbody>
 </table>
+<h2 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><strong>Binary Field</strong>:
+    A field that checks whether it is filled or not with any value, say <code>1</code>.
+    The default is implied by the name of the field, and a value of "true" means that the field is filled.
+    For example, the <code>IsSentenceCard</code> field will turn the card into a sentence card if filled.
+    If it is not filled, then the card will be a word card.
+    To fill a field automatically, see
+    <a href="../faq/#how-do-i-change-the-default-value-of-a-binary-field" target="_blank">here</a>.</p>
+</li>
+<li>
+<p><strong>PA</strong>: Short for "Pitch Accent".</p>
+</li>
+</ul></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
       
     
   </small>

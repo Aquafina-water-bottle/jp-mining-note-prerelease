@@ -750,7 +750,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupmpvacious/" class="md-nav__link">
-        mpvacious (TODO)
+        mpvacious
       </a>
     </li>
   
@@ -764,7 +764,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupasbplayer/" class="md-nav__link">
-        asbplayer (TODO)
+        asbplayer
       </a>
     </li>
   
@@ -1460,7 +1460,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options (TODO)
+        Compile Options (TODO)
       </a>
     </li>
   
@@ -1796,7 +1796,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts (TODO)
+        Anki Hotkeys (TODO)
       </a>
     </li>
   
@@ -2014,7 +2014,7 @@ in almost every aspect:</p>
 <li>They do not require an extension that constantly polls the clipboard.</li>
 </ul>
 <p>However, it requires more specialized coordination between programs.
-Fortunately, most common workflows support websockets nowadays.</p>
+Fortunately, most standard workflows support websockets nowadays.</p>
 <details class="example">
 <summary>Resources <small>(click here)</small></summary>
 <ul>
@@ -2125,7 +2125,9 @@ have came out (see above), I recommend to use said alternatives.</p>
 <h3 id="texthooker-clipboard-based">Texthooker: Clipboard based<a class="headerlink" href="#texthooker-clipboard-based" title="Permanent link">¶</a></h3>
 <p>These pages display the hooked content, where the hooked content is communicated
 via automated clipboard (copy/paste) tools.
-Most classic setups documented are for clipboard based texthooker pages.</p>
+Most classic setups documented are for clipboard based texthooker pages.
+If possible, I highly recommend trying out a
+<a href="#texthooker-websocket-based">websocket based texthooker approach</a> instead.</p>
 <details class="example">
 <summary>Resources <small>(click here)</small></summary>
 <ul>
@@ -2208,24 +2210,33 @@ standard resources above in favor of these.</p>
 <summary>Resources <small>(click here)</small></summary>
 <ul>
 <li><a href="https://github.com/Ajatt-Tools/mpvacious"><strong>mpvacious</strong></a> (recommended for downloaded videos / if you are using mpv)<ul>
-<li>Add-on for <a href="https://mpv.io/">MPV</a>, a cross platform media player. Personally tested.</li>
+<li>Add-on for <a href="https://mpv.io/">mpv</a>, a cross platform media player. Personally tested.</li>
 <li>Basically universal codec support since it uses mpv.</li>
 <li>This addon has capabilities to
     <a href="https://github.com/Ajatt-Tools/mpvacious/pull/78">extract the video clip itself</a>
     as the form of a gif (autoplayable webp).</li>
+<li><strong>See <a href="../setupmpvacious/">here</a> for basic setup instructions.</strong></li>
 </ul>
 </li>
 <li><a href="https://github.com/killergerbah/asbplayer"><strong>asbplayer</strong></a> (recommended for streamed sites)<ul>
 <li>Cross platform (chromium) browser video player. Personally tested.</li>
 <li>Works on video streaming sites, as well as downloaded videos.</li>
-<li>Does not require a texthooker: subtitles are displayed on the site itself.</li>
+<li>Does not require a texthooker page: subtitles are displayed on the site itself.</li>
 <li>Codec support is limited, and depends on the browser used.</li>
+<li><strong>See <a href="../setupasbplayer/">here</a> for basic setup instructions.</strong></li>
 </ul>
 </li>
 <li><a href="https://github.com/animebook/animebook.github.io"><strong>Animebook</strong></a><ul>
 <li>Cross platform (chromium) browser video player.</li>
-<li>Does not require a texthooker: subtitles are displayed on the site itself.</li>
+<li>Does not require a texthooker page: subtitles are displayed on the site itself.</li>
 <li>Codec support is limited, and depends on the browser used.</li>
+<li>See <a href="https://cademcniven.com/posts/20210703/"><strong>Cade's sentence mining guide</strong></a>
+    for basic setup instructions.
+    Note that the aformentioned guide is not using JPMN.<ul>
+<li>Contact info: <code>eminent#8189</code> <!-- 126903585152827392 -->
+    on <a href="https://discord.gg/uK4HeGN">Perdition's server</a> or <a href="https://learnjapanese.moe/join/">TMW server</a>)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>All of the above require subtitle files to function.
@@ -2257,28 +2268,6 @@ standard resources above in favor of these.</p>
 <li>WARNING: This is potentially outdated and/or abandoned.
     The most recent commit as of writing (2022/10/19) was done in 2022/01/27.
     This is listed here for completeness only.</li>
-</ul>
-</li>
-</ul>
-</details>
-<details class="example">
-<summary>Guides <small>(click here)</small></summary>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=B60cj69MSmA">mikumino's mining workflow</a> (asbplayer + jp-mining-note)</li>
-<li><a href="https://docs.google.com/document/d/e/2PACX-1vQuEAoZFoJbULZzCJ3_tW7ayT_DcQl9eDlrXMnuPGTwDk62r5fQrXak3ayxBsEgkL85_Z-YY5W4yUom/pub">Shiki's mining workflow</a> (asbplayer)<ul>
-<li>Contact info: <code>boundary-of-emptiness#3065</code> <!-- 152563705345867778 -->
-    on the Refold (JP) Discord server</li>
-</ul>
-</li>
-<li><a href="https://docs.google.com/document/d/e/2PACX-1vTnCEECFTJ_DyBID0uIQ5AZkbrb5ynSmYgkdi6OVyvX-fs9X40btEbpSToTmsct5JzrQJ2e9wcrc6h-/pub">Tigy01's mining workflow</a> (asbplayer)<ul>
-<li>Contact info: <code>Tigy01#1231</code> <!-- 451194927515172864 -->
-    on the Refold (JP) Discord server</li>
-</ul>
-</li>
-<li><a href="https://soyuz18.notion.site/Sentence-mining-from-Netflix-and-YouTube-with-asbplayer-83a03590cd8349ba81ca10340645b565#92ca8ce0251f4eeba89776950b8cef11">Brian's "Sentence mining from Netflix and YouTube with asbplayer"</a></li>
-<li><a href="https://cademcniven.com/posts/20210703/">Cade's sentence mining guide</a> (animebook)<ul>
-<li>Contact info: <code>eminent#8189</code> <!-- 126903585152827392 -->
-    on <a href="https://discord.gg/uK4HeGN">Perdition's server</a> or <a href="https://learnjapanese.moe/join/">TMW server</a></li>
 </ul>
 </li>
 </ul>
@@ -2476,7 +2465,7 @@ There are a few common issues that asbplayer users have, when creating cards wit
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
       
     
   </small>

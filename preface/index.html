@@ -739,7 +739,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupmpvacious/" class="md-nav__link">
-        mpvacious (TODO)
+        mpvacious
       </a>
     </li>
   
@@ -753,7 +753,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupasbplayer/" class="md-nav__link">
-        asbplayer (TODO)
+        asbplayer
       </a>
     </li>
   
@@ -1449,7 +1449,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../compiletimeoptions/" class="md-nav__link">
-        Compile-Time Options (TODO)
+        Compile Options (TODO)
       </a>
     </li>
   
@@ -1785,7 +1785,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts (TODO)
+        Anki Hotkeys (TODO)
       </a>
     </li>
   
@@ -1953,7 +1953,8 @@ it would be best to make sure that the note aligns with exactly what you want.</
 <h2 id="why-you-would-not-want-to-use-jp-mining-note">Why you would NOT want to use jp-mining-note<a class="headerlink" href="#why-you-would-not-want-to-use-jp-mining-note" title="Permanent link">¶</a></h2>
 <ul>
 <li>You have an existing setup and are happy with it.</li>
-<li>You want to study only from pre-made decks.</li>
+<li>You want to study only from pre-made decks
+    (or are not willing to spend the time to import notes into this template).</li>
 <li>You want to use this template to study something outside of Japanese.</li>
 <li>You want an extremely minimal template, with little/no javascript.</li>
 <li>You do not like its overall layout, and are not willing to customize the note to suit your needs.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
@@ -1962,13 +1963,13 @@ it would be best to make sure that the note aligns with exactly what you want.</
 <h2 id="why-you-would-want-to-use-jp-mining-note">Why you would want to use jp-mining-note<a class="headerlink" href="#why-you-would-want-to-use-jp-mining-note" title="Permanent link">¶</a></h2>
 <!-- I don't like trying to "sell" people the note. If you like it, you like it. If you don't, you don't. -->
 <ul>
-<li>It looks pretty cool. :)</li>
+<li>You agree with <a href="../principles/">jp-mining-note's philosophy</a>.</li>
 </ul>
 <h2 id="alternatives">Alternatives<a class="headerlink" href="#alternatives" title="Permanent link">¶</a></h2>
 <p>There are many, many Anki templates out there in the wild.
 <a href="../alternatives/">This page</a>
 is my attempt to assemble together some of the the popular and/or interesting card templates.</p>
-<p>If you are not satisfied with, or are not interested in using this template,
+<p>If you are not satisfied with this template, or are not interested in using this template,
 feel free to refer to the above list of alternatives.
 Of course, you can always create one from scratch, or modify any of these notes
 to your heart's content.</p>
@@ -1979,26 +1980,25 @@ to your heart's content.</p>
 <p>The card creation process requires a working instance of Yomichan, Anki-Connect, and Anki.</p>
 <p>By default, this works on PC (Windows, Mac, Linux), and the instructions shown will be for PC.
 However, with the proper setup, one can also create cards on the following platforms:</p>
-<p>TODO update links with correct setup pages:</p>
 <ul>
-<li><a href="../setupyomichan/#android-setup">Android</a> (including Android based e-readers such as ONYX BOOX)</li>
-<li><a href="../setupyomichan/#kindle-setup">Kindle</a> (export to PC to create)</li>
+<li><a href="../setupandroid/">Android</a> (including Android based e-readers such as ONYX BOOX)</li>
+<li><a href="setupkindle.md">Kindle</a> (export a list of sentences to the PC to manually create)</li>
 </ul>
 <p>I'm not aware of a workflow for iOS that works with Yomichan.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>TODO update this note!!! other card exporters will likely be supported in the future!</p>
 <p>JPMN currently requires Yomichan to create the Anki cards.
-As common as Yomichan is, this dependency to Yomichan can be considered a weakness.</p>
+As common as Yomichan is, this dependency to Yomichan can be considered a weakness
+(especially now that Yomichan is no longer getting updates).</p>
 <p>There are many popular setups out there that do not use Yomichan
 and instead have their own card exporter,
 such as
 <a href="https://github.com/rampaa/JL">JL</a>
 and
-<a href="https://github.com/lrorpilla/jidoujisho">jidoujisho</a>.
-Although it is likely possible to replicate certain parts of the setup
-with these card exporters, it is almost guaranteed that select features
-will be missing.</p>
+<a href="https://github.com/lrorpilla/jidoujisho">jidoujisho</a>.</p>
+<p>It is almost guaranteed that one can create JPMN cards with these card exporters.
+However, it is also almost guaranteed that various minor features will likely be missing.</p>
+<p>In the future, more workarounds will be developed to work with alternative card exporters.</p>
 </div>
 <h3 id="anki-desktop">Anki Desktop<a class="headerlink" href="#anki-desktop" title="Permanent link">¶</a></h3>
 <p>This note supports Anki versions 2.1.50 and above, with
@@ -2028,33 +2028,24 @@ The note does not auto-update; it must be done manually.</p>
 <hr>
 <ol>
 <li id="fn:1">
-<p>TODO not point form</p>
-<ul>
-<li>most smaller things, like colors, font size, etc. can be customized fairly easily</li>
-<li>however, customizing the overall layout, i.e. where the image is placed relative to the word,
-    requires a lot more techncial skill</li>
-<li>if using a prebuilt theme, requires building, which also requires a bit of technical skill with
-    command line</li>
-</ul>
-<p><a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<p>Most minor things, such as colors, font size, etc. can be customized fairly easily with <a href="../customcss/">custom CSS</a>.
+However, customizing the overall layout
+(i.e. customizing where the image is placed relative to the word),
+requires a lot more technical skill.
+Alternatively, if plan on using a custom theme within the <code>themes</code> folder,
+these require you to build the note, which at least requires basic knowlwedge of command line. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
 </li>
 <li id="fn:2">
-<p>TODO not point form</p>
-<ul>
-<li>in general, this template is a little more fragile than other templates due to heavy usage of javascript<ul>
-<li>internally attempts to mitigate as much as possible, providing plenty of fallbacks when things fail</li>
-</ul>
-</li>
-<li>updates to anything such as Anki, add-ons, etc. can (and have been known to)
-    break more things than other setups<ul>
-<li>these things usually require user intervention to deal with</li>
-<li>usually recorded under setup changes</li>
-</ul>
-</li>
-<li>updating everything on the template side of things has been smoothlined as much as possible,
-    due to JPMN Manager</li>
-</ul>
-<p><a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+<p>In general, this template is a little more fragile than other templates due to its
+heavy usage of JavaScript.
+This is combined with updates to Anki and external add-ons.
+These updates have been known to break a bit more compared to other setups,
+and usually require some user intervention to deal with (whether it is updating the note,
+or manually changing some settings outside the note).
+If something breaks and a fix is released, they will usually be recorded under
+<a href="../setupchanges/">Setup Changes</a>.</p>
+<p>Note that updating the template itself has been smoothlined as much as possible,
+due to JPMN Manager. <a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
 </li>
 </ol>
 </div></div>
@@ -2064,7 +2055,7 @@ The note does not auto-update; it must be done manually.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
       
     
   </small>

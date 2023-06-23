@@ -23,7 +23,7 @@
     
     
       
-        <title>Compile-Time Options (TODO) - jp-mining-note</title>
+        <title>Compile Options (TODO) - jp-mining-note</title>
       
     
     
@@ -122,7 +122,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Compile-Time Options (TODO)
+              Compile Options (TODO)
             
           </span>
         </div>
@@ -622,7 +622,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupmpvacious/" class="md-nav__link">
-        mpvacious (TODO)
+        mpvacious
       </a>
     </li>
   
@@ -636,7 +636,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../setupasbplayer/" class="md-nav__link">
-        asbplayer (TODO)
+        asbplayer
       </a>
     </li>
   
@@ -1343,12 +1343,12 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Compile-Time Options (TODO)
+          Compile Options (TODO)
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Compile-Time Options (TODO)
+        Compile Options (TODO)
       </a>
       
         
@@ -1723,7 +1723,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../scripts/" class="md-nav__link">
-        Anki Scripts (TODO)
+        Anki Hotkeys (TODO)
       </a>
     </li>
   
@@ -1821,20 +1821,20 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 
 
-  <h1>Compile-Time Options (TODO)</h1>
+  <h1>Compile Options (TODO)</h1>
 
-<div><p>Just like <a href="../runtimeoptions/">runtime options</a>, compile-time options are also options that are applied
+<div><p>Just like <a href="../runtimeoptions/">runtime options</a>, compile options are also options that are applied
 globally to each JPMN card.</p>
-<p>The difference between runtime options and compile-time options is that
-compile-time options require you to <a href="../building/">build the note</a> on your machine
+<p>The difference between runtime options and compile options is that
+compile options require you to <a href="../building/">build the note</a> on your machine
 to use.
 Runtime options can be accessed and changed without having to build the note.</p>
 <hr>
 <h2 id="accessing-editing">Accessing &amp; Editing<a class="headerlink" href="#accessing-editing" title="Permanent link">¶</a></h2>
-<p>To access the compile-time options, <a href="../building/">build the note</a>.</p>
+<p>To access the compile options, <a href="../building/">build the note</a>.</p>
 <p>After building the note, a new file <code>config/config.py</code> should appear.
-The compile-time options can be found in this file.</p>
-<p>To use these compile-time options, edit the <code>config.py</code> file,
+The compile options can be found in this file.</p>
+<p>To use these compile options, edit the <code>config.py</code> file,
 and then re-build the note.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1845,7 +1845,7 @@ it may result in unnecessary merge conflicts.</p>
 </div>
 <hr>
 <h2 id="always-filled-never-filled-fields">Always filled &amp; Never filled fields<a class="headerlink" href="#always-filled-never-filled-fields" title="Permanent link">¶</a></h2>
-<p>Using compile-time options,
+<p>Using compile options,
 one can set a field to act as if it has always been filled, or it has never been filled,
 using the <code>always-filled-fields</code> and <code>never-filled-fields</code> options.
 This will remove the conditional Anki templates
@@ -1884,9 +1884,9 @@ See <a href="../moddingtips/#field-editing">here</a> for more details.</p>
 </div>
 <hr>
 <h2 id="optimized-vocab-card-example">Optimized Vocab Card Example<a class="headerlink" href="#optimized-vocab-card-example" title="Permanent link">¶</a></h2>
-<p>An example set of compile-time options to create a more optimized vocab card is shown below.</p>
+<p>An example set of compile options to create a more optimized vocab card is shown below.</p>
 <div class="admonition examplecode">
-<p class="admonition-title">Vocab card compile-time options example</p>
+<p class="admonition-title">Vocab card compile options example</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"compile-options"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">"keybinds-enabled"</span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -1916,7 +1916,7 @@ See <a href="../moddingtips/#field-editing">here</a> for more details.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 9, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 17, 2023</span>
       
     
   </small>
