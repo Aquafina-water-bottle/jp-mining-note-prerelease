@@ -668,12 +668,62 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
         <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
-          Extra Setup
+          Transfer Existing Notes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Transfer Existing Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../importing/" class="md-nav__link">
+        Transfer Existing Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Extra Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Extra Setup
         </label>
@@ -749,20 +799,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../importing/" class="md-nav__link">
-        Transfer Existing Notes
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -783,17 +819,17 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
           Alternate Card Exporters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Alternate Card Exporters
         </label>
@@ -890,7 +926,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../updating/" class="md-nav__link">
-        Updating: Overview (TODO)
+        Updating: Overview
       </a>
     </li>
   
@@ -1294,20 +1330,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
         <li class="md-nav__item">
   <a href="#backfill-frequencysort" class="md-nav__link">
     Backfill FrequencySort
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backfill-wordreadinghiragana" class="md-nav__link">
-    Backfill WordReadingHiragana
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backfill-pasilence" class="md-nav__link">
-    Backfill PASilence
   </a>
   
 </li>
@@ -1807,20 +1829,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#backfill-wordreadinghiragana" class="md-nav__link">
-    Backfill WordReadingHiragana
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#backfill-pasilence" class="md-nav__link">
-    Backfill PASilence
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1913,89 +1921,14 @@ page.</p>
 the field if it is empty.</p>
 <p>If you are following the command line instructions, use the following command:
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>backfill.py<span class="w"> </span><span class="s2">"Word"</span><span class="w"> </span>--freq-field<span class="w"> </span><span class="s2">"FrequencySort"</span><span class="w"> </span>--query<span class="w"> </span><span class="s2">"FrequencySort: \"note:JP Mining Note\""</span>
-</code></pre></div>
-<hr>
-<h2 id="backfill-wordreadinghiragana">Backfill <code>WordReadingHiragana</code><a class="headerlink" href="#backfill-wordreadinghiragana" title="Permanent link">¶</a></h2>
-<p>Filling out the <code>WordReadingHiragana</code> field is technically optional but highly recommended.
-This will enable the usage of <a href="../ui/#word-indicators">Word Indicators</a>
-on existing cards.</p>
-<p>To do this, run the following <a href="../batch/">batch command</a>:
-</p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">fill_word_reading_hiragana_field</span>
-</code></pre></div>
-<hr>
-<h2 id="backfill-pasilence">Backfill <code>PASilence</code><a class="headerlink" href="#backfill-pasilence" title="Permanent link">¶</a></h2>
-<p>PASilence must be filled for cards with <code>PAShowInfo</code> filled to work.
-See <a href="../faq/#what-is-the-point-of-the-pasilence-field">here</a> for more info.</p>
-<p><code>PASilence</code> can be filled in one of two ways:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Batch Command</label><label for="__tabbed_1_2">Within Anki</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">set_pasilence_field</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<ol>
-<li>Head to the Card Browser window.</li>
-<li>
-<p>Right click a card, and then head to:</p>
-<blockquote>
-<p><code>Notes</code> →  <code>Find and Replace...</code></p>
-</blockquote>
-</li>
-<li>
-<p>Set the fields to the following:</p>
-<table>
-<thead>
-<tr>
-<th align="left">Field name</th>
-<th align="left">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left" class="smaller-table-row"><strong>Find:</strong></td>
-<td align="left" class="smaller-table-row"><code>.*</code></td>
-</tr>
-<tr>
-<td align="left" class="smaller-table-row"><strong>Replace With:</strong></td>
-<td align="left" class="smaller-table-row"><code>[sound:_silence.wav]</code></td>
-</tr>
-<tr>
-<td align="left" class="smaller-table-row"><strong>In:</strong></td>
-<td align="left" class="smaller-table-row"><code>PASilence</code> <sup>(IMPORTANT! Do not forget this field!)</sup></td>
-</tr>
-<tr>
-<td align="left" class="smaller-table-row">Selected notes only</td>
-<td align="left" class="smaller-table-row">Unchecked (<input type="checkbox" disabled>)</td>
-</tr>
-<tr>
-<td align="left" class="smaller-table-row">Ignore case</td>
-<td align="left" class="smaller-table-row">Unchecked (<input type="checkbox" disabled>)</td>
-</tr>
-<tr>
-<td align="left" class="smaller-table-row">Treat input as a<br>regular expression</td>
-<td align="left" class="smaller-table-row">Checked (<input type="checkbox" disabled checked>)</td>
-</tr>
-</tbody>
-</table>
-<details class="example">
-<summary>Example image <small>(click here)</small></summary>
-<p><figure markdown>
-<a href="../assets/importing/bulk_add_silencewav.png"><img alt="The above table in Anki" src="../assets/importing/bulk_add_silencewav.png"></a>
-</figure></p>
-</details>
-</li>
-</ol>
-</div>
-</div>
-</div></div>
+</code></pre></div></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 21, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 25, 2023</span>
       
     
   </small>

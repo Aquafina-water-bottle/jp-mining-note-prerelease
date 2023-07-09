@@ -668,12 +668,62 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
         <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
-          Extra Setup
+          Transfer Existing Notes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Transfer Existing Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../importing/" class="md-nav__link">
+        Transfer Existing Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Extra Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Extra Setup
         </label>
@@ -749,20 +799,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../importing/" class="md-nav__link">
-        Transfer Existing Notes
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -783,17 +819,17 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
           Alternate Card Exporters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Alternate Card Exporters
         </label>
@@ -890,7 +926,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../updating/" class="md-nav__link">
-        Updating: Overview (TODO)
+        Updating: Overview
       </a>
     </li>
   
@@ -1385,11 +1421,11 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
       
         <li class="md-nav__item">
-  <a href="#special-option-values" class="md-nav__link">
-    Special Option Values
+  <a href="#option-branch-values" class="md-nav__link">
+    Option Branch Values
   </a>
   
-    <nav class="md-nav" aria-label="Special Option Values">
+    <nav class="md-nav" aria-label="Option Branch Values">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1905,11 +1941,11 @@ If you are looking for the stable release documentation, see <a href="https://aq
 </li>
       
         <li class="md-nav__item">
-  <a href="#special-option-values" class="md-nav__link">
-    Special Option Values
+  <a href="#option-branch-values" class="md-nav__link">
+    Option Branch Values
   </a>
   
-    <nav class="md-nav" aria-label="Special Option Values">
+    <nav class="md-nav" aria-label="Option Branch Values">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2111,14 +2147,15 @@ If that is desired, these override options can be used to exactly define
 what options are used by the internal
 sentence parser, auto pitch accent and/or tooltips modules.</p>
 <hr>
-<h2 id="special-option-values">Special Option Values<a class="headerlink" href="#special-option-values" title="Permanent link">¶</a></h2>
-<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-10</code>)</i></sup></p>
+<h2 id="option-branch-values">Option Branch Values<a class="headerlink" href="#option-branch-values" title="Permanent link">¶</a></h2>
+<p><sup><i>New in version <code>0.11.0.0</code> (latest version: <code>0.12.0.0-prerelease-11</code>)</i></sup></p>
 <p>All runtime options are formatted as a key/value pair.
 A simple example is the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">"kanjiHover.enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 </code></pre></div>
 <p>In the above example, the key is <code>kanjiHover.enabled</code>, whereas the value is <code>true</code>.</p>
-<p>All runtime options can take special values, which are always formatted as the following:</p>
+<p>All runtime options can take special values (known as "option branch values"),
+which are always formatted as the following:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IDENTIFIER_STRING"</span><span class="p">,</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="c1">// potentially extra arguments in "args": { ... }</span>
@@ -2126,7 +2163,7 @@ A simple example is the following:</p>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="err">VALUE</span><span class="p">,</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">},</span>
 </code></pre></div>
-<p>For example, we can change the above <code>kanjiHover.enabled</code> to use this special value,
+<p>For example, we can change the above <code>kanjiHover.enabled</code> to use this branch value,
 with type type of <code>isMobile</code>:</p>
 <p>This can be changed to:
 </p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">"kanjiHover.enabled"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2135,12 +2172,12 @@ with type type of <code>isMobile</code>:</p>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">"resultFalse"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="c1">// kanji hover is not enabled on non-PC devices, i.e. mobile</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">},</span>
 </code></pre></div>
-<p>A full list of special option types is shown below.
+<p>A full list of option branch values is shown below.
 The source code for these can be found under
 <a href="https://github.com/Aquafina-water-bottle/jp-mining-note/blob/dev/src/ts/options.ts">src/ts/options.ts</a>.
 (TODO not dev branch)</p>
 <h3 id="ismobile-and-ispc"><code>isMobile</code> and <code>isPC</code><a class="headerlink" href="#ismobile-and-ispc" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-10</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-11</code>)</i></sup></p>
 <p>The <code>isMobile</code> and <code>isPC</code> type allows you to specify different values depending if
 you are using Anki on a mobile device, or PC (non-mobile).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2159,7 +2196,7 @@ you are using Anki on a mobile device, or PC (non-mobile).</p>
 <h3 id="isiphoneipad"><code>isiPhoneiPad</code><a class="headerlink" href="#isiphoneipad" title="Permanent link">¶</a></h3>
 <p>TODO</p>
 <h3 id="viewportwidth"><code>viewportWidth</code><a class="headerlink" href="#viewportwidth" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-10</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-11</code>)</i></sup></p>
 <p>The <code>viewportWidth</code> type allows you to specify different values depending
 on the screen width.
 Note that the viewport width is read for each card flip.
@@ -2178,7 +2215,7 @@ and will only be updated when you flip the side or go to a new card.</p>
 </code></pre></div>
 <p>TODO <code>MATH_OP</code> and <code>WIDTH</code></p>
 <h3 id="viewportwidthbreakpoint"><code>viewportWidthBreakpoint</code><a class="headerlink" href="#viewportwidthbreakpoint" title="Permanent link">¶</a></h3>
-<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-10</code>)</i></sup></p>
+<p><sup><i>New in version <code>0.12.0.0</code> (latest version: <code>0.12.0.0-prerelease-11</code>)</i></sup></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"viewportWidthBreakpoint"</span><span class="p">,</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2223,7 +2260,7 @@ and will only be updated when you flip the side or go to a new card.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2023</span>
       
     
   </small>

@@ -668,12 +668,62 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
         <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
-          Extra Setup
+          Transfer Existing Notes
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Transfer Existing Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../importing/" class="md-nav__link">
+        Transfer Existing Notes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Extra Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           Extra Setup
         </label>
@@ -749,20 +799,6 @@ If you are looking for the stable release documentation, see <a href="https://aq
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../importing/" class="md-nav__link">
-        Transfer Existing Notes
-      </a>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -783,17 +819,17 @@ If you are looking for the stable release documentation, see <a href="https://aq
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
       
       
       
-        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
           Alternate Card Exporters
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_2_7">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_8">
           <span class="md-nav__icon md-icon"></span>
           Alternate Card Exporters
         </label>
@@ -892,7 +928,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
   
     <li class="md-nav__item">
       <a href="../updating/" class="md-nav__link">
-        Updating: Overview (TODO)
+        Updating: Overview
       </a>
     </li>
   
@@ -986,14 +1022,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
         
           <li class="md-nav__item">
   <a href="#v0-12-0-0-handlebars" class="md-nav__link">
-    Handlebars
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#v0-12-0-0-ankiconnectandroid" class="md-nav__link">
-    AnkiConnectAndroid
+    Yomichan Handlebars
   </a>
   
 </li>
@@ -1900,14 +1929,7 @@ If you are looking for the stable release documentation, see <a href="https://aq
         
           <li class="md-nav__item">
   <a href="#v0-12-0-0-handlebars" class="md-nav__link">
-    Handlebars
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#v0-12-0-0-ankiconnectandroid" class="md-nav__link">
-    AnkiConnectAndroid
+    Yomichan Handlebars
   </a>
   
 </li>
@@ -2043,10 +2065,9 @@ including an entire backend javascript rework.
 See the <a href="../updating/#overview">Updating</a> page on how to update the note.
 Afterwards, see below for the other necessary changes that must be made to properly update the note.</p>
 <h3 id="v0-12-0-0-config-rework">Config Rework<a class="headerlink" href="#v0-12-0-0-config-rework" title="Permanent link">¶</a></h3>
-<p>The <code>_jpmn-options.js</code> runtime options file has been completely reworked,
-meaning your config will no longer work.
-With this update, the file has been replaced automatically.
-The runtime options file can be found <a href="../runtimeoptions/#accessing-editing">here</a>.</p>
+<p>The <code>_jpmn-options.js</code> <a href="../runtimeoptions/#accessing-editing">runtime options file</a>
+has been completely reworked, meaning your previous config will no longer work.
+With this update, the file has been replaced automatically, so the note can work for future versions.</p>
 <p>If you have changed any runtime options before, you will need change them again.
 Common runtime-options (pitch accent coloring and image blur) are included as examples;
 remove the comment to re-enable them.
@@ -2125,7 +2146,7 @@ that is guaranteed to work is documented below.</p>
 </div>
 </div>
 </div>
-<h3 id="v0-12-0-0-handlebars">Handlebars<a class="headerlink" href="#v0-12-0-0-handlebars" title="Permanent link">¶</a></h3>
+<h3 id="v0-12-0-0-handlebars">Yomichan Handlebars<a class="headerlink" href="#v0-12-0-0-handlebars" title="Permanent link">¶</a></h3>
 <p>Yomichan's Handlebars has been updated, with some new markers and features being added.</p>
 <ul>
 <li>To update Yomichan's Anki Card Format, see <a href="../updating/#updating-yomichans-anki-card-format">here</a>.</li>
@@ -2142,9 +2163,11 @@ that is guaranteed to work is documented below.</p>
 <li>See <a href="../updating/#updating-yomichans-anki-card-format">here</a>
   for instructions on how to update Anki Card Format.</li>
 </ul>
-<h3 id="v0-12-0-0-ankiconnectandroid">AnkiConnectAndroid<a class="headerlink" href="#v0-12-0-0-ankiconnectandroid" title="Permanent link">¶</a></h3>
-<p>If you are using AnkiConnectAndroid, please repeat the steps above for updating Yomichan.
-It will likely <a href="https://github.com/KamWithK/AnkiconnectAndroid#problem-on-card-add-i-get-incorrect-flds-argument">error until updated</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remember that these settings must be updated on every device that you use Yomichan on!
+This includes <strong>Android</strong> (if you use AnkiConnectAndroid), and <strong>all active Yomichan profiles</strong>.</p>
+</div>
 <!--
 ### Handlebars: JMdict Extra
 <i><sup>Main Page: [Setup Yomichan: Fixing JMdict Extra](setupyomichan.md#fixing-jmdict-extra)</sup></i>
@@ -2176,10 +2199,10 @@ instead of all the literal values itself.</p>
 <li>If you prefer the frequency sort display but you don't have a frequency sort value,
     <a href="../importing/#backfill-the-frequencysort-field">backfill the frequencies</a>.</li>
 <li>If you prefer the frequency sort display but your frequency sort is somehow invalid:<ol>
-<li>Clear out your <code>FrequencySort</code> field entirely through the following command:
-    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python3 tools/batch.py clear_field "FrequencySort"
+<li>Clear out your <code>FrequencySort</code> field entirely through the following <a href="../batch/">batch command</a>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">clear_field</span><span class="w"> </span><span class="s2">"FrequencySort"</span>
 </code></pre></div></li>
-<li><a href="../importing/#backfill-the-frequencysort-field">Backfill the frequencies</a>.</li>
+<li><a href="../backfilling/#backfill-frequencysort">Backfill the frequencies</a>.</li>
 </ol>
 </li>
 </ul>
@@ -2291,7 +2314,7 @@ Full details of the changes can be found in the main
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 9, 2023</span>
       
     
   </small>
